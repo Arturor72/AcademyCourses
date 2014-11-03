@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace AcademyCourses
+{
+    public class ModuloBE
+    {
+
+        public int C_Modulo { get; set; }
+        public CategoriaBE C_Categoria { get; set; }
+        public double Precio { get; set; }
+        public String Descripcion { get; set; }
+        public Boolean Estado { get; set; }
+
+        public ModuloBE () { }
+
+        public ModuloBE(int C_Modulo, CategoriaBE C_Categoria, double Precio, String Descripcion, Boolean Estado) {
+
+            this.C_Modulo = C_Modulo;
+            this.C_Categoria = C_Categoria;
+            this.Precio = Precio;
+            this.Descripcion = Descripcion;
+            this.Estado = Estado;
+        
+        }
+
+
+    }
+}

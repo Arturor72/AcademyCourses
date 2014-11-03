@@ -61,8 +61,17 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministradorBE.cs" />
     <Compile Include="AlumnoBE.cs" />
+    <Compile Include="CategoriaBE.cs" />
+    <Compile Include="CursoBE.cs" />
+    <Compile Include="HorarioBE.cs" />
+    <Compile Include="MatriculaCursoBE.cs" />
+    <Compile Include="MatriculaModuloBE.cs" />
+    <Compile Include="ModuloBE.cs" />
+    <Compile Include="ProfesorBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBE.cs" />
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
