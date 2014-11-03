@@ -1,0 +1,36 @@
+/*!
+ * Start Bootstrap - Round About HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-center {
+	margin: 0 auto;
+	width: 200px; height: 200px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+
+
+.post-body img {
+border-radius: 45% / 20%; /* Borde redondeado */
+box-shadow: 0px 0px 15px #000; /* Sombra */
+padding:0;
+-moz-transition: all 1s;
+-webkit-transition: all 1s;
+-o-transition: all 1s;
+}
+.post-body img:hover {
+border-radius: 0; /* Con esto eliminamos el borde redondeado */
+-moz-transition: all 1s;
+-webkit-transition: all 1s;
+-o-transition: all 1s;
+cursor:pointer;
+}
