@@ -92,7 +92,7 @@
 														<div class="clearfix">
 															<label class="inline">
 																<input type="checkbox" />
-																<span class="lbl"> Recordárme</span>
+																<span class="lbl"> Recordarme</span>
 															</label>
 
 															<button onclick="return false;" class="width-35 pull-right btn btn-small btn-primary">
