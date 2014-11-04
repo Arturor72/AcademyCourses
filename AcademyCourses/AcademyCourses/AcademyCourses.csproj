@@ -57,6 +57,269 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Tema\assets\avatars\avatar.png" />
+    <Content Include="App_Themes\Tema\assets\avatars\avatar1.png" />
+    <Content Include="App_Themes\Tema\assets\avatars\avatar2.png" />
+    <Content Include="App_Themes\Tema\assets\avatars\avatar3.png" />
+    <Content Include="App_Themes\Tema\assets\avatars\avatar4.png" />
+    <Content Include="App_Themes\Tema\assets\avatars\avatar5.png" />
+    <Content Include="App_Themes\Tema\assets\avatars\profile-pic.jpg" />
+    <Content Include="App_Themes\Tema\assets\avatars\user.jpg" />
+    <Content Include="App_Themes\Tema\assets\css\ace-ie.min.css" />
+    <Content Include="App_Themes\Tema\assets\css\ace-responsive.min.css" />
+    <Content Include="App_Themes\Tema\assets\css\ace-skins.min.css" />
+    <Content Include="App_Themes\Tema\assets\css\ace.min.css" />
+    <Content Include="App_Themes\Tema\assets\css\bootstrap-editable.css" />
+    <Content Include="App_Themes\Tema\assets\css\bootstrap-responsive.min.css" />
+    <Content Include="App_Themes\Tema\assets\css\bootstrap-timepicker.css" />
+    <Content Include="App_Themes\Tema\assets\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Tema\assets\css\chosen-sprite%402x.png" />
+    <Content Include="App_Themes\Tema\assets\css\chosen-sprite.png" />
+    <Content Include="App_Themes\Tema\assets\css\chosen.css" />
+    <Content Include="App_Themes\Tema\assets\css\colorbox.css" />
+    <Content Include="App_Themes\Tema\assets\css\colorpicker.css" />
+    <Content Include="App_Themes\Tema\assets\css\datepicker.css" />
+    <Content Include="App_Themes\Tema\assets\css\daterangepicker.css" />
+    <Content Include="App_Themes\Tema\assets\css\font-awesome-ie7.min.css" />
+    <Content Include="App_Themes\Tema\assets\css\font-awesome.min.css" />
+    <Content Include="App_Themes\Tema\assets\css\fullcalendar.css" />
+    <Content Include="App_Themes\Tema\assets\css\images\border.png" />
+    <Content Include="App_Themes\Tema\assets\css\images\controls.png" />
+    <Content Include="App_Themes\Tema\assets\css\images\loading.gif" />
+    <Content Include="App_Themes\Tema\assets\css\images\loading_background.png" />
+    <Content Include="App_Themes\Tema\assets\css\images\overlay.png" />
+    <Content Include="App_Themes\Tema\assets\css\img\alpha.png" />
+    <Content Include="App_Themes\Tema\assets\css\img\hue.png" />
+    <Content Include="App_Themes\Tema\assets\css\img\saturation.png" />
+    <Content Include="App_Themes\Tema\assets\css\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="App_Themes\Tema\assets\css\jquery.gritter.css" />
+    <Content Include="App_Themes\Tema\assets\css\prettify.css" />
+    <Content Include="App_Themes\Tema\assets\css\select2-spinner.gif" />
+    <Content Include="App_Themes\Tema\assets\css\select2.css" />
+    <Content Include="App_Themes\Tema\assets\css\select2.png" />
+    <Content Include="App_Themes\Tema\assets\css\select2x2.png" />
+    <Content Include="App_Themes\Tema\assets\font\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\image-1.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\image-2.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\image-3.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\image-4.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\image-5.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\image-6.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\thumb-1.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\thumb-2.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\thumb-3.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\thumb-4.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\thumb-5.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gallery\thumb-6.jpg" />
+    <Content Include="App_Themes\Tema\assets\images\gritter-light.png.html" />
+    <Content Include="App_Themes\Tema\assets\images\gritter.png.html" />
+    <Content Include="App_Themes\Tema\assets\images\ie-spacer.gif.html" />
+    <Content Include="App_Themes\Tema\assets\img\clear.png.html" />
+    <Content Include="App_Themes\Tema\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="App_Themes\Tema\assets\img\glyphicons-halflings.png" />
+    <Content Include="App_Themes\Tema\assets\img\loading.gif.html" />
+    <Content Include="App_Themes\Tema\assets\js\%402x.%241.html" />
+    <Content Include="App_Themes\Tema\assets\js\1.10.2.html" />
+    <Content Include="App_Themes\Tema\assets\js\1.10.3.html" />
+    <Content Include="App_Themes\Tema\assets\js\1.3.1.html" />
+    <Content Include="App_Themes\Tema\assets\js\1.6.1.html" />
+    <Content Include="App_Themes\Tema\assets\js\1.9.4.html" />
+    <Content Include="App_Themes\Tema\assets\js\2.0.3.html" />
+    <Content Include="App_Themes\Tema\assets\js\4.0em.html" />
+    <Content Include="App_Themes\Tema\assets\js\a.chzn-single.html" />
+    <Content Include="App_Themes\Tema\assets\js\a.close.html" />
+    <Content Include="App_Themes\Tema\assets\js\ace-elements.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\ace.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\additional-methods.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\autosize.destroy.html" />
+    <Content Include="App_Themes\Tema\assets\js\autosize.resize.html" />
+    <Content Include="App_Themes\Tema\assets\js\autosize.resizeIncludeStyle.html" />
+    <Content Include="App_Themes\Tema\assets\js\beforeactivate._change.html" />
+    <Content Include="App_Themes\Tema\assets\js\blur.inputlimiter.html" />
+    <Content Include="App_Themes\Tema\assets\js\blur.mask.html" />
+    <Content Include="App_Themes\Tema\assets\js\blur.validate-equalTo.html" />
+    <Content Include="App_Themes\Tema\assets\js\bootbox.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\bootstrap-colorpicker.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\bootstrap-tag.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\bootstrap-wysiwyg.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\bootstrap.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\change.ace_inner_call.html" />
+    <Content Include="App_Themes\Tema\assets\js\change.DT.html" />
+    <Content Include="App_Themes\Tema\assets\js\change.select2.html" />
+    <Content Include="App_Themes\Tema\assets\js\change._change.html" />
+    <Content Include="App_Themes\Tema\assets\js\chosen.jquery.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\click.affix.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\click.alert.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\click.button.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\click.carousel.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\click.collapse.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\click.dismiss.modal.html" />
+    <Content Include="App_Themes\Tema\assets\js\click.dropdown.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\click.DT.html" />
+    <Content Include="App_Themes\Tema\assets\js\click.modal.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\click.tab.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\click._change.html" />
+    <Content Include="App_Themes\Tema\assets\js\click._submit keypress._submit.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\2.0.0.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\blur.timepicker.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\bootstrap-datepicker.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\bootstrap-timepicker.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\button.applyBtn.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\button.clearBtn.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\changeTime.timepicker.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\click.timepicker.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\daterangepicker.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\focus.timepicker.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\hide.timepicker.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\input.bootstrap-timepicker-hour.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\input.bootstrap-timepicker-meridian.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\input.bootstrap-timepicker-minute.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\input.bootstrap-timepicker-second.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\keydown.timepicker.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\mm\dd\yyyy.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\moment.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\mousedown.timepicker.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\select.monthselect.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\select.yearselect.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\show.timepicker.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\span.bootstrap-timepicker-hour.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\span.bootstrap-timepicker-meridian.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\span.bootstrap-timepicker-minute.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\span.bootstrap-timepicker-second.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\td.available.html" />
+    <Content Include="App_Themes\Tema\assets\js\date-time\tfoot th.today.html" />
+    <Content Include="App_Themes\Tema\assets\js\ddd M\d.html" />
+    <Content Include="App_Themes\Tema\assets\js\dddd M\d.html" />
+    <Content Include="App_Themes\Tema\assets\js\div.chzn-drop.html" />
+    <Content Include="App_Themes\Tema\assets\js\div.chzn-search.html" />
+    <Content Include="App_Themes\Tema\assets\js\div.dataTables_filter.html" />
+    <Content Include="App_Themes\Tema\assets\js\div.fc-day-content div.html" />
+    <Content Include="App_Themes\Tema\assets\js\div.fc-event-time.html" />
+    <Content Include="App_Themes\Tema\assets\js\div.fc-event-title.html" />
+    <Content Include="App_Themes\Tema\assets\js\div.ui-draggable-iframeFix.html" />
+    <Content Include="App_Themes\Tema\assets\js\excanvas.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\flot\0.8.1.html" />
+    <Content Include="App_Themes\Tema\assets\js\flot\jquery.flot.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\flot\jquery.flot.pie.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\flot\jquery.flot.resize.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\focus.mask.html" />
+    <Content Include="App_Themes\Tema\assets\js\focus.typeahead.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\focusin.modal.html" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\button.btn-next.html" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\button.btn-prev.html" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\data\fuelux.tree-sampledata.js" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\fuelux.spinner.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\fuelux.tree.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\fuelux.wizard.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\li.complete.html" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\mousedown.spinner.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\mousedown.wizard.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\fuelux\span.badge.html" />
+    <Content Include="App_Themes\Tema\assets\js\fullcalendar.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\in.tag.html" />
+    <Content Include="App_Themes\Tema\assets\js\input.autosize keyup.autosize.html" />
+    <Content Include="App_Themes\Tema\assets\js\input.autosize.html" />
+    <Content Include="App_Themes\Tema\assets\js\input.select2-input.html" />
+    <Content Include="App_Themes\Tema\assets\js\invalid-form.validate.html" />
+    <Content Include="App_Themes\Tema\assets\js\jquery-1.10.2.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery-2.0.3.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.autosize-min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.colorbox-min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.dataTables.bootstrap.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.dataTables.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.easy-pie-chart.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.gritter.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.hotkeys.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.inputlimiter.1.3.1.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.knob.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.maskedinput.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.mobile.custom.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.slimscroll.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.sparkline.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\jquery.validate.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\keydown.dropdown.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\keydown.mask.html" />
+    <Content Include="App_Themes\Tema\assets\js\keypress.DT.html" />
+    <Content Include="App_Themes\Tema\assets\js\keypress.inputlimiter.html" />
+    <Content Include="App_Themes\Tema\assets\js\keypress.mask.html" />
+    <Content Include="App_Themes\Tema\assets\js\keyup.dismiss.modal.html" />
+    <Content Include="App_Themes\Tema\assets\js\keyup.DT.html" />
+    <Content Include="App_Themes\Tema\assets\js\keyup.inputlimiter.html" />
+    <Content Include="App_Themes\Tema\assets\js\keyup.k.html" />
+    <Content Include="App_Themes\Tema\assets\js\lang-in.tag.html" />
+    <Content Include="App_Themes\Tema\assets\js\lang-uq.val.html" />
+    <Content Include="App_Themes\Tema\assets\js\li.active-result.html" />
+    <Content Include="App_Themes\Tema\assets\js\li.dropdown.html" />
+    <Content Include="App_Themes\Tema\assets\js\li.no-results.html" />
+    <Content Include="App_Themes\Tema\assets\js\li.search-choice.html" />
+    <Content Include="App_Themes\Tema\assets\js\li.search-field.html" />
+    <Content Include="App_Themes\Tema\assets\js\li.select2-more-results.html" />
+    <Content Include="App_Themes\Tema\assets\js\markdown\bootstrap-markdown.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\markdown\click.markdown.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\markdown\markdown.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\markdown\URL\Link.html" />
+    <Content Include="App_Themes\Tema\assets\js\Microsoft.XMLDOM.html" />
+    <Content Include="App_Themes\Tema\assets\js\Microsoft.XMLHTTP.html" />
+    <Content Include="App_Themes\Tema\assets\js\mousemove.jqs.html" />
+    <Content Include="App_Themes\Tema\assets\js\mousemove.k mouseup.k keyup.k.html" />
+    <Content Include="App_Themes\Tema\assets\js\mousemove.k.html" />
+    <Content Include="App_Themes\Tema\assets\js\mouseup.k mousemove.k keyup.k.html" />
+    <Content Include="App_Themes\Tema\assets\js\mouseup.k.html" />
+    <Content Include="App_Themes\Tema\assets\js\Please enter a valid time in 12-hour am\pm format.html" />
+    <Content Include="App_Themes\Tema\assets\js\prettify.js" />
+    <Content Include="App_Themes\Tema\assets\js\propertychange.autosize.html" />
+    <Content Include="App_Themes\Tema\assets\js\propertychange.select2 DOMAttrModified.select2.html" />
+    <Content Include="App_Themes\Tema\assets\js\propertychange._change.html" />
+    <Content Include="App_Themes\Tema\assets\js\resize.autosize.html" />
+    <Content Include="App_Themes\Tema\assets\js\resize.jqs scroll.jqs.html" />
+    <Content Include="App_Themes\Tema\assets\js\scroll.affix.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\scroll.droppable.html" />
+    <Content Include="App_Themes\Tema\assets\js\scroll.scroll-spy.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\select2.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\selectstart.DT.html" />
+    <Content Include="App_Themes\Tema\assets\js\selectstart.ui.html" />
+    <Content Include="App_Themes\Tema\assets\js\spin.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\submit._submit.html" />
+    <Content Include="App_Themes\Tema\assets\js\th.fc-agenda-gutter.html" />
+    <Content Include="App_Themes\Tema\assets\js\th.fc-week-number.html" />
+    <Content Include="App_Themes\Tema\assets\js\touchend.k.html" />
+    <Content Include="App_Themes\Tema\assets\js\touchmove.k touchend.k.html" />
+    <Content Include="App_Themes\Tema\assets\js\touchmove.k.html" />
+    <Content Include="App_Themes\Tema\assets\js\ui.draggable.html" />
+    <Content Include="App_Themes\Tema\assets\js\ui.droppable.html" />
+    <Content Include="App_Themes\Tema\assets\js\ui.mouse.html" />
+    <Content Include="App_Themes\Tema\assets\js\ui.resizable.html" />
+    <Content Include="App_Themes\Tema\assets\js\ui.selectable.html" />
+    <Content Include="App_Themes\Tema\assets\js\ui.slider.html" />
+    <Content Include="App_Themes\Tema\assets\js\ui.sortable.html" />
+    <Content Include="App_Themes\Tema\assets\js\ul.chzn-choices.html" />
+    <Content Include="App_Themes\Tema\assets\js\ul.chzn-results.html" />
+    <Content Include="App_Themes\Tema\assets\js\uq.val.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\ace-editable.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\bootstrap-editable.min.js" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\change.editable.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\click.editable.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\div.editable-input.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\focus.datepicker.data-api click.datepicker.data-api.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\keydown.editable.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\keyup.editable.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\mm\dd\yyyy.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\Object.keys called on a non-object.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\save.internal.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\tfoot th.clear.html" />
+    <Content Include="App_Themes\Tema\assets\js\x-editable\tfoot th.today.html" />
+    <Content Include="App_Themes\Tema\css\bootstrap.css" />
+    <Content Include="App_Themes\Tema\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Tema\css\round-about.css" />
+    <Content Include="App_Themes\Tema\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\Tema\js\bootstrap.js" />
+    <Content Include="App_Themes\Tema\js\bootstrap.min.js" />
+    <Content Include="App_Themes\Tema\js\jquery.js" />
+    <Content Include="App_Themes\Tema\login.html" />
+    <Content Include="Vista\Index.aspx" />
+    <Content Include="Vista\Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -72,6 +335,20 @@
     <Compile Include="ProfesorBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioBE.cs" />
+    <Compile Include="Vista\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -81,6 +358,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Tema\assets\font\fontawesome-webfont.woff" />
+    <Content Include="App_Themes\Tema\assets\font\fontawesome-webfont_2d2816fe.eot" />
+    <Content Include="App_Themes\Tema\assets\font\fontawesome-webfont_aea8981c.eot" />
+    <Content Include="App_Themes\Tema\assets\font\fontawesome-webfont_aea8981c.ttf" />
+    <Content Include="App_Themes\Tema\assets\font\fontawesome-webfont_aea8981c.woff" />
+    <Content Include="App_Themes\Tema\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\Tema\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\Tema\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,6 +373,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
