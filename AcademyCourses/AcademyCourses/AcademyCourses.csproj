@@ -317,11 +317,8 @@
     <Content Include="App_Themes\Tema\js\bootstrap.js" />
     <Content Include="App_Themes\Tema\js\bootstrap.min.js" />
     <Content Include="App_Themes\Tema\js\jquery.js" />
-    <Content Include="App_Themes\Tema\login.html" />
     <Content Include="Vista\Index.aspx" />
     <Content Include="Vista\Login.aspx" />
-    <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministradorBE.cs" />
@@ -351,13 +348,6 @@
     <Compile Include="Vista\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Tema\assets\font\fontawesome-webfont.woff" />
@@ -368,12 +358,6 @@
     <Content Include="App_Themes\Tema\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="App_Themes\Tema\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="App_Themes\Tema\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
