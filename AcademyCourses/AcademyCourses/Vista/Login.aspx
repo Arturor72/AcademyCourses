@@ -44,6 +44,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 
 	<body class="login-layout" >
+		<form id="form1" runat="server">
 		<div class="main-container container-fluid">
 			<div class="main-content">
 				<div class="row-fluid">
@@ -71,18 +72,17 @@
 
 												<div class="space-6"></div>
 
-												<form />
 													<fieldset>
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Usuario" />
+																<input type="text" class="span12" placeholder="Usuario" id="txtUsuario" runat="server"/>
 																<i class="icon-user"></i>
 															</span>
 														</label>
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="password" class="span12" placeholder="Contraseña" />
+																<input type="password" class="span12" placeholder="Contraseña" id="txtPassword" runat="server"/>
 																<i class="icon-lock"></i>
 															</span>
 														</label>
@@ -95,7 +95,7 @@
 																<span class="lbl"> Recordarme</span>
 															</label>
 
-															<button onclick="return false;" class="width-35 pull-right btn btn-small btn-primary">
+															<button onclick="return false;" class="width-35 pull-right btn btn-small btn-primary" id="btnEntrar" runat="server">
 																<i class="icon-key"></i>
 																Entrar
 															</button>
@@ -103,12 +103,12 @@
 
 														<div class="space-4"></div>
 													</fieldset>
-												</form>
-
+												
 
 
 
 												<div class="social-or-login center">
+													<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 													<span class="bigger-110"</span>
 												</div>
 
@@ -148,7 +148,6 @@
 													Ingrese su correo electrónico para recibir las instrucciones:
 												</p>
 
-												<form />
 													<fieldset>
 														<label>
 															<span class="block input-icon input-icon-right">
@@ -164,8 +163,7 @@
 															</button>
 														</div>
 													</fieldset>
-												</form>
-											</div><!--/widget-main-->
+												</div><!--/widget-main-->
 
 											<div class="toolbar center">
 												<a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
@@ -191,7 +189,6 @@
 												<div class="space-6"></div>
 												<p> Ingrese sus datos: </p>
 
-												<form />
 													<fieldset>
 														<label>
 															<span class="block input-icon input-icon-right">
@@ -313,8 +310,7 @@
 															</button>
 														</div>
 													</fieldset>
-												</form>
-											</div>
+												</div>
 
 											<div class="toolbar center">
 												<a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
@@ -383,3 +379,5 @@
 		</script>
 	</body>
 </html>
+</form>
+
