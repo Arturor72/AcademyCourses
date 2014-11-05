@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
 namespace AcademyCourses.Vista
 {
@@ -11,7 +12,13 @@ namespace AcademyCourses.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label1.Text = "Probando";
         }
+
+        
+
+        
+        //Request.Form.Get("txtUsuario")
+        //Request.Form.Get("txtPassword")
     }
 }

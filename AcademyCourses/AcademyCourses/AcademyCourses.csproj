@@ -323,9 +323,11 @@
   <ItemGroup>
     <Compile Include="AdministradorBE.cs" />
     <Compile Include="AlumnoBE.cs" />
+    <Compile Include="BDConexion.cs" />
     <Compile Include="CategoriaBE.cs" />
     <Compile Include="CursoBE.cs" />
     <Compile Include="HorarioBE.cs" />
+    <Compile Include="LoginDAO.cs" />
     <Compile Include="MatriculaCursoBE.cs" />
     <Compile Include="MatriculaModuloBE.cs" />
     <Compile Include="ModuloBE.cs" />

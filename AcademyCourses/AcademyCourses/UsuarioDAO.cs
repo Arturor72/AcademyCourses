@@ -15,15 +15,15 @@ namespace AcademyCourses
         {
             int respuesta = 0;
 
-            using (SqlConnection Conn = BDConexion.obtenerConexion())
+            using (SqlConnection Conn = BDConexion.ObtenerConexion())
             {
-                SqlCommand comm = new SqlCommand("usp_insertarUsuario", Conn);
+                SqlCommand comm = new SqlCommand("usp_InsertarUsuario", Conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("@ApellidoP", SqlDbType.VarChar).Value = objUsuario.ApellidoP;
                 comm.Parameters.Add("@ApellidoM", SqlDbType.VarChar).Value = objUsuario.ApellidoM;
                 comm.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objUsuario.Nombre;
                 comm.Parameters.Add("@Email", SqlDbType.VarChar).Value = objUsuario.Email;
-                comm.Parameters.Add("@Sexo", SqlDbType.Char).Value = objUsuario.Sexo;
+                comm.Parameters.Add("@Sexo", SqlDbType.VarChar).Value = objUsuario.Sexo;
                 comm.Parameters.Add("@Nick", SqlDbType.VarChar).Value = objUsuario.Nick;
                 comm.Parameters.Add("@Contrasena", SqlDbType.VarChar).Value = objUsuario.Contrasena;
                 comm.Parameters.Add("@Estado", SqlDbType.Bit).Value = objUsuario.Estado;
@@ -40,7 +40,7 @@ namespace AcademyCourses
         {
             int respuesta = 0;
 
-            using (SqlConnection Conn = BDConexion.obtenerConexion())
+            using (SqlConnection Conn = BDConexion.ObtenerConexion())
             {
 
 
@@ -51,7 +51,7 @@ namespace AcademyCourses
                 comm.Parameters.Add("@ApellidoM", SqlDbType.VarChar).Value = objUsuario.ApellidoM;
                 comm.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objUsuario.Nombre;
                 comm.Parameters.Add("@Email", SqlDbType.VarChar).Value = objUsuario.Email;
-                comm.Parameters.Add("@Sexo", SqlDbType.Char).Value = objUsuario.Sexo;
+                comm.Parameters.Add("@Sexo", SqlDbType.VarChar).Value = objUsuario.Sexo;
                 comm.Parameters.Add("@Nick", SqlDbType.VarChar).Value = objUsuario.Nick;
                 comm.Parameters.Add("@Contrasena", SqlDbType.VarChar).Value = objUsuario.Contrasena;
                 comm.Parameters.Add("@Estado", SqlDbType.Bit).Value = objUsuario.Estado;
@@ -70,14 +70,13 @@ namespace AcademyCourses
 
             int respuesta = 0;
 
-            using (SqlConnection Conn = BDConexion.obtenerConexion())
+            using (SqlConnection Conn = BDConexion.ObtenerConexion())
             {
 
 
                 SqlCommand comm = new SqlCommand("usp_EliminarUsuario", Conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("@C_Usuario", SqlDbType.Int).Value = objUsuario.C_Usuario;
-                comm.Parameters.Add("@Estado", SqlDbType.Bit).Value = objUsuario.Estado;
 
                 respuesta = comm.ExecuteNonQuery();
                 Conn.Close();
@@ -93,7 +92,7 @@ namespace AcademyCourses
         public static List<UsuarioBE> mostrarUsuarios()
         {
             List<UsuarioBE> lista = new List<UsuarioBE>();
-            using (SqlConnection Conn = BDConexion.obtenerConexion())
+            using (SqlConnection Conn = BDConexion.ObtenerConexion())
             {
                 SqlCommand comm = new SqlCommand("usp_mostrarUsuarios", Conn);
                 comm.CommandType = CommandType.StoredProcedure;
@@ -110,9 +109,7 @@ namespace AcademyCourses
                     objUsuarioBE.ApellidoM = x.GetString(2);
                     objUsuarioBE.Nombre = x.GetString(3);
                     objUsuarioBE.Email = x.GetString(4);
-
-                    objUsuarioBE.Sexo = x.GetChar(5); // ERROR
-
+                    objUsuarioBE.Sexo = x.GetString(5); 
                     objUsuarioBE.Nick = x.GetString(6);
                     objUsuarioBE.Contrasena = x.GetString(7);
                     objUsuarioBE.Estado = x.GetBoolean(8);

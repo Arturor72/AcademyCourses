@@ -11,7 +11,7 @@ namespace AcademyCourses
         public String Ocupacion { get; set; }
 
         public AlumnoBE(int C_Alumno, string ApellidoP, string ApellidoM, string Nombre,
-                          string Email, char Sexo, string Nick, string Contraseña, Boolean Estado, String Ocupacion)
+                          string Email, string Sexo, string Nick, string Contraseña, Boolean Estado, String Ocupacion)
             : base(C_Alumno, ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contraseña, Estado)
         {
 

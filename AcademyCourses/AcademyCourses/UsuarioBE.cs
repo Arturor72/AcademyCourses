@@ -12,7 +12,7 @@ namespace AcademyCourses
         public string ApellidoM { get; set; }
         public string Nombre { get; set; }
         public string Email { get; set; }
-        public char   Sexo { get; set; }
+        public string   Sexo { get; set; }
         public string Nick { get; set; }
         public string Contrasena { get; set; }
         public Boolean Estado { get; set; }
@@ -20,7 +20,7 @@ namespace AcademyCourses
         public UsuarioBE() { }
 
         public UsuarioBE(int C_Usuario, string ApellidoP, string ApellidoM, string Nombre,
-                          string Email, char Sexo, string Nick, string Contrasena, Boolean Estado)
+                          string Email, string Sexo, string Nick, string Contrasena, Boolean Estado)
         {
 
             this.C_Usuario = C_Usuario;
