@@ -18,7 +18,7 @@ namespace AcademyCourses
                 SqlCommand comm = new SqlCommand("usp_ValidarLogin", Conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("@Nick", SqlDbType.VarChar).Value = objUsuario.Nick;
-                comm.Parameters.Add("@Password", SqlDbType.VarChar).Value = objUsuario.Contraseña;
+                comm.Parameters.Add("@Password", SqlDbType.VarChar).Value = objUsuario.Contrasena;
 
                 //Capturamos los valores RETURN del STORE PROCEDURE
                 SqlParameter valorReturn = new SqlParameter();
