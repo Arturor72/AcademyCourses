@@ -1,0 +1,15 @@
+.centrar {
+    vertical-align:middle;
+}
+
+.alineacion{
+
+
+}
+
+
+.alineacion {
+        position:relative;
+        float:right;
+        width: 1000px;
+    }
