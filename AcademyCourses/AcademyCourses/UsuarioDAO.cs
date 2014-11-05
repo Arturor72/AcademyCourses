@@ -17,7 +17,7 @@ namespace AcademyCourses
 
             using (SqlConnection Conn = BDConexion.obtenerConexion())
             {
-                SqlCommand comm = new SqlCommand("insertUsuario", Conn);
+                SqlCommand comm = new SqlCommand("usp_insertarUsuario", Conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("@ApellidoP", SqlDbType.VarChar).Value = objUsuario.ApellidoP;
                 comm.Parameters.Add("@ApellidoM", SqlDbType.VarChar).Value = objUsuario.ApellidoM;
@@ -44,7 +44,7 @@ namespace AcademyCourses
             {
 
 
-                SqlCommand comm = new SqlCommand("actualizarUsuario", Conn);
+                SqlCommand comm = new SqlCommand("usp_actualizarUsuario", Conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("@C_Usuario", SqlDbType.Int).Value = objUsuario.C_Usuario;
                 comm.Parameters.Add("@ApellidoP", SqlDbType.VarChar).Value = objUsuario.ApellidoP;
