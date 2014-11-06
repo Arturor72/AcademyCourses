@@ -21,12 +21,9 @@ namespace AcademyCourses
                 comm.Parameters.Add("@Password", SqlDbType.VarChar).Value = objUsuario.Contrasena;
 
                 //Capturamos los valores RETURN del STORE PROCEDURE
-                SqlParameter valorReturn = new SqlParameter();
-                valorReturn.DbType = DbType.Int32;
-                valorReturn.Direction = ParameterDirection.ReturnValue;
-                comm.Parameters.Add(valorReturn);
-                respuesta = Convert.ToInt32(comm.ExecuteScalar());
-                Console.WriteLine(Convert.ToString(respuesta));
+                comm.Parameters.Add("@RETURN_VALUE", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+                comm.ExecuteNonQuery();
+                respuesta = (int)comm.Parameters["@RETURN_VALUE"].Value;
             }
 
             return respuesta;
