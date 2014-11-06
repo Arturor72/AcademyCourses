@@ -2,14 +2,14 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
 
-		<meta charset="utf-8" />
-		<title>Academy Courses - Login</title>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+  		<title>Academy Courses - Login</title>
 
 
 		<meta name="description" content="User login page" />
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!--basic styles-->
@@ -17,9 +17,7 @@
 		<link href="../App_Themes/Tema/assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="../App_Themes/Tema/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../App_Themes/Tema/assets/css/font-awesome.min.css" />
-
-
-
+    
 		<!--[if IE 7]>
 		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
@@ -42,83 +40,60 @@
 		<![endif]-->
 
 		<!--inline styles related to this page-->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	
 
-	<body class="login-layout" >
-		<form id="form1" runat="server">
-		<div class="main-container container-fluid">
-			<div class="main-content">
-				<div class="row-fluid">
-					<div class="span12">
-						<div class="login-container">
-							<div class="row-fluid">
+</head>
+<body class="login-layout" >
+    <form id="form1" runat="server">
+    <div class="main-container container-fluid">
+        <div class="main-content">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="login-container">
+                        <div class="row-fluid">
 								<div class="center">
 									<h1>
-										<br><br>
 										<i class="icon-desktop"></i>
 										<span class="white">Academy Courses</span>
 									</h1>
 									
 								</div>
-							</div>
-
-							<div class="space-6"></div>
-
-							<div class="row-fluid">
-								<div class="position-relative">
-									<div id="login-box" class="login-box visible widget-box no-border">
-										<div class="widget-body">
-											<div class="widget-main">
-												
-
-												<div class="space-6"></div>
-
-													<fieldset>
-														<label>
+                            <div class="space-6"></div>
+                            <div class="row-fluid">
+                                <div class="position-relative">
+                                    <div id="login-box" class="login-box visible widget-box no-border">
+                                        <div class="widget-body">
+                                            <div class="widget-main">
+                                                <div class="space-6"></div>
+                                                <fieldset>
+                                                    <label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Usuario" id="txtUsuario" runat="server"/>
+                                                                <asp:TextBox ID="txtUsuario" class="span12" placeholder="Usuario" runat="server"></asp:TextBox>
 																<i class="icon-user"></i>
 															</span>
 														</label>
-
-														<label>
+                                                    <label>
 															<span class="block input-icon input-icon-right">
-																<input type="password" class="span12" placeholder="Contraseña" id="txtPassword" runat="server"/>
+                                                                <asp:TextBox ID="txtContrasena" type="password" class="span12" placeholder="Contraseña" runat="server"></asp:TextBox>
 																<i class="icon-lock"></i>
 															</span>
-														</label>
+													</label>
+                                                    <div class="space"></div>
 
-														<div class="space"></div>
-
-														<div class="clearfix">
+                                                    <div class="clearfix">
 															<label class="inline">
-																<input type="checkbox" />
+                                                                <asp:CheckBox ID="CheckBox1" runat="server" />
 																<span class="lbl"> Recordarme</span>
 															</label>
-
-															<button onclick="return false;" class="width-35 pull-right btn btn-small btn-primary" id="btnEntrar" runat="server">
-																<i class="icon-key"></i>
-																Entrar
-															</button>
+                                                            <asp:Button ID="Button1" runat="server" Text="Entrar" class="width-35 pull-right btn btn-small btn-primary" OnClick="Button1_Click"/>
 														</div>
+                                                </fieldset>
+                                                <div class="space-4">
+                                                    <asp:Label ID="lblResultado" runat="server"></asp:Label>
+                                                </div>
+                                            </div><!--/widget-main-->
 
-														<div class="space-4"></div>
-													</fieldset>
-												
-
-
-
-												<div class="social-or-login center">
-													<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-													<span class="bigger-110"</span>
-												</div>
-
-												
-											</div><!--/widget-main-->
-
-
-
-											<div class="toolbar clearfix">
+                                            <div class="toolbar clearfix">
 												<div>
 													<a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
 														<i class="icon-arrow-left"></i>
@@ -133,12 +108,14 @@
 													</a>
 												</div>
 											</div>
-										</div><!--/widget-body-->
-									</div><!--/login-box-->
 
-									<div id="forgot-box" class="forgot-box widget-box no-border">
-										<div class="widget-body">
-											<div class="widget-main">
+
+                                        </div><!--/widget-body-->
+                                    </div><!--/login-box-->
+                                   
+                                     <div id="forgot-box" class="forgot-box widget-box no-border">
+                                        <div class="widget-body">
+                                            <div class="widget-main">
 												<h4 class="header red lighter bigger">
 													<i class="icon-key"></i>
 													Recuperar contraseña
@@ -152,34 +129,28 @@
 													<fieldset>
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="email" class="span12" placeholder="Email" />
-																<i class="icon-envelope"></i>
+                                                                <asp:TextBox ID="TextBox3" type="email" class="span12" placeholder="Email" runat="server"></asp:TextBox>
+                                                                <i class="icon-envelope"></i>
 															</span>
 														</label>
 
 														<div class="clearfix">
-															<button onclick="return false;" class="width-35 pull-right btn btn-small btn-danger">
-																<i class="icon-lightbulb"></i>
-																Enviar
-															</button>
+                                                            <asp:Button ID="Button2" runat="server" class="width-35 pull-right btn btn-small btn-danger" Text="Enviar" />
 														</div>
 													</fieldset>
-												</div><!--/widget-main-->
-
-											<div class="toolbar center">
+											</div><!--/widget-main-->
+                                            
+                                            <div class="toolbar center">
 												<a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
 													Regresar
 													<i class="icon-arrow-right"></i>
 
 												</a>
 											</div>
-										</div><!--/widget-body-->
-									</div><!--/forgot-box-->
+                                        </div><!--/widget-body-->
+                                    </div><!--/forgot-box-->
 
-									
-
-							<!--/NUEVO USUARIO-->
-									<div id="signup-box" class="signup-box widget-box no-border">
+                                    <div id="signup-box" class="signup-box widget-box no-border">
 										<div class="widget-body">
 											<div class="widget-main">
 												<h4 class="header green lighter bigger">
@@ -189,46 +160,34 @@
 
 												<div class="space-6"></div>
 												<p> Ingrese sus datos: </p>
-
 													<fieldset>
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Nombre" />
-																
+                                                                <asp:TextBox ID="TextBox4" class="span12" placeholder="Nombre"  runat="server"></asp:TextBox>
 															</span>
 														</label>
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Apellido paterrno" />
-																
+                                                                <asp:TextBox ID="TextBox5" class="span12" placeholder="Apellido paterrno" runat="server"></asp:TextBox>
 															</span>
 														</label>
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Apellido materrno" />
-																
+                                                                <asp:TextBox ID="TextBox6" class="span12" placeholder="Apellido materrno" runat="server"></asp:TextBox>
 															</span>
 														</label>
 
-
-														
-  														<label class="control-label" for="selectbasic">Sexo</label>
-				<!--/REVISAR, COSTADO-->											 
-															    <select id="selectbasic" name="selectbasic" class="input-medium">
+                                                        <label>
+															<span class="block input-icon input-icon-right">
+                                                                 <select id="selectbasic" name="selectbasic" class="input-medium">
 															      <option>Femenino</option>
 															      <option>Masculino</option>
 															    </select>
-
-
-
+															</span>
+														</label>
 														
-
-
-
-
-
 														<label>
 															<span class="block input-icon input-icon-right">
 																<input type="email" class="span12" placeholder="Correo" />
@@ -238,14 +197,14 @@
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Usuario" />
+                                                                <asp:TextBox ID="TextBox7" class="span12" placeholder="Usuario" runat="server"></asp:TextBox>
 																<i class="icon-user"></i>
 															</span>
 														</label>
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="password" class="span12" placeholder="Contraseña" />
+                                                                <asp:TextBox ID="TextBox8" type="password" class="span12" placeholder="Contraseña" runat="server"></asp:TextBox>
 																<i class="icon-lock"></i>
 															</span>
 														</label>
@@ -254,7 +213,7 @@
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="password" class="span12" placeholder="Reescriba contraseña" />
+                                                                <asp:TextBox ID="TextBox9" type="password" class="span12" placeholder="Reescriba Contraseña" runat="server"></asp:TextBox>
 																<i class="icon-retweet"></i>
 															</span>
 														</label>
@@ -271,24 +230,16 @@
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Código curso" />
-																
+																<asp:TextBox ID="TextBox10" class="span12" placeholder="Código curso" runat="server"></asp:TextBox>
 															</span>
 														</label>
 
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Código recibo" />
-																
+                                                                <asp:TextBox ID="TextBox11" class="span12" placeholder="Código recibo" runat="server"></asp:TextBox>
 															</span>
 														</label>
-
-
-
-
-
-
 														<label>
 															<input type="checkbox" />
 															<span class="lbl">
@@ -304,11 +255,7 @@
 																<i class="icon-refresh"></i>
 																Borrar
 															</button>
-
-															<button onclick="return false;" class="width-65 pull-right btn btn-small btn-success">
-																Registrarse
-																<i class="icon-arrow-right icon-on-right"></i>
-															</button>
+                                                            <asp:Button ID="Button3" runat="server" Text="Registrarse" class="width-65 pull-right btn btn-small btn-success"/>
 														</div>
 													</fieldset>
 												</div>
@@ -322,19 +269,17 @@
 										</div><!--/widget-body-->
 									</div><!--/signup-box-->
 
-							<!--/FIN NUEVO USUARIO-->
 
-								</div><!--/position-relative-->
-							</div>
+                                </div>
+                            </div>
 						</div>
-					</div><!--/.span-->
-				</div><!--/.row-fluid-->
-			</div>
-		</div><!--/.main-container-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
 
-		<!--basic scripts-->
-
-		<!--[if !IE]>-->
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
@@ -378,7 +323,9 @@
 		        $('#' + id).addClass('visible');
 		    }
 		</script>
-	</body>
-</html>
-</form>
 
+
+
+
+</body>
+</html>

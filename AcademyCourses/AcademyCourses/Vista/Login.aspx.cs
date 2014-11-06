@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.UI.HtmlControls;
 
 namespace AcademyCourses.Vista
 {
@@ -12,13 +11,40 @@ namespace AcademyCourses.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = "Probando";
+
         }
 
-        
 
-        
-        //Request.Form.Get("txtUsuario")
-        //Request.Form.Get("txtPassword")
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            UsuarioBE objUsuario = new UsuarioBE();
+            objUsuario.Nick = txtUsuario.Text;
+            objUsuario.Contrasena = txtContrasena.Text;
+
+            int retorno = LoginDAO.ValidarLogin(objUsuario);
+
+            switch (retorno)
+            {
+                case 0:
+                    lblResultado.Text = "Usuario valido";
+                    Server.Transfer("Index.aspx");
+                    break;
+
+                case 1:
+                    lblResultado.Text = "Debe ingresar su nombre de usuario";
+                    txtUsuario.Text = "";
+                    break;
+
+                case 2:
+                    lblResultado.Text = "Debe ingresar su contraseña";
+                    txtUsuario.Text = "";
+                    break;
+
+                case 3:
+                    lblResultado.Text = "Usuario no existe";
+                    txtUsuario.Text = "";
+                    break;
+            }
+        }
     }
 }
