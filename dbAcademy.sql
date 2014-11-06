@@ -1350,3 +1350,49 @@ INSERT INTO dbo.MatriculaModulo VALUES(4,10,3,10002,'2014-11-16T21:08:10')
 INSERT INTO dbo.MatriculaModulo VALUES(7,6,3,10005,'2014-11-19T22:25:10')
 
 INSERT INTO dbo.MatriculaModulo VALUES(9,2,1,10007,'2014-11-21T20:10:10')
+
+
+
+
+
+----------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+
+
+
+---- STORE PROCEDURE para validar el Login ----
+
+CREATE PROCEDURE usp_ValidarLogin
+@Nick			VARCHAR(25)			= NULL,
+@Password	VARCHAR(40)			= NULL
+AS
+	IF(@Nick IS NULL OR LEN(@Nick)=0)
+		BEGIN
+			PRINT 'Debe ingresar su nombre de usuario'
+			RETURN 1
+		END
+	----------------------------------------------------
+	IF(@Password IS NULL OR LEN(@Password)=0)
+		BEGIN
+			PRINT 'Debe ingresar su contrasena'
+			RETURN 2
+		END
+	----------------------------------------------------
+
+	IF NOT EXISTS( SELECT 1 FROM Usuario 
+					 WHERE Nick = @Nick
+					 AND	  dbo.Desencriptar(Contrasena) = @Password )
+		BEGIN
+			PRINT 'Usuario invalido'
+			RETURN 
+		END
+	ELSE
+		BEGIN
+			PRINT 'Usuario valido'
+			RETURN 0	-- EXITO
+		END
+GO
+
+
+-- EXECUTE usp_ValidarLogin 'RicardoDLC', '1234'
