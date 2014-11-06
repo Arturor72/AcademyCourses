@@ -68,13 +68,13 @@
                                                 <fieldset>
                                                     <label>
 															<span class="block input-icon input-icon-right">
-                                                                <asp:TextBox ID="TextBox1" class="span12" placeholder="Usuario" runat="server"></asp:TextBox>
+                                                                <asp:TextBox ID="txtUsuario" class="span12" placeholder="Usuario" runat="server"></asp:TextBox>
 																<i class="icon-user"></i>
 															</span>
 														</label>
                                                     <label>
 															<span class="block input-icon input-icon-right">
-                                                                <asp:TextBox ID="TextBox2" type="password" class="span12" placeholder="Contraseña" runat="server"></asp:TextBox>
+                                                                <asp:TextBox ID="txtContrasena" type="password" class="span12" placeholder="Contraseña" runat="server"></asp:TextBox>
 																<i class="icon-lock"></i>
 															</span>
 													</label>
@@ -88,7 +88,9 @@
                                                             <asp:Button ID="Button1" runat="server" Text="Entrar" class="width-35 pull-right btn btn-small btn-primary" OnClick="Button1_Click"/>
 														</div>
                                                 </fieldset>
-                                                <div class="space-4"></div>
+                                                <div class="space-4">
+                                                    <asp:Label ID="lblResultado" runat="server"></asp:Label>
+                                                </div>
                                             </div><!--/widget-main-->
 
                                             <div class="toolbar clearfix">
