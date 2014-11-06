@@ -187,7 +187,21 @@
 															    </select>
 															</span>
 														</label>
-														
+
+
+                                                        <label>Ocupación
+															<span class="block input-icon input-icon-right">
+                                                                 <select id="selectbasic2" name="selectbasic" class="input-medium">
+															      <option>Estudiante</option>
+															      <option>Ingeniero</option>
+                                                                  <option>Profesor</option>
+                                                                  <option>Diseñador</option>
+															    </select>
+															</span>
+														</label>
+                                                        
+                                    
+                                                        
 														<label>
 															<span class="block input-icon input-icon-right">
 																<input type="email" class="span12" placeholder="Correo" />
