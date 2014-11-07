@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index Administrador.aspx.cs" Inherits="AcademyCourses.Vista.Index_Administrador" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Index Administrador.aspx.cs" Inherits="AcademyCourses.Vista.Index_Administrador" %>
 
 <!DOCTYPE html>
 

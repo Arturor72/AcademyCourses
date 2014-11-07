@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registro_Curso.aspx.cs" Inherits="AcademyCourses.Vista.Registro_Curso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Registro_Curso.aspx.cs" Inherits="AcademyCourses.Vista.Registro_Curso" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 

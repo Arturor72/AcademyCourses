@@ -9,7 +9,7 @@ namespace AcademyCourses
     {
 
         public int C_Categoria { get; set; }
-        public int Descripcion { get; set; }
+        public string Descripcion { get; set; }
 
         public CategoriaBE() { }
 

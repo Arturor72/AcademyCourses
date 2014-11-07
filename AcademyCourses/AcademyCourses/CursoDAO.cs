@@ -117,12 +117,80 @@ namespace AcademyCourses
                 while(sdr.Read())
                 {
                     CursoBE objCurso = new CursoBE();
+                    ModuloBE objModulo = new ModuloBE();
+                    CategoriaBE objCategoria = new CategoriaBE();
+                    ProfesorBE objProfesor = new ProfesorBE();
+                    HorarioBE objHorario = new HorarioBE();
 
                     objCurso.C_Curso = sdr.GetInt32(0);
-                    objCurso.C_Modulo.C_Modulo = sdr.GetInt32(1);
-                    objCurso.C_Categoria.C_Categoria = sdr.GetInt32(2);
-                    objCurso.C_Profesor.C_Profesor = sdr.GetInt32(3);
-                    objCurso.C_Horario.C_Horario = sdr.GetInt32(4);
+
+                    SqlCommand comm2 = new SqlCommand("usp_BuscarModuloPorCodigo", Conn);
+                    comm2.CommandType = CommandType.StoredProcedure;
+                    comm2.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = objCurso.C_Modulo;
+                    SqlDataReader sdr2 = comm2.ExecuteReader();
+                    
+                    // En este IF lleno el objeto de ModuloBE
+                    if(sdr2.Read())
+                    {
+                        objModulo.C_Modulo = sdr2.GetInt32(0);
+
+                        SqlCommand comm3 = new SqlCommand("usp_BuscarCategoriaPorCodigo", Conn);
+                        comm3.CommandType = CommandType.StoredProcedure;
+                        comm3.Parameters.Add("@C_Categoria", SqlDbType.Int).Value = objCurso.C_Categoria;
+                        SqlDataReader sdr3 = comm3.ExecuteReader();
+                        
+                        // En este IF lleno el objeto de CategoriaBE
+                        if(sdr3.Read())
+                        {
+                            objCategoria.C_Categoria = sdr3.GetInt32(0);
+                            objCategoria.Descripcion = sdr3.GetString(1);
+                        }
+
+                        objModulo.C_Categoria = objCategoria;
+                        objModulo.Precio = sdr3.GetDouble(2);
+                        objModulo.Descripcion = sdr3.GetString(3);
+                        objModulo.Estado = sdr3.GetBoolean(4);
+                    }
+
+                    objCurso.C_Modulo = objModulo;          // Asigno el objModulo
+                    objCurso.C_Categoria = objCategoria;    // Asigno el objCategoría
+
+                    SqlCommand comm4 = new SqlCommand("usp_BuscarProfesorPorCodigo", Conn);
+                    comm4.CommandType = CommandType.StoredProcedure;
+                    comm4.Parameters.Add("@C_Profesor", SqlDbType.Int).Value = objCurso.C_Profesor;
+                    SqlDataReader sdr4 = comm4.ExecuteReader();
+                    
+                    // En este IF llenamos el objeto de ProfesorBE
+                    if(sdr4.Read())
+                    {
+                        objProfesor.C_Profesor = sdr4.GetInt32(0);
+                        objProfesor.C_Trabajador = sdr4.GetInt32(1);
+                        objProfesor.ApellidoP = sdr4.GetString(2);
+                        objProfesor.ApellidoM = sdr4.GetString(3);
+                        objProfesor.Nombre = sdr4.GetString(4);
+                        objProfesor.Telefono = sdr4.GetString(5);
+                        objProfesor.Email = sdr4.GetString(6);
+                        objProfesor.Estado = sdr4.GetBoolean(7);
+                    }
+
+                    objCurso.C_Profesor = objProfesor;  // Asigno el objProfesor
+
+
+                    SqlCommand comm5 = new SqlCommand("usp_BuscarProfesorPorCodigo", Conn);
+                    comm5.CommandType = CommandType.StoredProcedure;
+                    comm5.Parameters.Add("@C_Profesor", SqlDbType.Int).Value = objCurso.C_Profesor;
+                    SqlDataReader sdr5 = comm5.ExecuteReader();
+
+                    if(sdr5.Read())
+                    {
+                        objHorario.C_Horario = sdr5.GetInt32(0);
+                        objHorario.Dias = sdr5.GetString(1);
+                        objHorario.HoraInicio = sdr5.GetDateTime(2);
+                        objHorario.HoraFin = sdr5.GetDateTime(3);
+                    }
+
+
+                    objCurso.C_Horario = objHorario;        // Asigno el objHorario
                     objCurso.C_CursoR = sdr.GetInt32(5);
                     objCurso.Descripcion = sdr.GetString(6);
                     objCurso.Requisitos = sdr.GetString(7);
