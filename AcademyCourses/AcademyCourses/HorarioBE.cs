@@ -7,6 +7,7 @@ namespace AcademyCourses
 {
     public class HorarioBE
     {
+        public int C_Horario { get; set; }
         public int Descripcion { get; set; }
         public string Dias { get; set; }
         public DateTime HoraInicio { get; set; }
