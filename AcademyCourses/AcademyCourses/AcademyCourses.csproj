@@ -325,6 +325,7 @@
     <Compile Include="AlumnoBE.cs" />
     <Compile Include="BDConexion.cs" />
     <Compile Include="CategoriaBE.cs" />
+    <Compile Include="Clase_Prueba.cs" />
     <Compile Include="CursoBE.cs" />
     <Compile Include="HorarioBE.cs" />
     <Compile Include="LoginDAO.cs" />
