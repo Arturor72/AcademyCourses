@@ -319,6 +319,7 @@
     <Content Include="App_Themes\Tema\js\jquery.js" />
     <Content Include="Vista\Index.aspx" />
     <Content Include="Vista\Login.aspx" />
+    <Content Include="WFPrueba.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministradorBE.cs" />
@@ -349,6 +350,13 @@
     </Compile>
     <Compile Include="Vista\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WFPrueba.aspx.cs">
+      <DependentUpon>WFPrueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WFPrueba.aspx.designer.cs">
+      <DependentUpon>WFPrueba.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
