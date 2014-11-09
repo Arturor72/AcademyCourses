@@ -317,6 +317,7 @@
     <Content Include="App_Themes\Tema\js\bootstrap.js" />
     <Content Include="App_Themes\Tema\js\bootstrap.min.js" />
     <Content Include="App_Themes\Tema\js\jquery.js" />
+    <Content Include="Probando2.aspx" />
     <Content Include="Vista\Index.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="WFPrueba.aspx" />
@@ -333,6 +334,13 @@
     <Compile Include="MatriculaCursoBE.cs" />
     <Compile Include="MatriculaModuloBE.cs" />
     <Compile Include="ModuloBE.cs" />
+    <Compile Include="Probando2.aspx.cs">
+      <DependentUpon>Probando2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Probando2.aspx.designer.cs">
+      <DependentUpon>Probando2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProfesorBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioBE.cs" />
