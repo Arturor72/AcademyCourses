@@ -13,7 +13,7 @@ namespace AcademyCourses
 
         public CategoriaBE() { }
 
-        public CategoriaBE(int C_Categoria, int Descripcion) {
+        public CategoriaBE(int C_Categoria, string Descripcion) {
 
             this.C_Categoria = C_Categoria;
             this.Descripcion = Descripcion;
