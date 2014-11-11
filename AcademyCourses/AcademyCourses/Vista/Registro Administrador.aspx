@@ -1,13 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registro_Administrador.aspx.cs" Inherits="AcademyCourses.Vista.Registro_Administrador" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Registro Administrador.aspx.cs" Inherits="AcademyCourses.Vista.Registro_Administrador" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    
 
-		<title>Academy Courses</title>
+    <title>Academy Courses</title>
 
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -170,7 +169,7 @@
 				</div>
 			</div>
 
-			<div class="main-content">
+	<div class="main-content">
 				<div class="breadcrumbs" id="breadcrumbs">
 					<ul class="breadcrumb">
 						<li>
@@ -184,116 +183,134 @@
                 <!--INICIO HOJA-->
                 
                 <div class="page-content">
-					<div class="row-fluid">
+				    <div class="row-fluid">
 						<div class="span12">
                               <form id="form1" runat="server">
-                                    <div class="space-6"></div>
+                                 <div class="space-6"></div>
                                     <div class="row-fluid">
                                         <div class="position-relative">
                                  
                                             <div id="signup-box" class="signup-box widget-box no-border">
 										        <div class="widget-body">
 											        <div class="widget-main">
-												        <h4 class="header green lighter bigger">
-													        <i class="icon-group blue"></i>
-													        Nuevo administrador 
-												        </h4>
+												            <h4 class="header green lighter bigger">
+													            <i class="icon-group blue"></i>
+													            Nuevo administrador 
+												            </h4>
 
-												        <div class="space-6"></div>
-												
-													        <fieldset>
-														        <label>
-															        <span class="block input-icon input-icon-right">
+												        
+                                                            <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox1" class="span12" placeholder="Nombre" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
 
-														        <label>
-															        <span class="block input-icon input-icon-right">
+                                                            <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox2" class="span12" placeholder="Apellido paterrno" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
 
-														        <label>
-															        <span class="block input-icon input-icon-right">
+                                                            <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox3" class="span12" placeholder="Apellido materrno" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
 
-                                                                <label>
-															        <span class="block input-icon input-icon-right">
-                                                                         <select id="selectbasic" name="selectbasic" class="input-medium">
-															              <option>Femenino</option>
-															              <option>Masculino</option>
-															            </select>
-															        </span>
-														        </label>
+                                                            <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:DropDownList ID="DropDownList1" runat="server" class="span12">
+                                                                            <asp:ListItem Value="0">Femenino</asp:ListItem>
+                                                                            <asp:ListItem Value="1">Masculino</asp:ListItem>
+                                                                        </asp:DropDownList>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
 
-                                                                <label>
-															        <span class="block input-icon input-icon-right">
+                                                            <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox4" class="span12" placeholder="Código de trabajador" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
-                                                                                            
-                                                        
-														        <label>
-															        <span class="block input-icon input-icon-right">
-																        <input type="email" class="span12" placeholder="Correo" />
-																        <i class="icon-envelope"></i>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
 
-														        <label>
-															        <span class="block input-icon input-icon-right">
-                                                                        <asp:TextBox ID="TextBox5" class="span12" placeholder="Usuario" runat="server"></asp:TextBox>
-																        <i class="icon-user"></i>
-															        </span>
-														        </label>
+                                                            <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <input type="email" class="span12" placeholder="Correo" />
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
 
-														        <label>
-															        <span class="block input-icon input-icon-right">
-                                                                        <asp:TextBox ID="TextBox6" type="password" class="span12" placeholder="Contraseña" runat="server"></asp:TextBox>
-																        <i class="icon-lock"></i>
-															        </span>
-														        </label>
+                                                            <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <span class="block input-icon input-icon-right">
+                                                                            <asp:TextBox ID="TextBox5" class="span12" placeholder="Usuario" runat="server"></asp:TextBox>
+																            <i class="icon-user"></i>
+															            </span>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
 
+                                                            <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <span class="block input-icon input-icon-right">
+                                                                            <asp:TextBox ID="TextBox6" type="password" class="span12" placeholder="Contraseña" runat="server"></asp:TextBox>
+																            <i class="icon-lock"></i>
+															            </span>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
 
+                                                            <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <span class="block input-icon input-icon-right">
+                                                                            <asp:TextBox ID="TextBox7" type="password" class="span12" placeholder="Reescriba Contraseña" runat="server"></asp:TextBox>
+																            <i class="icon-retweet"></i>
+															            </span>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
 
-														        <label>
-															        <span class="block input-icon input-icon-right">
-                                                                        <asp:TextBox ID="TextBox7" type="password" class="span12" placeholder="Reescriba Contraseña" runat="server"></asp:TextBox>
-																        <i class="icon-retweet"></i>
-															        </span>
-														        </label>
+                                                             <div class="space-18"></div>
 
+                                                             <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <div class="clearfix">
+															                <button type="reset" class="width-23 pull-left btn btn-small">
+																                <i class="icon-refresh"></i>
+																                Borrar
+															                </button>
+                                                                        <asp:Button ID="Button1" runat="server" Text="Registrarse" class="width-65 pull-right btn btn-small btn-success"/>
+														                </div>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                          </div>
 
-														        <div class="space-24"></div>
+										              </div><!--/widget-main-->
+                                                </div><!--/widget-body-->
 
-														        <div class="clearfix">
-															        <button type="reset" class="width-30 pull-left btn btn-small">
-																        <i class="icon-refresh"></i>
-																        Borrar
-															        </button>
-                                                                    <asp:Button ID="Button3" runat="server" Text="Registrarse" class="width-65 pull-right btn btn-small btn-success"/>
-														        </div>
-													        </fieldset>
-												        </div>
-
-											        <div class="toolbar center">
-												        <a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
-													        <i class="icon-arrow-left"></i>
-													        Regresar
-												        </a>
-											        </div>
-										        </div><!--/widget-body-->
 									        </div><!--/signup-box-->
                                         </div>
                                     </div>
-                                  </form>
+                              </form>
 
 						</div><!--/.span-->
-					</div><!--/.row-fluid-->
+				    </div><!--/.row-fluid-->
 				</div><!--/.page-content-->
+            
 
                 <!--FIN HOJA-->
 
@@ -339,7 +356,7 @@
 					</div>
 				</div><!--/#ace-settings-container-->
 			</div><!--/.main-content-->
-		</div><!--/.main-container-->
+	</div><!--/.main-container-->
 
 		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
 			<i class="icon-double-angle-up icon-only bigger-110"></i>
