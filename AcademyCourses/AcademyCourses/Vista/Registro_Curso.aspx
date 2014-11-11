@@ -43,14 +43,6 @@
 
 		<!--inline styles related to this page-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<style type="text/css">
-        .auto-style6 {
-            width: 130px;
-        }
-        .auto-style7 {
-            width: 131px;
-        }
-    </style>
 	</head>
 
 	<body>
@@ -275,13 +267,10 @@
                                                                 <label>
 															        <span class="block input-icon input-icon-right">
                                                                         <asp:TextBox ID="TextBox6" class="span12" placeholder="Fecha de inicio" runat="server"></asp:TextBox>
-															        <asp:CalendarExtender ID="TextBox6_CalendarExtender" runat="server" TargetControlID="TextBox6">
-                                                                </asp:CalendarExtender>
-                                                                        <asp:TextBox ID="TextBox7" class="span12" placeholder="Fecha de fin" runat="server"></asp:TextBox>
-															        <asp:CalendarExtender ID="TextBox7_CalendarExtender" runat="server" TargetControlID="TextBox7">
-                                                                </asp:CalendarExtender>
-															        </span>
-														        Horario
+                                                                        <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox6"></asp:CalendarExtender>
+                                                                        <asp:TextBox ID="TextBox7" class="span12" placeholder="Fecha de fin" runat="server" ></asp:TextBox>
+                                                                        <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox7"></asp:CalendarExtender>
+                                                                    </span>Horario
 															        <span class="block input-icon input-icon-right">
                                                                          <select id="select3" name="selectbasic" class="input-medium  span12">
 															              <option>Lunes,Martes,Miercoles,Jueves,Viernes 9-10am</option>
@@ -313,13 +302,15 @@
                                                                 <asp:Button ID="Button1" runat="server" Text="Registrar" class="width-65 pull-right btn btn-small btn-success"/>
                                                                 
 
+										                        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" EnableScriptGlobalization="true" runat="server">
+                                                                </asp:ToolkitScriptManager>
+                                                                
+
 										        </div><!--/widget-body-->
 									        </div><!--/signup-box-->
                                         </div>
                                     </div>
-                                        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" EnableScriptGlobalization="true" runat="server">
-                                        </asp:ToolkitScriptManager>
-                                  </form>
+                                        </form>
 
 						</div><!--/.span-->
 					</div><!--/.row-fluid-->
