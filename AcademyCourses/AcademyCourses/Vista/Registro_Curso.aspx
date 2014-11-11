@@ -195,114 +195,151 @@
 
 												        <div class="space-6"></div>
 												
-													        <fieldset>
-                                                                <label>
-															        <span class="block input-icon input-icon-right">
+													    
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox1" class="span12" placeholder="Nombre" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
 
-                                                                <label>Módulo
-															        <span class="block input-icon input-icon-right">
-                                                                         <select id="select1" name="selectbasic" class="input-medium  span12">
-															              <option>Especialista en ofimática</option>
-															              <option>Técnico en Computación</option>
-                                                                          <option>Especialista Excel Empresarial </option>
-                                                                          <option>Data Base Administrador</option>
-                                                                          <option>Administración de BD en Oracle</option>
-                                                                          <option>Programación Estructurada</option>
-                                                                          <option>Visual Basic Developer</option>
-                                                                          <option>NET Developer</option>
-                                                                          <option>NET C#</option>                                                                                                                                                                                                                                
-                                                                          <option>PHP Developer</option>   
-                                                                          <option>Java Developer</option>
-                                                                          <option>Android Developer</option>
-                                                                          <option>AutoCAD 2014</option>
-                                                                          <option>Diseño Gráfico Digital</option>   
-                                                                          <option>Web Designer Professional</option>
-                                                                          <option>Especialista en Linux</option>                                       
-                                                                                                                                                                                                                                                                                                              
-															            </select>
-															        </span>
-														        </label>
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:DropDownList ID="DropDownList1" runat="server" class="span12">
+                                                                            <asp:ListItem Value="0">Especialista en ofimática</asp:ListItem>
+                                                                            <asp:ListItem Value="1">Técnico en Computación</asp:ListItem>
+                                                                            <asp:ListItem Value="3">Especialista Excel Empresarial</asp:ListItem>
+                                                                            <asp:ListItem Value="4">Data Base Administrador</asp:ListItem>
+                                                                            <asp:ListItem Value="5">Administración de BD en Oracle</asp:ListItem>
+                                                                            <asp:ListItem Value="6">Programación Estructurada</asp:ListItem>
+                                                                            <asp:ListItem Value="7">Visual Basic Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="8">NET Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="9">NET C#</asp:ListItem>
+                                                                            <asp:ListItem Value="10">PHP Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="11">Java Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="12">Android Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="13">AutoCAD 2014</asp:ListItem>
+                                                                            <asp:ListItem Value="14">Diseño Gráfico Digital</asp:ListItem>
+                                                                            <asp:ListItem Value="15">Web Designer Professional</asp:ListItem>
+                                                                            <asp:ListItem Value="16">Especialista en Linux</asp:ListItem>
+                                                                        </asp:DropDownList>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
+
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">Categoría
+                                                                        <asp:DropDownList ID="DropDownList2" runat="server" class="span12">
+                                                                            <asp:ListItem Value="0">Base de Datos</asp:ListItem>
+                                                                            <asp:ListItem Value="1">Computación</asp:ListItem>
+                                                                            <asp:ListItem Value="3">Diseño</asp:ListItem>
+                                                                            <asp:ListItem Value="4">Hardware y Redes</asp:ListItem>
+                                                                            <asp:ListItem Value="5">Programación</asp:ListItem>
+                                                                      
+                                                                        </asp:DropDownList>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
 
 
-                                                                <label>Categoría
-															        <span class="block input-icon input-icon-right">
-                                                                         <select id="select2" name="selectbasic" class="input-medium  span12">
-															              <option>Base de Datos</option>
-															              <option>Computación</option>
-                                                                          <option>Diseño</option>
-                                                                          <option>Hardware y Redes</option>
-                                                                          <option>Programación</option>
-                                                                                                                                                                                                                                                                    
-															            </select>
-															        </span>
-														        </label>
-
-                                                                <label>
-															        <span class="block input-icon input-icon-right">
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox2" class="span12" placeholder="Número de horas" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
 
-                                                                <label>
-															        <span class="block input-icon input-icon-right">
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox3" class="span12" placeholder="Precio" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
 
-                                                                <label>
-															        <span class="block input-icon input-icon-right">
+
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox4" class="span12" placeholder="Requisitos" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
 
-                                                                <label>
-															        <span class="block input-icon input-icon-right">
-                                                                        <asp:TextBox ID="TextBox5" class="span12" placeholder="Temario" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
 
-                                                                <label>
-															        <span class="block input-icon input-icon-right">
-                                                                        <asp:TextBox ID="TextBox6" class="span12" placeholder="Fecha de inicio" runat="server"></asp:TextBox>
-                                                                        <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox6"></asp:CalendarExtender>
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:TextBox ID="TextBox5" class="span12" placeholder="Temario" runat="server" TextMode="MultiLine"></asp:TextBox>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
+
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:TextBox ID="TextBox8" class="span12" placeholder="Fecha de inicio" runat="server"></asp:TextBox>
+                                                                        <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox8"></asp:CalendarExtender>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
+
+
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox7" class="span12" placeholder="Fecha de fin" runat="server" ></asp:TextBox>
                                                                         <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox7"></asp:CalendarExtender>
-                                                                    </span>Horario
-															        <span class="block input-icon input-icon-right">
-                                                                         <select id="select3" name="selectbasic" class="input-medium  span12">
-															              <option>Lunes,Martes,Miercoles,Jueves,Viernes 9-10am</option>
-															              <option>Lunes,Martes,Miercoles,Jueves,Viernes 10-11pm</option>
-                                                                          <option>Lunes,Miercoles,Viernes 11am-2pm</option>
-                                                                          <option>Martes,Jueves 11am-2pm</option>
-                                                                          <option>Lunes,Miercoles,Viernes 3-5pm</option>
-                                                                          <option>Lunes,Martes,Miercoles,Jueves,Viernes 5-6pm</option>
-                                                                          <option>Lunes,Martes,Miercoles,Jueves,Viernes 6-7pm</option>
-                                                                          <option>Lunes,Miercoles,Viernes 7-9pm</option>
-                                                                          <option>Martes,Jueves 7-9pm</option>
-                                                                          <option>Sabado 10am-2pm</option>
-                                                                          <option>Sabado 2-5pm</option>
-                                                                          <option>Sabado 5-8pm</option>
-                                                                          <option>Sabado 8-11pm</option>
-                                                                          <option>Domingo 10am-2pm</option>
-                                                                          <option>Domingo 2-5pm</option>
-                                                                                                                                                                                                                                                           
-															            </select>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
+                                                           
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">Horario
+                                                                        <asp:DropDownList ID="DropDownList3" runat="server" class="span12">
+                                                                            <asp:ListItem Value="0">Lunes,Martes,Miercoles,Jueves,Viernes 9-10am</asp:ListItem>
+                                                                            <asp:ListItem Value="1">Lunes,Martes,Miercoles,Jueves,Viernes 10-11pm</asp:ListItem>
+                                                                            <asp:ListItem Value="3">Lunes,Miercoles,Viernes 11am-2pm</asp:ListItem>
+                                                                            <asp:ListItem Value="4">Martes,Jueves 11am-2pm</asp:ListItem>
+                                                                            <asp:ListItem Value="5">Lunes,Miercoles,Viernes 3-5pm</asp:ListItem>
+                                                                            <asp:ListItem Value="6">Lunes,Martes,Miercoles,Jueves,Viernes 5-6pm</asp:ListItem>
+                                                                            <asp:ListItem Value="7">Lunes,Martes,Miercoles,Jueves,Viernes 6-7pm</asp:ListItem>
+                                                                            <asp:ListItem Value="8">Lunes,Miercoles,Viernes 7-9pm</asp:ListItem>
+                                                                            <asp:ListItem Value="9">Martes,Jueves 7-9pm</asp:ListItem>
+                                                                            <asp:ListItem Value="10">Sabado 2-5pm</asp:ListItem>
+                                                                            <asp:ListItem Value="11">Sabado 5-8pm</asp:ListItem>
+                                                                            <asp:ListItem Value="12">Sabado 8-11pm</asp:ListItem>
+                                                                            <asp:ListItem Value="13">Domingo 10am-2pm</asp:ListItem>
+                                                                            <asp:ListItem Value="14">Domingo 2-5pm</asp:ListItem>
+                                                                            
+                                                                        </asp:DropDownList>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
 
-                                                                <label>
-															        <span class="block input-icon input-icon-right">
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="TextBox9" class="span12" placeholder="Profesor" runat="server"></asp:TextBox>
-															        </span>
-														        </label>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
 
-                                                                <asp:Button ID="Button1" runat="server" Text="Registrar" class="width-65 pull-right btn btn-small btn-success"/>
-                                                                
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:Button ID="Button1" runat="server" Text="Registrar" class="width-65 pull-right btn btn-small btn-success"/>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
+                                                               
 
-										                        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" EnableScriptGlobalization="true" runat="server">
+           										                <asp:ToolkitScriptManager ID="ToolkitScriptManager1" EnableScriptGlobalization="true" runat="server">
                                                                 </asp:ToolkitScriptManager>
                                                                 
 

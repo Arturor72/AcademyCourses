@@ -181,23 +181,26 @@
 														</label>
 
                                                         <label>
-															<span class="block input-icon input-icon-right">
-                                                                 <select id="selectbasic" name="selectbasic" class="input-medium">
-															      <option>Femenino</option>
-															      <option>Masculino</option>
-															    </select>
+                                                            <span class="block input-icon input-icon-right">
+                                                            <asp:DropDownList ID="DropDownList1" runat="server" class="span12">
+                                                                            <asp:ListItem Value="0">Femenino</asp:ListItem>
+                                                                            <asp:ListItem Value="1">Masculino</asp:ListItem>
+                                                            </asp:DropDownList>
+
 															</span>
 														</label>
 
 
                                                         <label>Ocupación
 															<span class="block input-icon input-icon-right">
-                                                                 <select id="selectbasic2" name="selectbasic" class="input-medium">
-															      <option>Estudiante</option>
-															      <option>Ingeniero</option>
-                                                                  <option>Profesor</option>
-                                                                  <option>Diseñador</option>
-															    </select>
+                                                                <asp:DropDownList ID="DropDownList2" runat="server" class="span12">
+                                                                            <asp:ListItem Value="0">Estudiante</asp:ListItem>
+                                                                            <asp:ListItem Value="1">Ingeniero</asp:ListItem>
+                                                                            <asp:ListItem Value="3">Profesor</asp:ListItem>
+                                                                            <asp:ListItem Value="4">Diseñador</asp:ListItem>
+                                                                            <asp:ListItem Value="5">Otros</asp:ListItem>
+                                                                  </asp:DropDownList>
+
 															</span>
 														</label>
                                                         
@@ -205,7 +208,7 @@
                                                         
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="email" class="span12" placeholder="Correo" />
+                                                                <asp:TextBox ID="TextBox12" class="span12" placeholder="Correo" runat="server"></asp:TextBox>
 																<i class="icon-envelope"></i>
 															</span>
 														</label>
@@ -237,10 +240,11 @@
 
 														<label class="control-label" for="selectbasic">Matricula</label>
 				<!--/REVISAR, COSTADO-->											 
-															    <select id="select1" name="selectbasic" class="input-medium">
-															      <option>Curso</option>
-															      <option>Modulo</option>
-															    </select>
+															    <asp:DropDownList ID="DropDownList3" runat="server" class="span12">
+                                                                            <asp:ListItem Value="0">Curso</asp:ListItem>
+                                                                            <asp:ListItem Value="1">Módulo</asp:ListItem>
+                                                                           
+                                                                </asp:DropDownList>
 															  
 
 														<label>
