@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Registro Administrador.aspx.cs" Inherits="AcademyCourses.Vista.Registro_Administrador" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registro Administrador.aspx.cs" Inherits="AcademyCourses.Vista.Registro_Administrador" %>
 
 <!DOCTYPE html>
 
@@ -242,13 +242,21 @@
                                                                   <div class="span3"></div>  
  	                                                         </div>
 
-                                                            <div class="row-fluid">
+                                                             <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:TextBox ID="TextBox50" class="span12" placeholder="Correo" runat="server"></asp:TextBox>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                         </div>
+
+                                                        <%--    <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
                                                                         <input type="email" class="span12" placeholder="Correo" />
 															      </div>  
                                                                   <div class="span3"></div>  
- 	                                                         </div>
+ 	                                                         </div>--%>
 
                                                             <div class="row-fluid">
                                                                   <div class="span3" ></div>  
@@ -293,7 +301,7 @@
 																                <i class="icon-refresh"></i>
 																                Borrar
 															                </button>
-                                                                        <asp:Button ID="Button1" runat="server" Text="Registrarse" class="width-65 pull-right btn btn-small btn-success"/>
+                                                                        <asp:Button OnClick="Button1_Click" ID="Button1" runat="server" Text="Registrarse" class="width-65 pull-right btn btn-small btn-success"/>
 														                </div>
 															      </div>  
                                                                   <div class="span3"></div>  

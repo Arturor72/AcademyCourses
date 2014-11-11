@@ -109,7 +109,7 @@ namespace AcademyCourses.Vista
                 objMatriculaCurso.C_Curso.C_Curso = Convert.ToInt32(TextBox10.Text);
                 objMatriculaCurso.Recibo = TextBox11.Text;
 
-                int retorno = UsuarioDAO.AgregarUsuario(objUsuario, objAlumno, objMatriculaCurso);
+                int retorno = UsuarioDAO.AgregarAlumnoCurso(objUsuario, objAlumno, objMatriculaCurso);
 
                 if (retorno > 0)
                 {
