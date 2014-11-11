@@ -274,7 +274,7 @@
 																<i class="icon-refresh"></i>
 																Borrar
 															</button>
-                                                            <asp:Button ID="Button3" runat="server" Text="Registrarse" class="width-65 pull-right btn btn-small btn-success"/>
+                                                            <asp:Button OnClick="Button3_Click" ID="Button3" runat="server" Text="Registrarse" class="width-65 pull-right btn btn-small btn-success"/>
 														</div>
 													</fieldset>
 												</div>

@@ -54,5 +54,93 @@ namespace AcademyCourses.Vista
                     break;
             }
         }
+
+        ///////////////////**********************************  LOGIN - ASPX
+
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            UsuarioBE objUsuario = new UsuarioBE();
+            AlumnoBE objAlumno = new AlumnoBE();
+            MatriculaCursoBE objMatriculaCurso = new MatriculaCursoBE();
+            MatriculaModuloBE objMatriculaModulo = new MatriculaModuloBE();
+
+            objUsuario.Nombre = TextBox4.Text;
+            objUsuario.ApellidoP = TextBox5.Text;
+            objUsuario.ApellidoM = TextBox6.Text;
+
+            if (DropDownList1.SelectedIndex == 0)
+            {
+                objUsuario.Sexo = "F";
+            }
+            else { objUsuario.Sexo = "M"; }
+
+            if (DropDownList2.SelectedIndex == 0)
+            {
+                objAlumno.Ocupacion = "Estudiante";
+            }
+            if (DropDownList2.SelectedIndex == 1)
+            {
+                objAlumno.Ocupacion = "Ingeniero";
+            }
+            if (DropDownList2.SelectedIndex == 2)
+            {
+                objAlumno.Ocupacion = "Profesor";
+            }
+            if (DropDownList2.SelectedIndex == 3)
+            {
+                objAlumno.Ocupacion = "Diseñador";
+            }
+            if (DropDownList2.SelectedIndex == 4)
+            {
+                objAlumno.Ocupacion = "Otro";
+            }
+
+            objUsuario.Email = TextBox12.Text;
+            objUsuario.Nick = TextBox7.Text;
+            objUsuario.Contrasena = TextBox8.Text;
+            objUsuario.Contrasena = TextBox9.Text;
+
+            if (DropDownList3.SelectedIndex == 0)
+            {
+
+                objMatriculaCurso.C_Curso = new CursoBE();
+
+                objMatriculaCurso.C_Curso.C_Curso = Convert.ToInt32(TextBox10.Text);
+                objMatriculaCurso.Recibo = TextBox11.Text;
+
+                int retorno = UsuarioDAO.AgregarUsuario(objUsuario, objAlumno, objMatriculaCurso);
+
+                if (retorno > 0)
+                {
+                    txtUsuario.Text = "Registrado en CURSO!!!";
+
+                }
+
+            }
+
+            if (DropDownList3.SelectedIndex == 1)
+            {
+
+
+                objMatriculaModulo.C_Modulo = new ModuloBE();
+
+                objMatriculaModulo.C_Modulo.C_Modulo = Convert.ToInt32(TextBox10.Text);
+                objMatriculaModulo.Recibo = TextBox11.Text;
+
+                int retorno = UsuarioDAO.AgregarAlumnoModulo(objUsuario, objAlumno, objMatriculaModulo);
+
+                if (retorno > 0)
+                {
+                    txtUsuario.Text = "Registrado en MODULO!!!";
+
+                }
+
+
+            }
+        }
+
+
+
     }
 }

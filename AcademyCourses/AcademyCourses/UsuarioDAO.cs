@@ -11,30 +11,75 @@ namespace AcademyCourses
     public class UsuarioDAO
     {
 
-        public static int AgregarUsuario(UsuarioBE objUsuario)
+        public static int AgregarUsuario(UsuarioBE objUsuario, AlumnoBE objAlumno, MatriculaCursoBE objMatriculaC)
         {
             int respuesta = 0;
 
             using (SqlConnection Conn = BDConexion.ObtenerConexion())
             {
-                SqlCommand comm = new SqlCommand("usp_InsertarUsuario", Conn);
+                SqlCommand comm = new SqlCommand("usp_AgregarAlumnoCurso", Conn);
                 comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objUsuario.Nombre;
                 comm.Parameters.Add("@ApellidoP", SqlDbType.VarChar).Value = objUsuario.ApellidoP;
                 comm.Parameters.Add("@ApellidoM", SqlDbType.VarChar).Value = objUsuario.ApellidoM;
-                comm.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objUsuario.Nombre;
-                comm.Parameters.Add("@Email", SqlDbType.VarChar).Value = objUsuario.Email;
                 comm.Parameters.Add("@Sexo", SqlDbType.VarChar).Value = objUsuario.Sexo;
+                comm.Parameters.Add("@Ocupacion", SqlDbType.VarChar).Value = objAlumno.Ocupacion;
+                comm.Parameters.Add("@Email", SqlDbType.VarChar).Value = objUsuario.Email;
                 comm.Parameters.Add("@Nick", SqlDbType.VarChar).Value = objUsuario.Nick;
-                comm.Parameters.Add("@Contrasena", SqlDbType.VarChar).Value = objUsuario.Contrasena;
-                comm.Parameters.Add("@Estado", SqlDbType.Bit).Value = objUsuario.Estado;
+                comm.Parameters.Add("@Contrasena1", SqlDbType.VarChar).Value = objUsuario.Contrasena;
+                comm.Parameters.Add("@Contrasena2", SqlDbType.VarChar).Value = objUsuario.Contrasena;
+                comm.Parameters.Add("@C_Curso", SqlDbType.Int).Value = objMatriculaC.C_Curso.C_Curso;
+                comm.Parameters.Add("@C_Recibo", SqlDbType.Int).Value = objMatriculaC.Recibo;
+
+                //comm.Parameters.Add("@valorReturn", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
                 respuesta = comm.ExecuteNonQuery();
-                Conn.Close();
 
+                //respuesta = (int) comm.Parameters["@valorReturn"].Value;
+
+                Conn.Close();
             }
 
             return respuesta;
         }
+
+        /*******************************************************************************************/
+
+
+        public static int AgregarAlumnoModulo(UsuarioBE objUsuario, AlumnoBE objAlumno, MatriculaModuloBE objMatriculaM)
+        {
+            int respuesta = 0;
+
+            using (SqlConnection Conn = BDConexion.ObtenerConexion())
+            {
+                SqlCommand comm = new SqlCommand("usp_AgregarAlumnoModulo", Conn);
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = objUsuario.Nombre;
+                comm.Parameters.Add("@ApellidoP", SqlDbType.VarChar).Value = objUsuario.ApellidoP;
+                comm.Parameters.Add("@ApellidoM", SqlDbType.VarChar).Value = objUsuario.ApellidoM;
+                comm.Parameters.Add("@Sexo", SqlDbType.VarChar).Value = objUsuario.Sexo;
+                comm.Parameters.Add("@Ocupacion", SqlDbType.VarChar).Value = objAlumno.Ocupacion;
+                comm.Parameters.Add("@Email", SqlDbType.VarChar).Value = objUsuario.Email;
+                comm.Parameters.Add("@Nick", SqlDbType.VarChar).Value = objUsuario.Nick;
+                comm.Parameters.Add("@Contrasena1", SqlDbType.VarChar).Value = objUsuario.Contrasena;
+                comm.Parameters.Add("@Contrasena2", SqlDbType.VarChar).Value = objUsuario.Contrasena;
+                comm.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = objMatriculaM.C_Modulo.C_Modulo;
+                comm.Parameters.Add("@C_Recibo", SqlDbType.Int).Value = objMatriculaM.Recibo;
+
+                //comm.Parameters.Add("@valorReturn", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+
+                respuesta = comm.ExecuteNonQuery();
+
+                //respuesta = (int) comm.Parameters["@valorReturn"].Value;
+
+                Conn.Close();
+            }
+
+            return respuesta;
+        }
+
+        /*///////////////////////////////////////////////////////////////////////////////////////////*/
+
 
         public static int ActualizarUsuario(UsuarioBE objUsuario)
         {
