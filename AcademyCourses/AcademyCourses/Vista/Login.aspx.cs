@@ -15,7 +15,7 @@ namespace AcademyCourses.Vista
         }
 
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnEntrar_Click(object sender, EventArgs e)
         {
             UsuarioBE objUsuario = new UsuarioBE();
             objUsuario.Nick = txtUsuario.Text;
@@ -27,7 +27,15 @@ namespace AcademyCourses.Vista
             {
                 case 0:
                     lblResultado.Text = "Usuario valido";
-                    Server.Transfer("Index.aspx");
+                    int rpta = LoginDAO.AlumnoAdministrador(objUsuario);
+                    if (rpta == 1)
+                    {
+                        Server.Transfer("indexalumno.aspx");
+                    }
+                    else
+                    {
+                        Server.Transfer("Index Administrador.aspx");
+                    }
                     break;
 
                 case 1:

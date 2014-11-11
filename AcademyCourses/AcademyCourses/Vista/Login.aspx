@@ -86,7 +86,7 @@
                                                                 <asp:CheckBox ID="CheckBox1" runat="server" />
 																<span class="lbl"> Recordarme</span>
 															</label>
-                                                            <asp:Button ID="Button1" runat="server" Text="Entrar" class="width-35 pull-right btn btn-small btn-primary" OnClick="Button1_Click"/>
+                                                            <asp:Button ID="btnEntrar" runat="server" Text="Entrar" class="width-35 pull-right btn btn-small btn-primary" OnClick="btnEntrar_Click"/>
 														</div>
                                                 </fieldset>
                                                 <div class="space-4">
