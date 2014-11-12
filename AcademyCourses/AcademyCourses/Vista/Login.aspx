@@ -86,7 +86,7 @@
                                                                 <asp:CheckBox ID="CheckBox1" runat="server" />
 																<span class="lbl"> Recordarme</span>
 															</label>
-                                                            <asp:Button ID="btnEntrar" runat="server" Text="Entrar" class="width-35 pull-right btn btn-small btn-primary" OnClick="btnEntrar_Click"/>
+                                                            <asp:Button ID="btnEntrar" runat="server" Text="Ingresar" class="width-35 pull-right btn btn-small btn-primary" OnClick="btnEntrar_Click"/>
 														</div>
                                                 </fieldset>
                                                 <div class="space-4">
@@ -94,8 +94,8 @@
                                                 </div>
                                             </div><!--/widget-main-->
 
-                                            <div class="toolbar clearfix">
-												<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link pull-right">
+                                            <div class="toolbar clearfix" style="height: 45px">
+												<a href="#" onclick="show_box('signup-box'); return false;" style="vertical-align:middle" class="user-signup-link pull-right">
 														Registrarse
 														<i class="icon-arrow-right"></i>
 											    </a>
