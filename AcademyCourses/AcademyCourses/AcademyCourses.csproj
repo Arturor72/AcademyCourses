@@ -326,6 +326,7 @@
     <Content Include="Vista\indexalumno.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Registro Administrador.aspx" />
+    <Content Include="Vista\Registro Curso2.aspx" />
     <Content Include="Vista\Registro_Curso.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -378,6 +379,13 @@
     </Compile>
     <Compile Include="Vista\Registro Administrador.aspx.designer.cs">
       <DependentUpon>Registro Administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Registro Curso2.aspx.cs">
+      <DependentUpon>Registro Curso2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Registro Curso2.aspx.designer.cs">
+      <DependentUpon>Registro Curso2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Registro_Curso.aspx.cs">
       <DependentUpon>Registro_Curso.aspx</DependentUpon>
