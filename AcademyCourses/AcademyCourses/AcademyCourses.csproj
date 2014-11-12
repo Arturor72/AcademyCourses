@@ -321,9 +321,9 @@
     <Content Include="App_Themes\Tema\js\bootstrap.js" />
     <Content Include="App_Themes\Tema\js\bootstrap.min.js" />
     <Content Include="App_Themes\Tema\js\jquery.js" />
+    <Content Include="frmListarCurso.aspx" />
     <Content Include="Vista\Index Administrador.aspx" />
     <Content Include="Vista\Index.aspx" />
-    <Content Include="Vista\indexadmin.aspx" />
     <Content Include="Vista\indexalumno.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Registro Administrador.aspx" />
@@ -336,6 +336,13 @@
     <Compile Include="CategoriaBE.cs" />
     <Compile Include="CursoBE.cs" />
     <Compile Include="CursoDAO.cs" />
+    <Compile Include="frmListarCurso.aspx.cs">
+      <DependentUpon>frmListarCurso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListarCurso.aspx.designer.cs">
+      <DependentUpon>frmListarCurso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HorarioBE.cs" />
     <Compile Include="LoginDAO.cs" />
     <Compile Include="MatriculaCursoBE.cs" />
@@ -358,13 +365,6 @@
     </Compile>
     <Compile Include="Vista\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\indexadmin.aspx.cs">
-      <DependentUpon>indexadmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\indexadmin.aspx.designer.cs">
-      <DependentUpon>indexadmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\indexalumno.aspx.cs">
       <DependentUpon>indexalumno.aspx</DependentUpon>

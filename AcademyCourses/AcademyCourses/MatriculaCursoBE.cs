@@ -8,7 +8,7 @@ namespace AcademyCourses
     public class MatriculaCursoBE
     {
 
-        public int MatriculaCurso { get; set; }
+        public int C_MatriculaCurso { get; set; }
         public AlumnoBE C_Alumno { get; set; }
         public CursoBE C_Curso { get; set; }
         public String Recibo { get; set; }
@@ -16,10 +16,10 @@ namespace AcademyCourses
 
         public MatriculaCursoBE() { }
 
-        public MatriculaCursoBE(int MatriculaCurso,  AlumnoBE C_Alumno, CursoBE C_Curso, String Recibo,
+        public MatriculaCursoBE(int C_MatriculaCurso,  AlumnoBE C_Alumno, CursoBE C_Curso, String Recibo,
                                DateTime Matricula ) {
 
-            this.MatriculaCurso = MatriculaCurso;
+            this.C_MatriculaCurso = C_MatriculaCurso;
             this.C_Alumno = C_Alumno;
             this.C_Curso = C_Curso;
             this.Recibo = Recibo;

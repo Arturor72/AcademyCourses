@@ -107,6 +107,17 @@ namespace AcademyCourses
         public static List<CursoBE> ListarCurso()
         {
             List<CursoBE> listaCurso = new List<CursoBE>();
+            List<int> listaModulo = new List<int>();
+            List<int> listaCategoria = new List<int>();
+            List<int> listaProfesor = new List<int>();
+            List<int> listaHorario = new List<int>();
+
+            ModuloBE objModulo = new ModuloBE();
+            CategoriaBE objCategoria = new CategoriaBE();
+            ProfesorBE objProfesor = new ProfesorBE();
+            HorarioBE objHorario = new HorarioBE();
+
+            int cont = 0;
 
             using (SqlConnection Conn = BDConexion.ObtenerConexion())
             {
@@ -116,52 +127,66 @@ namespace AcademyCourses
 
                 while(sdr.Read())
                 {
-                    CursoBE objCurso = new CursoBE();
-                    ModuloBE objModulo = new ModuloBE();
-                    CategoriaBE objCategoria = new CategoriaBE();
-                    ProfesorBE objProfesor = new ProfesorBE();
-                    HorarioBE objHorario = new HorarioBE();
+                    listaModulo.Add(sdr.GetInt32(1));
+                    listaCategoria.Add(sdr.GetInt32(2));
+                    listaProfesor.Add(sdr.GetInt32(3));
+                    listaHorario.Add(sdr.GetInt32(4));
 
-                    objCurso.C_Curso = sdr.GetInt32(0);
+                    cont++;
+                }
 
-                    SqlCommand comm2 = new SqlCommand("usp_BuscarModuloPorCodigo", Conn);
-                    comm2.CommandType = CommandType.StoredProcedure;
-                    comm2.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = objCurso.C_Modulo;
-                    SqlDataReader sdr2 = comm2.ExecuteReader();
-                    
-                    // En este IF lleno el objeto de ModuloBE
-                    if(sdr2.Read())
+                sdr.Close();
+                CursoBE[] objCurso = new CursoBE[cont];
+
+                for (int i = 0; i < listaModulo.Count; i++)
+                {
+                    comm = new SqlCommand("usp_BuscarModuloPorCodigo", Conn);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = listaModulo[i];
+                    SqlDataReader sdr2 = comm.ExecuteReader();
+
+                    if (sdr2.Read())
                     {
                         objModulo.C_Modulo = sdr2.GetInt32(0);
-
-                        SqlCommand comm3 = new SqlCommand("usp_BuscarCategoriaPorCodigo", Conn);
-                        comm3.CommandType = CommandType.StoredProcedure;
-                        comm3.Parameters.Add("@C_Categoria", SqlDbType.Int).Value = objCurso.C_Categoria;
-                        SqlDataReader sdr3 = comm3.ExecuteReader();
-                        
-                        // En este IF lleno el objeto de CategoriaBE
-                        if(sdr3.Read())
-                        {
-                            objCategoria.C_Categoria = sdr3.GetInt32(0);
-                            objCategoria.Descripcion = sdr3.GetString(1);
-                        }
-
-                        objModulo.C_Categoria = objCategoria;
-                        objModulo.Precio = sdr3.GetDouble(2);
-                        objModulo.Descripcion = sdr3.GetString(3);
-                        objModulo.Estado = sdr3.GetBoolean(4);
+                        objModulo.Precio = sdr2.GetDecimal(2);
+                        objModulo.Descripcion = sdr2.GetString(3);
+                        objModulo.Estado = sdr2.GetBoolean(4);
                     }
 
-                    objCurso.C_Modulo = objModulo;          // Asigno el objModulo
-                    objCurso.C_Categoria = objCategoria;    // Asigno el objCategoría
+                    objCurso[i].C_Modulo = objModulo;
+                    sdr2.Close();
+                }
 
-                    SqlCommand comm4 = new SqlCommand("usp_BuscarProfesorPorCodigo", Conn);
-                    comm4.CommandType = CommandType.StoredProcedure;
-                    comm4.Parameters.Add("@C_Profesor", SqlDbType.Int).Value = objCurso.C_Profesor;
-                    SqlDataReader sdr4 = comm4.ExecuteReader();
-                    
-                    // En este IF llenamos el objeto de ProfesorBE
-                    if(sdr4.Read())
+
+
+                for (int i = 0; i < listaCategoria.Count; i++)
+                {
+                    comm = new SqlCommand("usp_BuscarCategoriaPorCodigo", Conn);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.Add("@C_Categoria", SqlDbType.Int).Value = listaCategoria[i];
+                    SqlDataReader sdr3 = comm.ExecuteReader();
+
+                    if (sdr3.Read())
+                    {
+                        objCategoria.C_Categoria = sdr3.GetInt32(0);
+                        objCategoria.Descripcion = sdr3.GetString(1);
+                    }
+
+                    objCurso[i].C_Categoria = objCategoria;
+                    objModulo.C_Categoria = objCategoria;
+                    sdr3.Close();
+                }
+
+
+
+                for (int i = 0; i < listaProfesor.Count; i++)
+                {
+                    comm = new SqlCommand("usp_BuscarProfesorPorCodigo", Conn);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.Add("@C_Profesor", SqlDbType.Int).Value = listaProfesor[i];
+                    SqlDataReader sdr4 = comm.ExecuteReader();
+
+                    if (sdr4.Read())
                     {
                         objProfesor.C_Profesor = sdr4.GetInt32(0);
                         objProfesor.C_Trabajador = sdr4.GetInt32(1);
@@ -173,37 +198,62 @@ namespace AcademyCourses
                         objProfesor.Estado = sdr4.GetBoolean(7);
                     }
 
-                    objCurso.C_Profesor = objProfesor;  // Asigno el objProfesor
+                    objCurso[i].C_Profesor = objProfesor;
+                    sdr4.Close();
+                }
 
 
-                    SqlCommand comm5 = new SqlCommand("usp_BuscarProfesorPorCodigo", Conn);
-                    comm5.CommandType = CommandType.StoredProcedure;
-                    comm5.Parameters.Add("@C_Profesor", SqlDbType.Int).Value = objCurso.C_Profesor;
-                    SqlDataReader sdr5 = comm5.ExecuteReader();
 
-                    if(sdr5.Read())
+                for (int i = 0; i < listaHorario.Count; i++)
+                {
+                    comm = new SqlCommand("usp_BuscarHorarioPorCodigo", Conn);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.Add("@C_Horario", SqlDbType.Int).Value = listaHorario[i];
+                    SqlDataReader sdr5 = comm.ExecuteReader();
+
+                    if (sdr5.Read())
                     {
                         objHorario.C_Horario = sdr5.GetInt32(0);
                         objHorario.Dias = sdr5.GetString(1);
-                        objHorario.HoraInicio = sdr5.GetDateTime(2);
-                        objHorario.HoraFin = sdr5.GetDateTime(3);
+                        objHorario.HoraInicio = sdr5.GetTimeSpan(2);
+                        objHorario.HoraFin = sdr5.GetTimeSpan(3);
                     }
 
-
-                    objCurso.C_Horario = objHorario;        // Asigno el objHorario
-                    objCurso.C_CursoR = sdr.GetInt32(5);
-                    objCurso.Descripcion = sdr.GetString(6);
-                    objCurso.Requisitos = sdr.GetString(7);
-                    objCurso.Objetivo = sdr.GetString(8);
-                    objCurso.Temario = sdr.GetString(9);
-                    objCurso.Precio = sdr.GetDouble(10);
-                    objCurso.NumeroHoras = sdr.GetInt32(11);
-                    objCurso.FechaInicio = sdr.GetDateTime(12);
-                    objCurso.FechaFin = sdr.GetDateTime(13);
-                    objCurso.Estado = sdr.GetBoolean(14);
-
-                    listaCurso.Add(objCurso);
+                    objCurso[i].C_Horario = objHorario;
+                    sdr5.Close();
                 }
+
+
+                comm = new SqlCommand("usp_ListarCurso", Conn);
+                comm.CommandType = CommandType.StoredProcedure;
+                SqlDataReader sdr6 = comm.ExecuteReader();
+                int x = 0;
+
+                while(sdr6.Read())
+                {
+                    objCurso[x].C_Curso = sdr6.GetInt32(0);
+                    if (sdr6.IsDBNull(5))
+                    {
+                        objCurso[x].C_CursoR = 0;
+                    }
+                    else
+                    {
+                        objCurso[x].C_CursoR = sdr6.GetInt32(5);
+                    }
+                    objCurso[x].Descripcion = sdr6.GetString(6);
+                    objCurso[x].Requisitos = sdr6.GetString(7);
+                    objCurso[x].Objetivo = sdr6.GetString(8);
+                    objCurso[x].Temario = sdr6.GetString(9);
+                    objCurso[x].Precio = sdr6.GetDecimal(10);
+                    objCurso[x].NumeroHoras = sdr6.GetInt32(11);
+                    objCurso[x].FechaInicio = sdr6.GetDateTime(12).Date;
+                    objCurso[x].FechaFin = sdr6.GetDateTime(13).Date;
+                    objCurso[x].Estado = sdr6.GetBoolean(14);
+
+                    listaCurso.Add(objCurso[x]);
+                    x++;
+                }
+              
                 Conn.Close();
             }
             return listaCurso;

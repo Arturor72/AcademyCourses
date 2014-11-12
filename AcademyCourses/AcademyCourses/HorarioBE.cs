@@ -8,17 +8,16 @@ namespace AcademyCourses
     public class HorarioBE
     {
         public int C_Horario { get; set; }
-        public int Descripcion { get; set; }
         public string Dias { get; set; }
-        public DateTime HoraInicio { get; set; }
-        public DateTime HoraFin { get; set; }
+        public TimeSpan HoraInicio { get; set; }
+        public TimeSpan HoraFin { get; set; }
 
         public HorarioBE() { }
 
-        public HorarioBE(int Descripcion, string Dias, DateTime HoraInicio, DateTime HoraFin)
+        public HorarioBE(int C_Horario, string Dias, TimeSpan HoraInicio, TimeSpan HoraFin)
         {
 
-            this.Descripcion = Descripcion;
+            this.C_Horario = C_Horario;
             this.Dias = Dias;
             this.HoraInicio = HoraInicio;
             this.HoraFin = HoraFin;
