@@ -297,11 +297,8 @@
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
                                                                         <div class="clearfix">
-															                <button type="reset" class="width-23 pull-left btn btn-small">
-																                <i class="icon-refresh"></i>
-																                Borrar
-															                </button>
-                                                                        <asp:Button OnClick="Button1_Click" ID="Button1" runat="server" Text="Registrarse" class="width-65 pull-right btn btn-small btn-success"/>
+
+                                                                        <asp:Button OnClick="Button1_Click" ID="Button1" runat="server" Text="Registrarse" class="width-45 pull-right btn btn-small btn-success"/>
 														                </div>
 															      </div>  
                                                                   <div class="span3"></div>  

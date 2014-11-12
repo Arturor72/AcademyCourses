@@ -206,7 +206,7 @@
 
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
-                                                                  <div class="span6">
+                                                                  <div class="span6">Módulo
                                                                         <asp:DropDownList ID="DropDownList1" runat="server" class="span12">
                                                                             <asp:ListItem Value="0">Especialista en ofimática</asp:ListItem>
                                                                             <asp:ListItem Value="1">Técnico en Computación</asp:ListItem>
@@ -333,7 +333,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:Button ID="Button1" runat="server" Text="Registrar" class="width-65 pull-right btn btn-small btn-success"/>
+                                                                        <asp:Button ID="Button1" runat="server" Text="Registrar" class="width-40 pull-right btn btn-small btn-success"/>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>

@@ -95,61 +95,18 @@
                                             </div><!--/widget-main-->
 
                                             <div class="toolbar clearfix">
-												<div>
-													<a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
-														<i class="icon-arrow-left"></i>
-														Olvidé mi contraseña
-													</a>
-												</div>
-
-												<div>
-													<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
+												<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link pull-right">
 														Registrarse
 														<i class="icon-arrow-right"></i>
-													</a>
-												</div>
+											    </a>
+												
 											</div>
 
 
                                         </div><!--/widget-body-->
                                     </div><!--/login-box-->
                                    
-                                     <div id="forgot-box" class="forgot-box widget-box no-border">
-                                        <div class="widget-body">
-                                            <div class="widget-main">
-												<h4 class="header red lighter bigger">
-													<i class="icon-key"></i>
-													Recuperar contraseña
-												</h4>
-
-												<div class="space-6"></div>
-												<p>
-													Ingrese su correo electrónico para recibir las instrucciones:
-												</p>
-
-													<fieldset>
-														<label>
-															<span class="block input-icon input-icon-right">
-                                                                <asp:TextBox ID="TextBox3" type="email" class="span12" placeholder="Email" runat="server"></asp:TextBox>
-                                                                <i class="icon-envelope"></i>
-															</span>
-														</label>
-
-														<div class="clearfix">
-                                                            <asp:Button ID="Button2" runat="server" class="width-35 pull-right btn btn-small btn-danger" Text="Enviar" />
-														</div>
-													</fieldset>
-											</div><!--/widget-main-->
-                                            
-                                            <div class="toolbar center">
-												<a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
-													Regresar
-													<i class="icon-arrow-right"></i>
-
-												</a>
-											</div>
-                                        </div><!--/widget-body-->
-                                    </div><!--/forgot-box-->
+                                   
 
                                     <div id="signup-box" class="signup-box widget-box no-border">
 										<div class="widget-body">
@@ -259,22 +216,13 @@
                                                                 <asp:TextBox ID="TextBox11" class="span12" placeholder="Código recibo" runat="server"></asp:TextBox>
 															</span>
 														</label>
-														<label>
-															<input type="checkbox" />
-															<span class="lbl">
-																Acepto las
-																<a href="#">condiciones</a>
-															</span>
-														</label>
+
 
 														<div class="space-24"></div>
 
 														<div class="clearfix">
-															<button type="reset" class="width-30 pull-left btn btn-small">
-																<i class="icon-refresh"></i>
-																Borrar
-															</button>
-                                                            <asp:Button OnClick="Button3_Click" ID="Button3" runat="server" Text="Registrarse" class="width-65 pull-right btn btn-small btn-success"/>
+															
+                                                            <asp:Button OnClick="Button3_Click" ID="Button3" runat="server" Text="Registrarse" class="width-45 pull-right btn btn-small btn-success"/>
 														</div>
 													</fieldset>
 												</div>
