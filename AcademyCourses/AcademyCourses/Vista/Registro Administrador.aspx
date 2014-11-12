@@ -143,12 +143,51 @@
 
 					<!--/.CURSOS-->	
 					<li>
-						<a href="">
-							<i class="icon-text-width"></i>
+						<a href="" class="dropdown-toggle">
+							<i class="icon-desktop"></i>
 							<span class="menu-text"> Cursos </span>
+
+							<b class="arrow icon-angle-down"></b>
 						</a>
-					</li>
+
+						<ul class="submenu">
+							    <li>
+								    <a href="">
+									    <i class="icon-double-angle-right"></i>
+									    Listar  
+								    </a>
+							     </li>
+
+							     <li>
+								    <a href="Registro_Curso.aspx">
+									    <i class="icon-double-angle-right"></i>
+								        Nuevo curso
+								    </a>
+							     </li>
+                         </ul>
+					   </li>
 					<!--/.FIN CURSOS-->	
+
+
+                    <!--/.ADMINISTRADORES-->	
+					<li>
+						<a href="" class="dropdown-toggle">
+							<i class="icon-desktop"></i>
+							<span class="menu-text"> Administradores </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							    <li>
+								    <a href="Registro Administrador.aspx">
+									    <i class="icon-double-angle-right"></i>
+									    Nuevo administrador  
+								    </a>
+							     </li>
+                         </ul>
+					   </li>
+					<!--/.FIN administradores-->
 
 					<!--/. -->	
 					<li>
@@ -158,7 +197,10 @@
 						</a>
 					</li>
 					<!--/.FIN-->	
-											
+					
+
+
+							
 					
 				</ul><!--/.nav-list-->
 				<!--/.FIN LISTA DE MENU-->
@@ -173,7 +215,7 @@
 				<div class="breadcrumbs" id="breadcrumbs">
 					<ul class="breadcrumb">
 						<li>
-							<h2 >Inicio</h2>
+							<h2 >Administradores-Nuevo administrador</h2>
 						</li>
 					</ul>
 	
