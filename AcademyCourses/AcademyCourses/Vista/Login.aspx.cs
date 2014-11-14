@@ -113,7 +113,7 @@ namespace AcademyCourses.Vista
 
                 if (retorno > 0)
                 {
-                    txtUsuario.Text = "Registrado en CURSO!!!";
+                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje1", "alertaRegistroCurso();", true);
 
                 }
 
@@ -132,7 +132,7 @@ namespace AcademyCourses.Vista
 
                 if (retorno > 0)
                 {
-                    txtUsuario.Text = "Registrado en MODULO!!!";
+                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje2", "alertaRegistroModulo();", true);
 
                 }
 

@@ -41,7 +41,20 @@
 		<![endif]-->
 
 		<!--inline styles related to this page-->
-	
+
+	  <script type="text/javascript">
+
+	      function alertaRegistroCurso() {
+	          alert("Registrado en el curso satisfactoriamente");
+	      }
+
+	      function alertaRegistroModulo() {
+
+	          alert("Registrado en el modulo satisfactoriamente");
+
+	      }
+
+    </script>--%>
 
 </head>
 <body class="login-layout" >
