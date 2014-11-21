@@ -47,6 +47,17 @@
             width: 131px;
         }
     </style>
+
+    <script type="text/javascript">
+
+        function alertaRegistroAdmin() {
+            alert("Administrador registrado satisfactoriamente");
+        }
+
+    </script>--%>
+
+
+
 	</head>
 
 	<body>
