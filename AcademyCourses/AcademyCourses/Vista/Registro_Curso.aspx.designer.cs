@@ -76,6 +76,15 @@ namespace AcademyCourses.Vista {
         protected global::System.Web.UI.WebControls.TextBox txtRequisitos;
         
         /// <summary>
+        /// Control txtObjetivos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtObjetivos;
+        
+        /// <summary>
         /// Control txtTemario.
         /// </summary>
         /// <remarks>
@@ -130,13 +139,13 @@ namespace AcademyCourses.Vista {
         protected global::System.Web.UI.WebControls.DropDownList ddlHorario;
         
         /// <summary>
-        /// Control txtProfesor.
+        /// Control dllProfesor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProfesor;
+        protected global::System.Web.UI.WebControls.DropDownList dllProfesor;
         
         /// <summary>
         /// Control btnRegistrar.

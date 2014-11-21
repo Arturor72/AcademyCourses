@@ -312,6 +312,13 @@
                                                                   <div class="span3"></div>  
  	                                                    </div>
 
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:TextBox ID="txtObjetivos" class="span12" placeholder="Objetivos" runat="server" TextMode="MultiLine"></asp:TextBox>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
 
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
@@ -346,18 +353,18 @@
                                                                         <asp:DropDownList ID="ddlHorario" runat="server" class="span12">
                                                                             <asp:ListItem Value="0">Lunes,Martes,Miercoles,Jueves,Viernes 9-10am</asp:ListItem>
                                                                             <asp:ListItem Value="1">Lunes,Martes,Miercoles,Jueves,Viernes 10-11pm</asp:ListItem>
-                                                                            <asp:ListItem Value="3">Lunes,Miercoles,Viernes 11am-2pm</asp:ListItem>
-                                                                            <asp:ListItem Value="4">Martes,Jueves 11am-2pm</asp:ListItem>
-                                                                            <asp:ListItem Value="5">Lunes,Miercoles,Viernes 3-5pm</asp:ListItem>
-                                                                            <asp:ListItem Value="6">Lunes,Martes,Miercoles,Jueves,Viernes 5-6pm</asp:ListItem>
-                                                                            <asp:ListItem Value="7">Lunes,Martes,Miercoles,Jueves,Viernes 6-7pm</asp:ListItem>
-                                                                            <asp:ListItem Value="8">Lunes,Miercoles,Viernes 7-9pm</asp:ListItem>
-                                                                            <asp:ListItem Value="9">Martes,Jueves 7-9pm</asp:ListItem>
-                                                                            <asp:ListItem Value="10">Sabado 2-5pm</asp:ListItem>
-                                                                            <asp:ListItem Value="11">Sabado 5-8pm</asp:ListItem>
-                                                                            <asp:ListItem Value="12">Sabado 8-11pm</asp:ListItem>
-                                                                            <asp:ListItem Value="13">Domingo 10am-2pm</asp:ListItem>
-                                                                            <asp:ListItem Value="14">Domingo 2-5pm</asp:ListItem>
+                                                                            <asp:ListItem Value="2">Lunes,Miercoles,Viernes 11am-2pm</asp:ListItem>
+                                                                            <asp:ListItem Value="3">Martes,Jueves 11am-2pm</asp:ListItem>
+                                                                            <asp:ListItem Value="4">Lunes,Miercoles,Viernes 3-5pm</asp:ListItem>
+                                                                            <asp:ListItem Value="5">Lunes,Martes,Miercoles,Jueves,Viernes 5-6pm</asp:ListItem>
+                                                                            <asp:ListItem Value="6">Lunes,Martes,Miercoles,Jueves,Viernes 6-7pm</asp:ListItem>
+                                                                            <asp:ListItem Value="7">Lunes,Miercoles,Viernes 7-9pm</asp:ListItem>
+                                                                            <asp:ListItem Value="8">Martes,Jueves 7-9pm</asp:ListItem>
+                                                                            <asp:ListItem Value="9">Sabado 2-5pm</asp:ListItem>
+                                                                            <asp:ListItem Value="10">Sabado 5-8pm</asp:ListItem>
+                                                                            <asp:ListItem Value="11">Sabado 8-11pm</asp:ListItem>
+                                                                            <asp:ListItem Value="12">Domingo 10am-2pm</asp:ListItem>
+                                                                            <asp:ListItem Value="13">Domingo 2-5pm</asp:ListItem>
                                                                             
                                                                         </asp:DropDownList>
 															      </div>  
@@ -367,7 +374,17 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="txtProfesor" class="span12" placeholder="Profesor" runat="server"></asp:TextBox>
+                                                                      Profesor
+                                                                        <asp:DropDownList ID="dllProfesor" runat="server" class="span12">
+                                                                            <asp:ListItem Value="0">Ruiz Romero Elizabeth</asp:ListItem>
+                                                                            <asp:ListItem Value="1">Martinez Perez Eduardo</asp:ListItem>
+                                                                            <asp:ListItem Value="2">Salazar Lopez Jesús</asp:ListItem>
+                                                                            <asp:ListItem Value="3">Leon Huaman Enrique</asp:ListItem>
+                                                                            <asp:ListItem Value="4">Reyes Ramirez Natalia</asp:ListItem>
+                                                                            <asp:ListItem Value="5">Huaman Chavez Laura</asp:ListItem>
+                                                                            <asp:ListItem Value="6">Ramos Rojas Tamara</asp:ListItem>
+                                                                            
+                                                                        </asp:DropDownList>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
