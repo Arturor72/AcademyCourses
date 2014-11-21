@@ -49,6 +49,15 @@ namespace AcademyCourses.Vista {
         protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
         
         /// <summary>
+        /// Control txtCursoR.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCursoR;
+        
+        /// <summary>
         /// Control txtHoras.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,13 @@ namespace AcademyCourses.Vista {
         protected global::System.Web.UI.WebControls.TextBox txtRequisitos;
         
         /// <summary>
-        /// Control txtObjetivos.
+        /// Control txtObjetivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtObjetivos;
+        protected global::System.Web.UI.WebControls.TextBox txtObjetivo;
         
         /// <summary>
         /// Control txtTemario.
@@ -139,13 +148,13 @@ namespace AcademyCourses.Vista {
         protected global::System.Web.UI.WebControls.DropDownList ddlHorario;
         
         /// <summary>
-        /// Control dllProfesor.
+        /// Control ddlProfesor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dllProfesor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProfesor;
         
         /// <summary>
         /// Control btnRegistrar.

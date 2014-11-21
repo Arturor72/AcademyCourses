@@ -144,7 +144,7 @@
 
 						<ul class="submenu">
 							<li>
-								<a href="" class="dropdown-toggle">
+								<a href="#" class="dropdown-toggle">
 									<i class="icon-double-angle-right"></i>
 
 									Inscritos 
@@ -153,14 +153,14 @@
 
 								<ul class="submenu">
 									<li>
-										<a href="">
+										<a href="#">
 											<i class="icon-leaf"></i>
 											Java
 										</a>
 									</li>
 
 									<li>
-										<a href="" class="dropdown-toggle">
+										<a href="#" class="dropdown-toggle">
 											<i class="icon-pencil"></i>
 
 											Android
@@ -169,14 +169,14 @@
 
 										<ul class="submenu">
 											<li>
-												<a href="">
+												<a href="#">
 													<i class="icon-plus"></i>
 													Tareas
 												</a>
 											</li>
 
 											<li>
-												<a href="">
+												<a href="#">
 													<i class="icon-eye-open"></i>
 													Sillabus
 												</a>
@@ -194,7 +194,7 @@
 							</li>
 
 							<li>
-								<a href="">
+								<a href="#">
 									<i class="icon-double-angle-right"></i>
 									Progreso
 								</a>
@@ -207,7 +207,7 @@
 
 					<!--/. -->	
 					<li>
-						<a href="">
+						<a href="#">
 							<i class="icon-text-width"></i>
 							<span class="menu-text"> Cursos </span>
 						</a>
@@ -265,7 +265,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">Matricula
-                                                                        <asp:DropDownList ID="DropDownList1" runat="server" class="span12">
+                                                                        <asp:DropDownList ID="ddlCursoModulo" runat="server" class="span12" OnSelectedIndexChanged="ddlCursoModulo_SelectedIndexChanged">
                                                                             <asp:ListItem Value="0">Curso</asp:ListItem>
                                                                             <asp:ListItem Value="1">Módulo</asp:ListItem>
                                                                     
@@ -277,7 +277,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="TextBox2" class="span12" placeholder="Código curso" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtCurso" class="span12" placeholder="Código curso" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
@@ -285,7 +285,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="TextBox3" class="span12" placeholder="Código recibo" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtRecibo" class="span12" placeholder="Código recibo" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
@@ -295,7 +295,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:Button ID="Button1" runat="server" Text="Registrar" class="width-40 pull-right btn btn-small btn-success"/>
+                                                                        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" class="width-40 pull-right btn btn-small btn-success" OnClick="btnRegistrar_Click"/>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>

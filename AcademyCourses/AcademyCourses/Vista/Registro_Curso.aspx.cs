@@ -20,12 +20,12 @@ namespace AcademyCourses.Vista
 
             objCurso.C_Modulo = CursoDAO.buscarModulo(ddlModulo.SelectedIndex+1);
             objCurso.C_Categoria = CursoDAO.buscarCategoria(ddlCategoria.SelectedIndex+1);
-            objCurso.C_Profesor = CursoDAO.buscarProfesor(Convert.ToInt32(txtProfesor.Text));
+            objCurso.C_Profesor = CursoDAO.buscarProfesor(ddlProfesor.SelectedIndex+1);
             objCurso.C_Horario = CursoDAO.buscarHorario(ddlHorario.SelectedIndex+1);
-            objCurso.C_CursoR = 1;                      // Agregar DropDownList a la vista
+            objCurso.C_CursoR = Convert.ToInt32(txtCursoR.Text);                      
             objCurso.Descripcion = txtNombre.Text;
             objCurso.Requisitos = txtRequisitos.Text;
-            objCurso.Objetivo = "Objetivo";             // Agregar TextBox a la vista
+            objCurso.Objetivo = txtObjetivo.Text;             
             objCurso.Temario = txtTemario.Text;
             objCurso.Precio = Convert.ToInt32(txtPrecio.Text);
             objCurso.NumeroHoras = Convert.ToInt32(txtHoras.Text);

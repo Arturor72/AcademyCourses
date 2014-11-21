@@ -11,6 +11,16 @@ namespace AcademyCourses.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlCursoModulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

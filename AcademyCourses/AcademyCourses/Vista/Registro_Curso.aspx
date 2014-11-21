@@ -290,6 +290,15 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
+                                                                        <asp:TextBox ID="txtCursoR" class="span12" placeholder="Curso Requerido" runat="server"></asp:TextBox>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
+
+
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
                                                                         <asp:TextBox ID="txtHoras" class="span12" placeholder="Número de horas" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
@@ -315,7 +324,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="txtObjetivos" class="span12" placeholder="Objetivos" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtObjetivo" class="span12" placeholder="Objetivos" runat="server" TextMode="MultiLine"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
@@ -376,7 +385,7 @@
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
                                                                       Profesor
-                                                                        <asp:DropDownList ID="dllProfesor" runat="server" class="span12">
+                                                                        <asp:DropDownList ID="ddlProfesor" runat="server" class="span12">
                                                                             <asp:ListItem Value="0">Ruiz Romero Elizabeth</asp:ListItem>
                                                                             <asp:ListItem Value="1">Martinez Perez Eduardo</asp:ListItem>
                                                                             <asp:ListItem Value="2">Salazar Lopez Jesús</asp:ListItem>
