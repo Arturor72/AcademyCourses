@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Registro_Curso.aspx.cs" Inherits="AcademyCourses.Vista.Registro_Curso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registro_Curso.aspx.cs" Inherits="AcademyCourses.Vista.Registro_Curso" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 
@@ -139,7 +139,7 @@
 
 					<!--/.CURSOS-->	
 					<li>
-						<a href="" class="dropdown-toggle">
+						<a href="#" class="dropdown-toggle">
 							<i class="icon-desktop"></i>
 							<span class="menu-text"> Cursos </span>
 
@@ -148,7 +148,7 @@
 
 						<ul class="submenu">
 							    <li>
-								    <a href="">
+								    <a href="#">
 									    <i class="icon-double-angle-right"></i>
 									    Listar  
 								    </a>
@@ -167,7 +167,7 @@
 
                     <!--/.ADMINISTRADORES-->	
 					<li>
-						<a href="" class="dropdown-toggle">
+						<a href="#" class="dropdown-toggle">
 							<i class="icon-desktop"></i>
 							<span class="menu-text"> Administradores </span>
 
@@ -187,7 +187,7 @@
 
 					<!--/. -->	
 					<li>
-						<a href="">
+						<a href="#">
 							<i class="icon-text-width"></i>
 							<span class="menu-text"> Profesores </span>
 						</a>
@@ -240,7 +240,8 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="TextBox1" class="span12" placeholder="Nombre" runat="server"></asp:TextBox>
+
+                                                                        <asp:TextBox ID="txtNombre" class="span12" placeholder="Nombre" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
@@ -248,7 +249,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">Módulo
-                                                                        <asp:DropDownList ID="DropDownList1" runat="server" class="span12">
+                                                                        <asp:DropDownList ID="ddlModulo" runat="server" class="span12">
                                                                             <asp:ListItem Value="0">Especialista en ofimática</asp:ListItem>
                                                                             <asp:ListItem Value="1">Técnico en Computación</asp:ListItem>
                                                                             <asp:ListItem Value="3">Especialista Excel Empresarial</asp:ListItem>
@@ -273,7 +274,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">Categoría
-                                                                        <asp:DropDownList ID="DropDownList2" runat="server" class="span12">
+                                                                        <asp:DropDownList ID="ddlCategoria" runat="server" class="span12">
                                                                             <asp:ListItem Value="0">Base de Datos</asp:ListItem>
                                                                             <asp:ListItem Value="1">Computación</asp:ListItem>
                                                                             <asp:ListItem Value="3">Diseño</asp:ListItem>
@@ -289,7 +290,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="TextBox2" class="span12" placeholder="Número de horas" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtHoras" class="span12" placeholder="Número de horas" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
@@ -297,16 +298,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="TextBox3" class="span12" placeholder="Precio" runat="server"></asp:TextBox>
-															      </div>  
-                                                                  <div class="span3"></div>  
- 	                                                    </div>
-
-
-                                                        <div class="row-fluid">
-                                                                  <div class="span3" ></div>  
-                                                                  <div class="span6">
-                                                                        <asp:TextBox ID="TextBox4" class="span12" placeholder="Requisitos" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtPrecio" class="span12" placeholder="Precio" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
@@ -315,16 +307,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="TextBox5" class="span12" placeholder="Temario" runat="server" TextMode="MultiLine"></asp:TextBox>
-															      </div>  
-                                                                  <div class="span3"></div>  
- 	                                                    </div>
-
-                                                        <div class="row-fluid">
-                                                                  <div class="span3" ></div>  
-                                                                  <div class="span6">
-                                                                        <asp:TextBox ID="TextBox8" class="span12" placeholder="Fecha de inicio" runat="server"></asp:TextBox>
-                                                                        <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox8"></asp:CalendarExtender>
+                                                                        <asp:TextBox ID="txtRequisitos" class="span12" placeholder="Requisitos" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
@@ -333,8 +316,26 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="TextBox7" class="span12" placeholder="Fecha de fin" runat="server" ></asp:TextBox>
-                                                                        <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox7"></asp:CalendarExtender>
+                                                                        <asp:TextBox ID="txtTemario" class="span12" placeholder="Temario" runat="server" TextMode="MultiLine"></asp:TextBox>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
+
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:TextBox ID="txtFechaInicio" class="span12" placeholder="Fecha de inicio" runat="server"></asp:TextBox>
+                                                                        <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtFechaInicio"></asp:CalendarExtender>
+															      </div>  
+                                                                  <div class="span3"></div>  
+ 	                                                    </div>
+
+
+                                                        <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:TextBox ID="txtFechaFin" class="span12" placeholder="Fecha de fin" runat="server" ></asp:TextBox>
+                                                                        <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txtFechaFin"></asp:CalendarExtender>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
@@ -342,7 +343,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">Horario
-                                                                        <asp:DropDownList ID="DropDownList3" runat="server" class="span12">
+                                                                        <asp:DropDownList ID="ddlHorario" runat="server" class="span12">
                                                                             <asp:ListItem Value="0">Lunes,Martes,Miercoles,Jueves,Viernes 9-10am</asp:ListItem>
                                                                             <asp:ListItem Value="1">Lunes,Martes,Miercoles,Jueves,Viernes 10-11pm</asp:ListItem>
                                                                             <asp:ListItem Value="3">Lunes,Miercoles,Viernes 11am-2pm</asp:ListItem>
@@ -366,7 +367,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="TextBox9" class="span12" placeholder="Profesor" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtProfesor" class="span12" placeholder="Profesor" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
@@ -374,7 +375,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:Button ID="Button1" runat="server" Text="Registrar" class="width-40 pull-right btn btn-small btn-success"/>
+                                                                        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" class="width-40 pull-right btn btn-small btn-success" OnClick="btnRegistrar_Click"/>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
