@@ -252,20 +252,20 @@
                                                                         <asp:DropDownList ID="ddlModulo" runat="server" class="span12">
                                                                             <asp:ListItem Value="0">Especialista en ofimática</asp:ListItem>
                                                                             <asp:ListItem Value="1">Técnico en Computación</asp:ListItem>
-                                                                            <asp:ListItem Value="3">Especialista Excel Empresarial</asp:ListItem>
-                                                                            <asp:ListItem Value="4">Data Base Administrador</asp:ListItem>
-                                                                            <asp:ListItem Value="5">Administración de BD en Oracle</asp:ListItem>
-                                                                            <asp:ListItem Value="6">Programación Estructurada</asp:ListItem>
-                                                                            <asp:ListItem Value="7">Visual Basic Developer</asp:ListItem>
-                                                                            <asp:ListItem Value="8">NET Developer</asp:ListItem>
-                                                                            <asp:ListItem Value="9">NET C#</asp:ListItem>
-                                                                            <asp:ListItem Value="10">PHP Developer</asp:ListItem>
-                                                                            <asp:ListItem Value="11">Java Developer</asp:ListItem>
-                                                                            <asp:ListItem Value="12">Android Developer</asp:ListItem>
-                                                                            <asp:ListItem Value="13">AutoCAD 2014</asp:ListItem>
-                                                                            <asp:ListItem Value="14">Diseño Gráfico Digital</asp:ListItem>
-                                                                            <asp:ListItem Value="15">Web Designer Professional</asp:ListItem>
-                                                                            <asp:ListItem Value="16">Especialista en Linux</asp:ListItem>
+                                                                            <asp:ListItem Value="2">Especialista Excel Empresarial</asp:ListItem>
+                                                                            <asp:ListItem Value="3">Data Base Administrador</asp:ListItem>
+                                                                            <asp:ListItem Value="4">Administración de BD en Oracle</asp:ListItem>
+                                                                            <asp:ListItem Value="5">Programación Estructurada</asp:ListItem>
+                                                                            <asp:ListItem Value="6">Visual Basic Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="7">NET Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="8">NET C#</asp:ListItem>
+                                                                            <asp:ListItem Value="9">PHP Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="10">Java Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="11">Android Developer</asp:ListItem>
+                                                                            <asp:ListItem Value="12">AutoCAD 2014</asp:ListItem>
+                                                                            <asp:ListItem Value="13">Diseño Gráfico Digital</asp:ListItem>
+                                                                            <asp:ListItem Value="14">Web Designer Professional</asp:ListItem>
+                                                                            <asp:ListItem Value="15">Especialista en Linux</asp:ListItem>
                                                                         </asp:DropDownList>
 															      </div>  
                                                                   <div class="span3"></div>  
@@ -275,11 +275,11 @@
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">Categoría
                                                                         <asp:DropDownList ID="ddlCategoria" runat="server" class="span12">
-                                                                            <asp:ListItem Value="0">Base de Datos</asp:ListItem>
-                                                                            <asp:ListItem Value="1">Computación</asp:ListItem>
+                                                                            <asp:ListItem Value="0">Computación</asp:ListItem>
+                                                                            <asp:ListItem Value="1">Base de Datos</asp:ListItem>
+                                                                            <asp:ListItem Value="2">Programación</asp:ListItem>
                                                                             <asp:ListItem Value="3">Diseño</asp:ListItem>
                                                                             <asp:ListItem Value="4">Hardware y Redes</asp:ListItem>
-                                                                            <asp:ListItem Value="5">Programación</asp:ListItem>
                                                                       
                                                                         </asp:DropDownList>
 															      </div>  
@@ -360,11 +360,12 @@
                                                                             <asp:ListItem Value="6">Lunes,Martes,Miercoles,Jueves,Viernes 6-7pm</asp:ListItem>
                                                                             <asp:ListItem Value="7">Lunes,Miercoles,Viernes 7-9pm</asp:ListItem>
                                                                             <asp:ListItem Value="8">Martes,Jueves 7-9pm</asp:ListItem>
-                                                                            <asp:ListItem Value="9">Sabado 2-5pm</asp:ListItem>
-                                                                            <asp:ListItem Value="10">Sabado 5-8pm</asp:ListItem>
-                                                                            <asp:ListItem Value="11">Sabado 8-11pm</asp:ListItem>
-                                                                            <asp:ListItem Value="12">Domingo 10am-2pm</asp:ListItem>
-                                                                            <asp:ListItem Value="13">Domingo 2-5pm</asp:ListItem>
+                                                                            <asp:ListItem Value="9">Sabado 10am-2pm</asp:ListItem>
+                                                                            <asp:ListItem Value="10">Sabado 2-5pm</asp:ListItem>
+                                                                            <asp:ListItem Value="11">Sabado 5-8pm</asp:ListItem>
+                                                                            <asp:ListItem Value="12">Sabado 8-11pm</asp:ListItem>
+                                                                            <asp:ListItem Value="13">Domingo 10am-2pm</asp:ListItem>
+                                                                            <asp:ListItem Value="14">Domingo 2-5pm</asp:ListItem>
                                                                             
                                                                         </asp:DropDownList>
 															      </div>  
