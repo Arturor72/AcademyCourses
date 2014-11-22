@@ -92,7 +92,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="Index.aspx">
 										<i class="icon-off"></i>
 										Salir
 									</a>
