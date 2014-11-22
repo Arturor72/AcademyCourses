@@ -2481,3 +2481,114 @@ EXECUTE usp_AgregarAlumnoModulo 'Diego',  'Zavaleta' , 'Fernandez' ,  'M' ,  'Es
 SELECT * FROM Usuario
 SELECT * FROM alumno
 SELECT * FROM MatriculaModulo
+
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+
+create PROCEDURE usp_AgregarAdministrador
+@Nombre			    VARCHAR(50),
+@ApellidoP			VARCHAR(50),
+@ApellidoM		    VARCHAR(50),
+@Sexo			    CHAR(1),
+@C_Trabajador       INT ,
+@Email				VARCHAR(40),
+@Nick			    VARCHAR(25),
+@Contrasena1	    VARCHAR(40),
+@Contrasena2	    VARCHAR(40)
+AS
+
+IF(@Nombre IS NULL OR LEN(@Nombre) = 0)
+		BEGIN
+			PRINT 'Debe ingresar nombre de usuario'
+			RETURN 1
+		END
+	----------------------------------------------------
+	IF(@ApellidoP IS NULL OR LEN(@ApellidoP) = 0)
+		BEGIN
+			PRINT 'Debe ingresar apellido paterno de usuario'
+			RETURN 2
+		END
+	----------------------------------------------------
+	IF(@ApellidoM IS NULL OR LEN(@ApellidoM) = 0)
+		BEGIN
+			PRINT 'Debe ingresar apellido materno de usuario'
+			RETURN 3
+		END
+   ----------------------------------------------------
+	IF(@C_Trabajador IS NULL OR LEN(@C_Trabajador) = 0)
+		BEGIN
+			PRINT 'Debe ingresar codigo de trabajador'
+			RETURN 4
+		END
+		----------------------------------------------------
+	IF(@Email IS NULL OR LEN(@Email) = 0)
+		BEGIN
+			PRINT 'Debe ingresar correo de usuario'
+			RETURN 5
+		END
+	----------------------------------------------------
+	IF(@Nick	 IS NULL OR LEN(@Nick	) = 0)
+		BEGIN
+			PRINT 'Debe ingresar nick usuario'
+			RETURN 6
+		END
+	----------------------------------------------------
+	IF(@Contrasena1	 IS NULL OR LEN(@Contrasena1	) = 0)
+		BEGIN
+			PRINT 'Debe ingresar contraseña'
+			RETURN 7
+		END
+	----------------------------------------------------
+	IF(@Contrasena2 IS NULL OR LEN(@Contrasena2	) = 0)
+		BEGIN
+			PRINT 'Debe ingresar contraseña de confirmacion'
+			RETURN 8
+		END
+	----------------------------------------------------
+	IF EXISTS(SELECT 1 FROM dbo.Usuario WHERE Email = @Email)
+		BEGIN	
+			PRINT 'El Email ya existe'
+			RETURN 9
+		END	
+	----------------------------------------------------
+	IF EXISTS(SELECT 1 FROM dbo.Usuario WHERE  Nick= @Nick)
+		BEGIN	
+			PRINT 'El Nick ya existe'
+			RETURN 10
+		END	
+    ----------------------------------------------------
+    IF EXISTS(SELECT 1 FROM dbo.Administrador WHERE  @C_Trabajador= C_Trabajador)
+		BEGIN	
+			PRINT 'El codigo de trabajador ya existe'
+			RETURN 11
+		END	
+    ----------------------------------------------------
+    IF  ( @Contrasena1 <>  @Contrasena2)
+		BEGIN	
+			PRINT 'Las contrasenas no coinciden'
+			RETURN 13
+		END	
+    ----------------------------------------------------
+
+INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
+	   VALUES    (@ApellidoP, @ApellidoM, @Nombre, @Email, @Sexo, @Nick, dbo.Encriptar(@Contrasena1), 1)
+	   
+BEGIN TRANSACTION
+
+DECLARE @C_Administrador INT
+			SELECT @C_Administrador =  COUNT(*) FROM Usuario
+			INSERT INTO Administrador(C_Administrador, C_Trabajador)
+			VALUES((@C_Administrador), @C_Trabajador)
+			IF(@@ERROR <> 0)
+				BEGIN
+					PRINT 'Error al insertar Administrador'
+					ROLLBACK
+					RETURN 13
+				END
+
+COMMIT TRANSACTION
+	RETURN 0
+GO 
+
