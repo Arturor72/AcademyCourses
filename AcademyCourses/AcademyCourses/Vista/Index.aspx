@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-lg-10"><h2 style="color:white">Academy Courses</h2></div>
                             <div class="col-lg-2" style="text-align:right; margin-top:8px;">
-                                <a  class="btn btn-danger" href="Login.aspx" >Login</a>
+                                <a  class="btn btn-danger" href="Login.aspx" >Ingresar</a>
                             </div>
                         </div>
                     </div>
@@ -185,11 +185,11 @@
 
             <!--IMAGEN 1-->
           <div class="col-lg-4 col-sm-6 text-center post-body">
-                <img class="img-circle img-responsive img-center" src="http://www.android.com/media/android_vector.jpg" alt="">
+              <a href="Android.aspx"><img class="img-circle img-responsive img-center" src="http://www.android.com/media/android_vector.jpg" alt="" ></a>
                 <h3>Android developer
                   
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Con el Curso de Programación en Android, aprenderás a crear desde cero tus propias aplicaciones para dispositivos móviles con sistema operativo Android.</p>
             </div>
 
             <!--IMAGEN 2-->
@@ -198,7 +198,7 @@
                 <h3>Administración de BD en Oracle
                     
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>El aprendizaje de esta arquitectura de datos le dará flexibilidad para la implementación de una base de datos, para su mantenimiento y afinamiento final.</p>
             </div>
 
             <!--IMAGEN 3-->
@@ -207,7 +207,7 @@
                 <h3>Especialista en Linux
                     
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Aprenderá la instalación del sistema operativo Linux, gestión de paquetes con APT, administración avanzada de usuarios-grupos, copias de seguridad con rsync.</p>
             </div>
 
 
@@ -217,7 +217,7 @@
                 <h3>Visual Basic Developer
                
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Visual Basic 6.0 proporciona el lenguaje y la herramienta más fáciles y productivos para crear con rapidez aplicaciones para Windows®.</p>
             </div>
 
             <!--IMAGEN 5-->
@@ -226,7 +226,7 @@
                 <h3>Data Base Administrador
                  
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Adquirirá conocimientos para la administración de sistemas, técnicas para el diseño y análisis de soluciones visuales informáticas basadas en bases de datos.</p>
             </div>
 
             <!--IMAGEN 6-->
@@ -235,7 +235,7 @@
                 <h3>Especialista Excel Empresarial 
                    
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Realizará aplicaciones a casos específicos de la gestión empresarial, con uso de fórmulas, gráficos tablas, informes, análisis de datos, búsquedas y mucho más.</p>
             </div>
 
 
@@ -246,7 +246,7 @@
                 <h3>PHP Developer
                    
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Se proporcionará al participante los conocimientos necesarios para la Instalación y configuración del Lenguaje de Programación PHP.</p>
             </div>
 
 
@@ -256,7 +256,7 @@
                 <h3>AutoCAD 2014
                    
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Este curso de dibujo asistido por computadora le permitirá plasmar sus proyectos con gran facilidad y realizar buenas presentaciones.</p>
             </div>
 
             <!--IMAGEN 9-->
@@ -265,11 +265,11 @@
                 <h3>Especialista en ofimática
                     
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>El objetivo principal es el poder ingresar y manejar el ambiente de Windows y las aplicaciones más utilizadas en una oficina, o en el hogar.</p>
             </div>
         </div>
 
-        <hr>
+        
 
 
 
