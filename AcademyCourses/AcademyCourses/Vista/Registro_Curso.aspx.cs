@@ -18,10 +18,10 @@ namespace AcademyCourses.Vista
         {
             CursoBE objCurso = new CursoBE();
 
-            objCurso.C_Modulo = CursoDAO.buscarModulo(ddlModulo.SelectedIndex+1);
-            objCurso.C_Categoria = CursoDAO.buscarCategoria(ddlCategoria.SelectedIndex+1);
-            objCurso.C_Profesor = CursoDAO.buscarProfesor(ddlProfesor.SelectedIndex+1);
-            objCurso.C_Horario = CursoDAO.buscarHorario(ddlHorario.SelectedIndex+1);
+            objCurso.Modulo = CursoDAO.buscarModulo(ddlModulo.SelectedIndex+1);
+            objCurso.Categoria = CursoDAO.buscarCategoria(ddlCategoria.SelectedIndex+1);
+            objCurso.Profesor = CursoDAO.buscarProfesor(ddlProfesor.SelectedIndex+1);
+            objCurso.Horario = CursoDAO.buscarHorario(ddlHorario.SelectedIndex+1);
             objCurso.C_CursoR = Convert.ToInt32(txtCursoR.Text);                      
             objCurso.Descripcion = txtNombre.Text;
             objCurso.Requisitos = txtRequisitos.Text;

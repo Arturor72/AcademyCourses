@@ -23,10 +23,10 @@ namespace AcademyCourses
 
                 SqlCommand comm = new SqlCommand("usp_AgregarCurso", Conn);
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = objCurso.C_Modulo.C_Modulo;
-                comm.Parameters.Add("@C_Categoria", SqlDbType.Int).Value = objCurso.C_Categoria.C_Categoria;
-                comm.Parameters.Add("@C_Profesor", SqlDbType.Int).Value = objCurso.C_Profesor.C_Profesor;
-                comm.Parameters.Add("@C_Horario", SqlDbType.Int).Value = objCurso.C_Horario.C_Horario;
+                comm.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = objCurso.Modulo.C_Modulo;
+                comm.Parameters.Add("@C_Categoria", SqlDbType.Int).Value = objCurso.Categoria.C_Categoria;
+                comm.Parameters.Add("@C_Profesor", SqlDbType.Int).Value = objCurso.Profesor.C_Profesor;
+                comm.Parameters.Add("@C_Horario", SqlDbType.Int).Value = objCurso.Horario.C_Horario;
                 comm.Parameters.Add("@C_CursoR", SqlDbType.Int).Value = objCurso.C_CursoR;
                 comm.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = objCurso.Descripcion;
                 comm.Parameters.Add("@Requisitos", SqlDbType.VarChar).Value = objCurso.Requisitos;
@@ -58,10 +58,10 @@ namespace AcademyCourses
                 SqlCommand comm = new SqlCommand("usp_ModificarCurso", Conn);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.Add("@C_Curso", SqlDbType.Int).Value = objCurso.C_Curso;
-                comm.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = objCurso.C_Modulo.C_Modulo;
-                comm.Parameters.Add("@C_Categoria", SqlDbType.Int).Value = objCurso.C_Categoria.C_Categoria;
-                comm.Parameters.Add("@C_Profesor", SqlDbType.Int).Value = objCurso.C_Profesor.C_Profesor;
-                comm.Parameters.Add("@C_Horario", SqlDbType.Int).Value = objCurso.C_Horario.C_Horario;
+                comm.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = objCurso.Modulo.C_Modulo;
+                comm.Parameters.Add("@C_Categoria", SqlDbType.Int).Value = objCurso.Categoria.C_Categoria;
+                comm.Parameters.Add("@C_Profesor", SqlDbType.Int).Value = objCurso.Profesor.C_Profesor;
+                comm.Parameters.Add("@C_Horario", SqlDbType.Int).Value = objCurso.Horario.C_Horario;
                 comm.Parameters.Add("@C_CursoR", SqlDbType.Int).Value = objCurso.C_CursoR;
                 comm.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = objCurso.Descripcion;
                 comm.Parameters.Add("@Requisitos", SqlDbType.VarChar).Value = objCurso.Requisitos;
@@ -116,12 +116,6 @@ namespace AcademyCourses
             List<int> listaProfesor = new List<int>();
             List<int> listaHorario = new List<int>();
 
-            
-            ModuloBE objModulo = new ModuloBE();
-            CategoriaBE objCategoria = new CategoriaBE();
-            ProfesorBE objProfesor = new ProfesorBE();
-            HorarioBE objHorario = new HorarioBE();
-
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[14]{
                                     new DataColumn("Codigo", typeof(int)),
@@ -175,7 +169,6 @@ namespace AcademyCourses
                     objCurso.Estado = sdr.GetBoolean(14);
 
                     listaCurso.Add(objCurso);
-                    dt.Rows.Add(listaCurso);
                 }
 
                 sdr.Close();
@@ -183,32 +176,47 @@ namespace AcademyCourses
 
                 for (int i = 0; i < listaModulo.Count; i++)
                 {
-                    buscarModulo(listaModulo[i]);
-                    listaCurso[i].C_Modulo = objModulo;
+                    listaCurso[i].Modulo = buscarModulo(listaModulo[i]);
                 }
 
 
 
                 for (int i = 0; i < listaCategoria.Count; i++)
                 {
-                    buscarCategoria(listaCategoria[i]);
-                    listaCurso[i].C_Categoria = objCategoria;
+                    listaCurso[i].Categoria = buscarCategoria(listaCategoria[i]);
                 }
 
 
 
                 for (int i = 0; i < listaProfesor.Count; i++)
                 {
-                    buscarProfesor(listaProfesor[i]);
-                    listaCurso[i].C_Profesor = objProfesor;
+                    listaCurso[i].Profesor = buscarProfesor(listaProfesor[i]);
                 }
 
 
 
                 for (int i = 0; i < listaHorario.Count; i++)
                 {
+                    listaCurso[i].Horario = buscarHorario(listaHorario[i]);
+                }
 
-                    listaCurso[i].C_Horario = objHorario;
+                // Aquí llenaré el DataTable
+                for (int i = 0; i < listaCurso.Count; i++)
+                {
+                    dt.Rows.Add(listaCurso[i].C_Curso,
+                                listaCurso[i].Modulo.Descripcion,
+                                listaCurso[i].Categoria.Descripcion,
+                                listaCurso[i].Profesor.ApellidoP + " " + listaCurso[i].Profesor.ApellidoM + " " + listaCurso[i].Profesor.Nombre,
+                                listaCurso[i].C_CursoR,
+                                listaCurso[i].Descripcion,
+                                listaCurso[i].Requisitos,
+                                listaCurso[i].Objetivo,
+                                listaCurso[i].Temario,
+                                listaCurso[i].Precio,
+                                listaCurso[i].NumeroHoras,
+                                listaCurso[i].FechaInicio,
+                                listaCurso[i].FechaFin,
+                                listaCurso[i].Estado);
                 }
 
                 Conn.Close();

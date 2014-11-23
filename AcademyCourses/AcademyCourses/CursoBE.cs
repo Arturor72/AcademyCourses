@@ -9,10 +9,10 @@ namespace AcademyCourses
     {
 
         public int C_Curso { get; set; }
-        public ModuloBE C_Modulo { get; set; }
-        public CategoriaBE C_Categoria { get; set; }
-        public ProfesorBE C_Profesor { get; set; }
-        public HorarioBE C_Horario { get; set; }
+        public ModuloBE Modulo { get; set; }
+        public CategoriaBE Categoria { get; set; }
+        public ProfesorBE Profesor { get; set; }
+        public HorarioBE Horario { get; set; }
         public int C_CursoR { get; set; }
         public string Descripcion { get; set; }
         public string Requisitos { get; set; }
@@ -32,9 +32,9 @@ namespace AcademyCourses
                         DateTime FechaFin, Boolean Estado) {
 
                             this.C_Curso = C_Curso;
-                            this.C_Modulo = C_Modulo;
-                            this.C_Categoria = C_Categoria;
-                            this.C_Horario = C_Horario;
+                            this.Modulo = C_Modulo;
+                            this.Categoria = C_Categoria;
+                            this.Horario = C_Horario;
                             this.C_CursoR = C_CursoR;
                             this.Descripcion = Descripcion;
                             this.Requisitos = Requisitos;
