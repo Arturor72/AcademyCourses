@@ -2568,7 +2568,7 @@ IF(@Nombre IS NULL OR LEN(@Nombre) = 0)
     IF  ( @Contrasena1 <>  @Contrasena2)
 		BEGIN	
 			PRINT 'Las contrasenas no coinciden'
-			RETURN 13
+			RETURN 12
 		END	
     ----------------------------------------------------
 
@@ -2592,3 +2592,17 @@ COMMIT TRANSACTION
 	RETURN 0
 GO 
 
+exec usp_AgregarAdministrador 'Laura','Solano' , 'Diaz', 'F' , '14' , 'laura_19@gmail.com', 'Laura_19', '555' , '555' --EXITO
+exec usp_AgregarAdministrador NULL, 'Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '123' , '123'--Debe ingresar nombre de usuario
+exec usp_AgregarAdministrador 'Claudia', NULL, 'Guzman' , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '123' , '123'--Debe ingresar apellido paterno de usuario
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', NULL , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '1234' , '1234'--Debe ingresar apellido materno de usuario
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , ' ' , 'romi1234@gmail.com', 'Romi789', '1234' , '1234'--Debe ingresar codigo de trabajador
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , NULL , 'Romi789', '1234' , '1234'--Debe ingresar correo de usuario
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , null , '1234' , '1234'--Debe ingresar nick de usuario
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , null , '1234'--Debe ingresar contraseña
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , null --Debe ingresar contraseña de confirmacion
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'laura_19@gmail.com' , 'Romi789' , '1234' , '1234' --El Email ya existe
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Laura_19' , '1234' , '1234' --El Nick ya existe
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '14' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1234' --El codigo de trabajador ya existe
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1235' --Las contrasenas no coinciden
+exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1234' --EXITO2
