@@ -20,5 +20,10 @@ namespace AcademyCourses
             gvCursos.DataSource = CursoDAO.ListarCurso();
             gvCursos.DataBind();
         }
+
+        protected void gvCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
