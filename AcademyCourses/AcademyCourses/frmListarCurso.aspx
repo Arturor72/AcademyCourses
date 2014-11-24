@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmListarCurso.aspx.cs" Inherits="AcademyCourses.frmListarCurso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="frmListarCurso.aspx.cs" Inherits="AcademyCourses.frmListarCurso" %>
 
 <!DOCTYPE html>
 
@@ -368,7 +368,25 @@
                                      <asp:Button ID="btnMostrar" runat="server" OnClick="btnMostrar_Click" Text="Mostrar" />
 
                                   <div style="overflow: scroll">
-                                     <asp:GridView ID="gvCursos" runat="server" PageSize="5"  AllowPaging="true" class="table table-striped table-bordered table-hover" OnSelectedIndexChanged="gvCursos_SelectedIndexChanged">  
+                                     <asp:GridView ID="gvCursos" runat="server" PageSize="5"  AllowPaging="True" class="table table-striped table-bordered table-hover" OnSelectedIndexChanged="gvCursos_SelectedIndexChanged" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="C_Curso" DataSourceID="SqlDataSource1">  
+                                         <Columns>
+                                             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                             <asp:BoundField DataField="C_Curso" HeaderText="C_Curso" InsertVisible="False" ReadOnly="True" SortExpression="C_Curso" />
+                                             <asp:BoundField DataField="C_Modulo" HeaderText="C_Modulo" SortExpression="C_Modulo" />
+                                             <asp:BoundField DataField="C_Categoria" HeaderText="C_Categoria" SortExpression="C_Categoria" />
+                                             <asp:BoundField DataField="C_Profesor" HeaderText="C_Profesor" SortExpression="C_Profesor" />
+                                             <asp:BoundField DataField="C_Horario" HeaderText="C_Horario" SortExpression="C_Horario" />
+                                             <asp:BoundField DataField="C_CursoR" HeaderText="C_CursoR" SortExpression="C_CursoR" />
+                                             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+                                             <asp:BoundField DataField="Requisitos" HeaderText="Requisitos" SortExpression="Requisitos" />
+                                             <asp:BoundField DataField="Objetivo" HeaderText="Objetivo" SortExpression="Objetivo" />
+                                             <asp:BoundField DataField="Temario" HeaderText="Temario" SortExpression="Temario" />
+                                             <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
+                                             <asp:BoundField DataField="NumeroHoras" HeaderText="NumeroHoras" SortExpression="NumeroHoras" />
+                                             <asp:BoundField DataField="FechaInicio" HeaderText="FechaInicio" SortExpression="FechaInicio" />
+                                             <asp:BoundField DataField="FechaFin" HeaderText="FechaFin" SortExpression="FechaFin" />
+                                             <asp:CheckBoxField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
+                                         </Columns>
                                         <pagersettings mode="NumericFirstLast"
                                         firstpagetext="Primera pag"
                                         lastpagetext="Ultima pag"
@@ -377,52 +395,48 @@
 
                                      </asp:GridView>
                                   
+                                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString3 %>" DeleteCommand="usp_EliminarCurso" DeleteCommandType="StoredProcedure" InsertCommand="usp_AgregarCurso" InsertCommandType="StoredProcedure" SelectCommand="usp_ListarCurso" SelectCommandType="StoredProcedure" UpdateCommand="usp_ModificarCurso" UpdateCommandType="StoredProcedure">
+                                          <DeleteParameters>
+                                              <asp:Parameter Name="C_Curso" Type="Int32" />
+                                          </DeleteParameters>
+                                          <InsertParameters>
+                                              <asp:Parameter Name="C_Modulo" Type="Int32" />
+                                              <asp:Parameter Name="C_Categoria" Type="Int32" />
+                                              <asp:Parameter Name="C_Profesor" Type="Int32" />
+                                              <asp:Parameter Name="C_Horario" Type="Int32" />
+                                              <asp:Parameter Name="C_CursoR" Type="Int32" />
+                                              <asp:Parameter Name="Descripcion" Type="String" />
+                                              <asp:Parameter Name="Requisitos" Type="String" />
+                                              <asp:Parameter Name="Objetivo" Type="String" />
+                                              <asp:Parameter Name="Temario" Type="String" />
+                                              <asp:Parameter Name="Precio" Type="Decimal" />
+                                              <asp:Parameter Name="NumeroHoras" Type="Int32" />
+                                              <asp:Parameter DbType="Date" Name="FechaInicio" />
+                                              <asp:Parameter DbType="Date" Name="FechaFin" />
+                                          </InsertParameters>
+                                          <UpdateParameters>
+                                              <asp:Parameter Name="C_Curso" Type="Int32" />
+                                              <asp:Parameter Name="C_Modulo" Type="Int32" />
+                                              <asp:Parameter Name="C_Categoria" Type="Int32" />
+                                              <asp:Parameter Name="C_Profesor" Type="Int32" />
+                                              <asp:Parameter Name="C_Horario" Type="Int32" />
+                                              <asp:Parameter Name="C_CursoR" Type="Int32" />
+                                              <asp:Parameter Name="Descripcion" Type="String" />
+                                              <asp:Parameter Name="Requisitos" Type="String" />
+                                              <asp:Parameter Name="Objetivo" Type="String" />
+                                              <asp:Parameter Name="Temario" Type="String" />
+                                              <asp:Parameter Name="Precio" Type="Decimal" />
+                                              <asp:Parameter Name="NumeroHoras" Type="Int32" />
+                                              <asp:Parameter DbType="Date" Name="FechaInicio" />
+                                              <asp:Parameter DbType="Date" Name="FechaFin" />
+                                              <asp:Parameter Name="Estado" Type="Boolean" />
+                                          </UpdateParameters>
+                                      </asp:SqlDataSource>
+                                  
                                   </div>
 
                                   
-                                  <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" class="table table-striped table-bordered table-hover" DataKeyNames="C_Curso" DataSourceID="SqlDataSource1" Width="556px">
-                                      <Columns>
-                                          <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                          <asp:BoundField DataField="C_Curso" HeaderText="C_Curso" InsertVisible="False" ReadOnly="True" SortExpression="C_Curso" />
-                                          <asp:BoundField DataField="C_Modulo" HeaderText="C_Modulo" SortExpression="C_Modulo" />
-                                          <asp:BoundField DataField="C_Categoria" HeaderText="C_Categoria" SortExpression="C_Categoria" />
-                                          <asp:BoundField DataField="C_Profesor" HeaderText="C_Profesor" SortExpression="C_Profesor" />
-                                          <asp:BoundField DataField="C_Horario" HeaderText="C_Horario" SortExpression="C_Horario" />
-                                          <asp:BoundField DataField="C_CursoR" HeaderText="C_CursoR" SortExpression="C_CursoR" />
-                                          <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
-                                          <asp:BoundField DataField="Requisitos" HeaderText="Requisitos" SortExpression="Requisitos" />
-                                          <asp:BoundField DataField="Objetivo" HeaderText="Objetivo" SortExpression="Objetivo" />
-                                          <asp:BoundField DataField="Temario" HeaderText="Temario" SortExpression="Temario" />
-                                          <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
-                                          <asp:BoundField DataField="NumeroHoras" HeaderText="NumeroHoras" SortExpression="NumeroHoras" />
-                                          <asp:BoundField DataField="FechaInicio" HeaderText="FechaInicio" SortExpression="FechaInicio" />
-                                          <asp:BoundField DataField="FechaFin" HeaderText="FechaFin" SortExpression="FechaFin" />
-                                          <asp:CheckBoxField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-                                      </Columns>
-                                     </asp:GridView>
-
-                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString %>" DeleteCommand="usp_EliminarCurso" DeleteCommandType="StoredProcedure" SelectCommand="SELECT * FROM [Curso] ORDER BY [C_Curso]" UpdateCommand="usp_ModificarCurso" UpdateCommandType="StoredProcedure">
-                                         <DeleteParameters>
-                                             <asp:Parameter Name="C_Curso" Type="Int32" />
-                                         </DeleteParameters>
-                                         <UpdateParameters>
-                                             <asp:Parameter Name="C_Curso" Type="Int32" />
-                                             <asp:Parameter Name="C_Modulo" Type="Int32" />
-                                             <asp:Parameter Name="C_Categoria" Type="Int32" />
-                                             <asp:Parameter Name="C_Profesor" Type="Int32" />
-                                             <asp:Parameter Name="C_Horario" Type="Int32" />
-                                             <asp:Parameter Name="C_CursoR" Type="Int32" />
-                                             <asp:Parameter Name="Descripcion" Type="String" />
-                                             <asp:Parameter Name="Requisitos" Type="String" />
-                                             <asp:Parameter Name="Objetivo" Type="String" />
-                                             <asp:Parameter Name="Temario" Type="String" />
-                                             <asp:Parameter Name="Precio" Type="Decimal" />
-                                             <asp:Parameter Name="NumeroHoras" Type="Int32" />
-                                             <asp:Parameter DbType="Date" Name="FechaInicio" />
-                                             <asp:Parameter DbType="Date" Name="FechaFin" />
-                                             <asp:Parameter Name="Estado" Type="Boolean" />
-                                         </UpdateParameters>
-                                     </asp:SqlDataSource>
+                                  
 
                               </form>
                               

@@ -11,6 +11,11 @@ namespace AcademyCourses.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
         }
-    }
+        protected void btnMostrar_Click(object sender, EventArgs e)
+        {
+            
+        }
+}
 }
