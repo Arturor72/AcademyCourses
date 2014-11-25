@@ -37,8 +37,16 @@ namespace AcademyCourses.Vista
             switch (retorno)
             {
                 case 0:
-                    Server.Transfer("Index.aspx");
                     Response.Write("<script>window.alert('Se registro el curso');</script>");
+                    txtNombre.Text = "";
+                    txtCursoR.Text = "";
+                    txtHoras.Text = "";
+                    txtPrecio.Text = "";
+                    txtRequisitos.Text = "";
+                    txtObjetivo.Text = "";
+                    txtTemario.Text = "";
+                    txtFechaInicio.Text = "";
+                    txtFechaFin.Text = "";
                     break;
 
                 case 1:
