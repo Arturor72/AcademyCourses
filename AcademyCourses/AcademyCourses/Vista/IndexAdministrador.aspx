@@ -229,32 +229,32 @@
 							
                             
                             <!--INICIO HOJA-->
-                            
+                            <div style="overflow:scroll">
                               <form id="form1" runat="server">
                                   
 
 
-                                     <asp:GridView ID="gvCursos" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="C_Curso" DataSourceID="SqlDataSource1">
+                                     <asp:GridView ID="gvCursos" PageSize="5" class="table-striped table-bordered table-hover" Width="1000px" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="C_Curso" DataSourceID="SqlDataSource1" >
                                          <Columns>
                                              <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                             <asp:BoundField DataField="C_Curso" HeaderText="C_Curso" InsertVisible="False" ReadOnly="True" SortExpression="C_Curso" />
-                                             <asp:BoundField DataField="C_Modulo" HeaderText="C_Modulo" SortExpression="C_Modulo" />
-                                             <asp:BoundField DataField="C_Categoria" HeaderText="C_Categoria" SortExpression="C_Categoria" />
-                                             <asp:BoundField DataField="C_Profesor" HeaderText="C_Profesor" SortExpression="C_Profesor" />
-                                             <asp:BoundField DataField="C_Horario" HeaderText="C_Horario" SortExpression="C_Horario" />
-                                             <asp:BoundField DataField="C_CursoR" HeaderText="C_CursoR" SortExpression="C_CursoR" />
+                                             <asp:BoundField DataField="C_Curso" HeaderText="C_Curso" InsertVisible="False" ReadOnly="True" SortExpression="C_Curso" ItemStyle-HorizontalAlign="Center"/>
+                                             <asp:BoundField DataField="C_Modulo" HeaderText="C_Modulo" SortExpression="C_Modulo" ItemStyle-HorizontalAlign="Center" />
+                                             <asp:BoundField DataField="C_Categoria" HeaderText="C_Categoria" SortExpression="C_Categoria" ItemStyle-HorizontalAlign="Center" />
+                                             <asp:BoundField DataField="C_Profesor" HeaderText="C_Profesor" SortExpression="C_Profesor" ItemStyle-HorizontalAlign="Center"/>
+                                             <asp:BoundField DataField="C_Horario" HeaderText="C_Horario" SortExpression="C_Horario" ItemStyle-HorizontalAlign="Center"/>
+                                             <asp:BoundField DataField="C_CursoR" HeaderText="C_CursoR" SortExpression="C_CursoR" ItemStyle-HorizontalAlign="Center"/>
                                              <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
                                              <asp:BoundField DataField="Requisitos" HeaderText="Requisitos" SortExpression="Requisitos" />
                                              <asp:BoundField DataField="Objetivo" HeaderText="Objetivo" SortExpression="Objetivo" />
-                                             <asp:BoundField DataField="Temario" HeaderText="Temario" SortExpression="Temario" />
-                                             <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
-                                             <asp:BoundField DataField="NumeroHoras" HeaderText="NumeroHoras" SortExpression="NumeroHoras" />
-                                             <asp:BoundField DataField="FechaInicio" HeaderText="FechaInicio" SortExpression="FechaInicio" />
-                                             <asp:BoundField DataField="FechaFin" HeaderText="FechaFin" SortExpression="FechaFin" />
-                                             <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
+                                             <asp:BoundField DataField="Temario" HeaderText="Temario" SortExpression="Temario" ItemStyle-Width="500px" ItemStyle-HorizontalAlign="Justify" />
+                                             <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" ItemStyle-HorizontalAlign="Center" />
+                                             <asp:BoundField DataField="NumeroHoras" HeaderText="NumeroHoras" SortExpression="NumeroHoras" ItemStyle-HorizontalAlign="Center" />
+                                             <asp:BoundField DataField="FechaInicio" HeaderText="FechaInicio" SortExpression="FechaInicio" ItemStyle-HorizontalAlign="Center" />
+                                             <asp:BoundField DataField="FechaFin" HeaderText="FechaFin" SortExpression="FechaFin" ItemStyle-HorizontalAlign="Center" />
+                                             <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" ItemStyle-HorizontalAlign="Center" />
                                          </Columns>
                                      </asp:GridView>
-                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString3 %>" DeleteCommand="usp_EliminarCursoGV" DeleteCommandType="StoredProcedure" SelectCommand="usp_ListarCurso" SelectCommandType="StoredProcedure" UpdateCommand="usp_ModificarCursoGV" UpdateCommandType="StoredProcedure">
+                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString4 %>" DeleteCommand="usp_EliminarCursoGV" DeleteCommandType="StoredProcedure" SelectCommand="usp_ListarCurso" SelectCommandType="StoredProcedure" UpdateCommand="usp_ModificarCursoGV" UpdateCommandType="StoredProcedure">
                                          <DeleteParameters>
                                              <asp:Parameter Name="C_Curso" Type="Int32" />
                                          </DeleteParameters>
@@ -281,6 +281,7 @@
                                   
 
                               </form>
+                            </div>
                               
 
 							<!--FIN HOJA-->

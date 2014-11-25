@@ -19,5 +19,15 @@ namespace AcademyCourses
         {
 
         }
+
+        protected void gvCursos_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gvCursos_SelectedIndexChanged2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
