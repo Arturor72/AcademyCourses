@@ -12,22 +12,8 @@ namespace AcademyCourses
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void gvCursos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void gvCursos_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void gvCursos_SelectedIndexChanged2(object sender, EventArgs e)
-        {
-
+            //gvCursos.Columns[10].ItemStyle.Width = 100;
+            //gvCursos.Columns[10].ItemStyle.Wrap = false;
         }
     }
 }
