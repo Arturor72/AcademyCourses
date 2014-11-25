@@ -1972,25 +1972,6 @@ EXECUTE usp_EliminarCurso 2			-- Curso es llave foránea de CursoR (misma tabla)
 
 
 
----- STORE PROCEDURE para eliminar Curso ----
-/*
-	Sin validaciones:
-	Para usarlo en el GridView
-*/
-CREATE PROCEDURE usp_EliminarCursoGV
-@C_Curso	INT
-AS
-	-- ELIMINAMOS CURSO
-	UPDATE Curso
-	SET Estado = 'Inactivo'
-	WHERE C_Curso = @C_Curso
-GO
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-
-
-
-
 ---- STORE PROCEDURE para listar Curso ----
 
 CREATE PROCEDURE usp_ListarCurso
