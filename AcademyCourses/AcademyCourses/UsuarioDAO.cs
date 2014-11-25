@@ -127,7 +127,7 @@ namespace AcademyCourses
                 comm.Parameters.Add("@Sexo", SqlDbType.VarChar).Value = objUsuario.Sexo;
                 comm.Parameters.Add("@Nick", SqlDbType.VarChar).Value = objUsuario.Nick;
                 comm.Parameters.Add("@Contrasena", SqlDbType.VarChar).Value = objUsuario.Contrasena;
-                comm.Parameters.Add("@Estado", SqlDbType.Bit).Value = objUsuario.Estado;
+                comm.Parameters.Add("@Estado", SqlDbType.VarChar).Value = objUsuario.Estado;
 
                 respuesta = comm.ExecuteNonQuery();
                 Conn.Close();
@@ -185,7 +185,7 @@ namespace AcademyCourses
                     objUsuarioBE.Sexo = x.GetString(5); 
                     objUsuarioBE.Nick = x.GetString(6);
                     objUsuarioBE.Contrasena = x.GetString(7);
-                    objUsuarioBE.Estado = x.GetBoolean(8);
+                    objUsuarioBE.Estado = x.GetString(8);
 
                     lista.Add(objUsuarioBE);
 

@@ -367,8 +367,7 @@
 
                                      <asp:Button ID="btnMostrar" runat="server" OnClick="btnMostrar_Click" Text="Mostrar" />
 
-                                  <div style="overflow: scroll">
-                                     <asp:GridView ID="gvCursos" runat="server" PageSize="5"  AllowPaging="True" class="table table-striped table-bordered table-hover" OnSelectedIndexChanged="gvCursos_SelectedIndexChanged" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="C_Curso" DataSourceID="SqlDataSource1">  
+                                     <asp:GridView ID="gvCursos" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="C_Curso" DataSourceID="SqlDataSource1">
                                          <Columns>
                                              <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                                              <asp:BoundField DataField="C_Curso" HeaderText="C_Curso" InsertVisible="False" ReadOnly="True" SortExpression="C_Curso" />
@@ -385,55 +384,31 @@
                                              <asp:BoundField DataField="NumeroHoras" HeaderText="NumeroHoras" SortExpression="NumeroHoras" />
                                              <asp:BoundField DataField="FechaInicio" HeaderText="FechaInicio" SortExpression="FechaInicio" />
                                              <asp:BoundField DataField="FechaFin" HeaderText="FechaFin" SortExpression="FechaFin" />
-                                             <asp:CheckBoxField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
+                                             <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
                                          </Columns>
-                                        <pagersettings mode="NumericFirstLast"
-                                        firstpagetext="Primera pag"
-                                        lastpagetext="Ultima pag"
-                                        pagebuttoncount="5"  
-                                        position="Bottom"/>
-
                                      </asp:GridView>
-                                  
-                                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString3 %>" DeleteCommand="usp_EliminarCurso" DeleteCommandType="StoredProcedure" InsertCommand="usp_AgregarCurso" InsertCommandType="StoredProcedure" SelectCommand="usp_ListarCurso" SelectCommandType="StoredProcedure" UpdateCommand="usp_ModificarCurso" UpdateCommandType="StoredProcedure">
-                                          <DeleteParameters>
-                                              <asp:Parameter Name="C_Curso" Type="Int32" />
-                                          </DeleteParameters>
-                                          <InsertParameters>
-                                              <asp:Parameter Name="C_Modulo" Type="Int32" />
-                                              <asp:Parameter Name="C_Categoria" Type="Int32" />
-                                              <asp:Parameter Name="C_Profesor" Type="Int32" />
-                                              <asp:Parameter Name="C_Horario" Type="Int32" />
-                                              <asp:Parameter Name="C_CursoR" Type="Int32" />
-                                              <asp:Parameter Name="Descripcion" Type="String" />
-                                              <asp:Parameter Name="Requisitos" Type="String" />
-                                              <asp:Parameter Name="Objetivo" Type="String" />
-                                              <asp:Parameter Name="Temario" Type="String" />
-                                              <asp:Parameter Name="Precio" Type="Decimal" />
-                                              <asp:Parameter Name="NumeroHoras" Type="Int32" />
-                                              <asp:Parameter DbType="Date" Name="FechaInicio" />
-                                              <asp:Parameter DbType="Date" Name="FechaFin" />
-                                          </InsertParameters>
-                                          <UpdateParameters>
-                                              <asp:Parameter Name="C_Curso" Type="Int32" />
-                                              <asp:Parameter Name="C_Modulo" Type="Int32" />
-                                              <asp:Parameter Name="C_Categoria" Type="Int32" />
-                                              <asp:Parameter Name="C_Profesor" Type="Int32" />
-                                              <asp:Parameter Name="C_Horario" Type="Int32" />
-                                              <asp:Parameter Name="C_CursoR" Type="Int32" />
-                                              <asp:Parameter Name="Descripcion" Type="String" />
-                                              <asp:Parameter Name="Requisitos" Type="String" />
-                                              <asp:Parameter Name="Objetivo" Type="String" />
-                                              <asp:Parameter Name="Temario" Type="String" />
-                                              <asp:Parameter Name="Precio" Type="Decimal" />
-                                              <asp:Parameter Name="NumeroHoras" Type="Int32" />
-                                              <asp:Parameter DbType="Date" Name="FechaInicio" />
-                                              <asp:Parameter DbType="Date" Name="FechaFin" />
-                                              <asp:Parameter Name="Estado" Type="Boolean" />
-                                          </UpdateParameters>
-                                      </asp:SqlDataSource>
-                                  
-                                  </div>
+                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString3 %>" DeleteCommand="usp_EliminarCurso" DeleteCommandType="StoredProcedure" SelectCommand="usp_ListarCurso" SelectCommandType="StoredProcedure" UpdateCommand="usp_ModificarCursoGV" UpdateCommandType="StoredProcedure">
+                                         <DeleteParameters>
+                                             <asp:Parameter Name="C_Curso" Type="Int32" />
+                                         </DeleteParameters>
+                                         <UpdateParameters>
+                                             <asp:Parameter Name="C_Curso" Type="Int32" />
+                                             <asp:Parameter Name="C_Modulo" Type="Int32" />
+                                             <asp:Parameter Name="C_Categoria" Type="Int32" />
+                                             <asp:Parameter Name="C_Profesor" Type="Int32" />
+                                             <asp:Parameter Name="C_Horario" Type="Int32" />
+                                             <asp:Parameter Name="C_CursoR" Type="Int32" />
+                                             <asp:Parameter Name="Descripcion" Type="String" />
+                                             <asp:Parameter Name="Requisitos" Type="String" />
+                                             <asp:Parameter Name="Objetivo" Type="String" />
+                                             <asp:Parameter Name="Temario" Type="String" />
+                                             <asp:Parameter Name="Precio" Type="Decimal" />
+                                             <asp:Parameter Name="NumeroHoras" Type="Int32" />
+                                             <asp:Parameter DbType="Date" Name="FechaInicio" />
+                                             <asp:Parameter DbType="Date" Name="FechaFin" />
+                                             <asp:Parameter Name="Estado" Type="String" />
+                                         </UpdateParameters>
+                                     </asp:SqlDataSource>
 
                                   
                                   

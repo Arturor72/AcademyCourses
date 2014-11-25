@@ -13,7 +13,7 @@ namespace AcademyCourses
         public AlumnoBE() { }
 
         public AlumnoBE(int C_Alumno, string ApellidoP, string ApellidoM, string Nombre,
-                          string Email, string Sexo, string Nick, string Contraseña, Boolean Estado, String Ocupacion)
+                          string Email, string Sexo, string Nick, string Contraseña, string Estado, String Ocupacion)
             : base(C_Alumno, ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contraseña, Estado)
         {
 

@@ -15,12 +15,12 @@ namespace AcademyCourses
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-        public Boolean Estado { get; set; }
+        public string Estado { get; set; }
 
         public ProfesorBE() { }
 
         public ProfesorBE(int C_Profesor, int C_Trabajador, string ApellidoP, string ApellidoM, string Nombre,
-                              string Telefono, string Email, Boolean Estado)
+                              string Telefono, string Email, string Estado)
         {
 
             this.C_Profesor = C_Profesor;

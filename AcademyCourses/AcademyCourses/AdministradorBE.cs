@@ -15,7 +15,7 @@ namespace AcademyCourses
         public AdministradorBE() { }
 
         public AdministradorBE(int C_Administrador, string ApellidoP, string ApellidoM, string Nombre,
-                          string Email, string Sexo, string Nick, string Contraseña, Boolean Estado, int C_Trabajador)
+                          string Email, string Sexo, string Nick, string Contraseña, string Estado, int C_Trabajador)
             : base(C_Administrador, ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contraseña, Estado)
         {
 

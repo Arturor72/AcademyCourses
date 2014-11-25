@@ -22,14 +22,14 @@ namespace AcademyCourses
         public int NumeroHoras { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
-        public Boolean Estado { get; set; }
+        public string Estado { get; set; }
 
         public CursoBE() { }
 
         public CursoBE(int C_Curso, ModuloBE C_Modulo, CategoriaBE C_Categoria, ProfesorBE C_Profesor,
                        HorarioBE C_Horario, int C_CursoR, string Descripcion, string Requisitos,
                        string Objetivo, string Temario, decimal Precio, int NumeroHoras, DateTime FechaInicio,
-                        DateTime FechaFin, Boolean Estado) {
+                        DateTime FechaFin, string Estado) {
 
                             this.C_Curso = C_Curso;
                             this.Modulo = C_Modulo;

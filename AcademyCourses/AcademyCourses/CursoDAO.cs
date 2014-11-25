@@ -71,7 +71,7 @@ namespace AcademyCourses
                 comm.Parameters.Add("@NumeroHoras", SqlDbType.Int).Value = objCurso.NumeroHoras;
                 comm.Parameters.Add("@FechaInicio", SqlDbType.Date).Value = objCurso.FechaInicio;
                 comm.Parameters.Add("@FechaFin", SqlDbType.Date).Value = objCurso.FechaFin;
-                comm.Parameters.Add("@Estado", SqlDbType.Bit).Value = objCurso.Estado;
+                comm.Parameters.Add("@Estado", SqlDbType.VarChar).Value = objCurso.Estado;
 
                 // Obtenemos valor del RETURN
                 comm.Parameters.Add("@valorReturn", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
@@ -131,7 +131,7 @@ namespace AcademyCourses
                                     new DataColumn("Numero de horas", typeof(int)),
                                     new DataColumn("Fecha de inicio", typeof(DateTime)),
                                     new DataColumn("Fecha de fin", typeof(DateTime)),
-                                    new DataColumn("Estado", typeof(int))});
+                                    new DataColumn("Estado", typeof(string))});
 
 
 
@@ -166,7 +166,7 @@ namespace AcademyCourses
                     objCurso.NumeroHoras = sdr.GetInt32(11);
                     objCurso.FechaInicio = sdr.GetDateTime(12).Date;
                     objCurso.FechaFin = sdr.GetDateTime(13).Date;
-                    objCurso.Estado = sdr.GetBoolean(14);
+                    objCurso.Estado = sdr.GetString(14);
 
                     listaCurso.Add(objCurso);
                 }
@@ -243,7 +243,7 @@ namespace AcademyCourses
                     objModulo.C_Modulo = sdr.GetInt32(0);
                     objModulo.Precio = sdr.GetDecimal(2);
                     objModulo.Descripcion = sdr.GetString(3);
-                    objModulo.Estado = sdr.GetBoolean(4);
+                    objModulo.Estado = sdr.GetString(4);
                 }
             }
             
@@ -299,7 +299,7 @@ namespace AcademyCourses
                     objProfesor.Nombre = sdr.GetString(4);
                     objProfesor.Telefono = sdr.GetString(5);
                     objProfesor.Email = sdr.GetString(6);
-                    objProfesor.Estado = sdr.GetBoolean(7);
+                    objProfesor.Estado = sdr.GetString(7);
                 }
             }
 
