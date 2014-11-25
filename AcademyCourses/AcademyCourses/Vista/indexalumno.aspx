@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="indexalumno.aspx.cs" Inherits="AcademyCourses.Vista.indexalumno" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IndexAlumno.aspx.cs" Inherits="AcademyCourses.Vista.IndexAlumno" %>
 
 <!DOCTYPE html>
 

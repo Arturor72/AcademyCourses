@@ -10,6 +10,6 @@
 namespace AcademyCourses.Vista {
     
     
-    public partial class indexalumno {
+    public partial class IndexAlumno {
     }
 }

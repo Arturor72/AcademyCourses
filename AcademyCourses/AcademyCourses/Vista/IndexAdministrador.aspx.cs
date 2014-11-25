@@ -4,18 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
-namespace AcademyCourses.Vista
+namespace AcademyCourses
 {
-    public partial class Index_Administrador : System.Web.UI.Page
+    public partial class IndexAdministrador : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
-        protected void btnMostrar_Click(object sender, EventArgs e)
+
+        protected void gvCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
-}
+    }
 }
