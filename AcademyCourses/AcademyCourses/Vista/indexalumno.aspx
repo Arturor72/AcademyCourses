@@ -126,7 +126,7 @@
 					
 					<!--/.INICIO-->	
 					<li>
-						<a href="indexalumno.aspx">
+						<a href="IndexAlumno.aspx">
 							<i class="icon-home home-icon"></i>
 							<span class="menu-text"> Inicio </span>
 						</a>
@@ -208,9 +208,9 @@
 							</li>
 
 							<li>
-								<a href="">
+								<a href="Registro Curso2.aspx">
 									<i class="icon-double-angle-right"></i>
-									Progreso
+									Matricula
 								</a>
 							</li>
 

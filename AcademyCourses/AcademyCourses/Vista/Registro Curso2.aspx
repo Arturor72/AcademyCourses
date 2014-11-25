@@ -126,7 +126,7 @@
 					
 					<!--/.INICIO-->	
 					<li>
-						<a href="indexalumno.aspx">
+						<a href="IndexAlumno.aspx">
 							<i class="icon-home home-icon"></i>
 							<span class="menu-text"> Inicio </span>
 						</a>
@@ -144,7 +144,7 @@
 
 						<ul class="submenu">
 							<li>
-								<a href="#" class="dropdown-toggle">
+								<a href="" class="dropdown-toggle">
 									<i class="icon-double-angle-right"></i>
 
 									Inscritos 
@@ -153,14 +153,21 @@
 
 								<ul class="submenu">
 									<li>
-										<a href="#">
-											<i class="icon-leaf"></i>
+										<a href="">
+											<i class="icon-pencil"></i>
+											Excel
+										</a>
+									</li>
+                                    
+                                    <li>
+										<a href="">
+											<i class="icon-pencil"></i>
 											Java
 										</a>
 									</li>
 
 									<li>
-										<a href="#" class="dropdown-toggle">
+										<a href="" class="dropdown-toggle">
 											<i class="icon-pencil"></i>
 
 											Android
@@ -169,21 +176,35 @@
 
 										<ul class="submenu">
 											<li>
-												<a href="#">
+												<a href="">
 													<i class="icon-plus"></i>
 													Tareas
 												</a>
 											</li>
 
 											<li>
-												<a href="#">
+												<a href="">
 													<i class="icon-eye-open"></i>
 													Sillabus
 												</a>
 											</li>
 										</ul>
 									</li>
+
+                                    <li>
+										<a href="">
+											<i class="icon-pencil"></i>
+											Modelamiento 
+										</a>
+									</li>
 								</ul>
+							</li>
+
+							<li>
+								<a href="">
+									<i class="icon-double-angle-right"></i>
+									Más cursos
+								</a>
 							</li>
 
 							<li>
@@ -193,17 +214,9 @@
 								</a>
 							</li>
 
-							<li>
-								<a href="#">
-									<i class="icon-double-angle-right"></i>
-									Progreso
-								</a>
-							</li>
-
 							
 						</ul>
-					</li>
-					<!--/.FIN CURSOS-->	
+					</li>					<!--/.FIN CURSOS-->	
 
 					<!--/. -->	
 					<li>

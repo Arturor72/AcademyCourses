@@ -342,15 +342,15 @@
         <div class="container">
             <div class="row">
                 <h2>Profesor</h2>
-                <div class="col-xs-12 col-sm-4 wow fadeInDown">
+                <div class="col-xs-12 col-sm-12 wow fadeInDown">
                     <div class="testimonial">
                         <div class="media testimonial-inner">
                             <div class="pull-left">
                                 <img class="img-responsive img-circle" src="../App_Themes/Tema/pag_principal/images/testimonials1.png">
                             </div>
-                            <div class="media-body">
+                            <div class="media-body" style="text-align: justify">
                                 <p><strong>Ruiz Romero Elizabeth</strong></p>
-                                <p>Profesora en Cambridge University :D</p>
+                                <p>Es Ingeniera de Computación y Sistemas de la Universidad San Martín de Porres. Cuenta con estudios de Maestría en Dirección Estratégica de Tecnologías de la Información por la Universidad de Piura. Con conocimientos de estándares de calidad a nivel de procesos y producto software ISO/IEC 12207, ISO/IEC 15504, CMMI, ISO/IEC 9126. Actualmente, es Jefe del Área de Proyectos Informáticos de la Oficina Nacional de Procesos Electorales (ONPE). Tiene amplia experiencia como docente en universidades de prestigio.</p>
                             </div>
                          </div>
                     </div>
