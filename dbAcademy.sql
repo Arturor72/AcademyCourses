@@ -20,7 +20,7 @@ CREATE TABLE Usuario(
 	Sexo				CHAR(1)					NOT NULL,	
 	Nick					VARCHAR(25)			NOT NULL,
 	Contrasena		VARBINARY(500)	NOT NULL,
-	Estado				BIT							NOT NULL	--> 0=FALSE  ||  1=TRUE 
+	Estado				VARCHAR(10)			NOT NULL	
 )
 ALTER TABLE Usuario
 	ADD CONSTRAINT PK_Usuario
@@ -34,6 +34,9 @@ ALTER TABLE Usuario
 ALTER TABLE Usuario
 	ADD CONSTRAINT CHK_Sexo
 	CHECK (Sexo LIKE 'M' OR Sexo LIKE 'F')
+ALTER TABLE Usuario
+	ADD CONSTRAINT CHK_EstadoUsuario
+	CHECK (Estado LIKE 'Activo' OR Estado LIKE 'Inactivo')
 ------------------------------------------------------
 
 
@@ -83,7 +86,7 @@ CREATE TABLE Profesor(
 	Nombre			VARCHAR(50)		NOT NULL,
 	Telefono			VARCHAR(15)		NULL,
 	Email				VARCHAR(40)		NOT NULL,
-	Estado				BIT						NOT NULL	--> 0=FALSE  ||  1=TRUE 
+	Estado				VARCHAR(10)		NOT NULL
 )
 ALTER TABLE Profesor
 	ADD CONSTRAINT PK_Profesor
@@ -94,6 +97,9 @@ ALTER TABLE Profesor
 ALTER TABLE Profesor
 	ADD CONSTRAINT U_EmailProfesor
 	UNIQUE (Email)
+ALTER TABLE Profesor
+	ADD CONSTRAINT CHK_EstadoProfesor
+	CHECK (Estado LIKE 'Activo' OR Estado LIKE 'Inactivo')
 ------------------------------------------------------
 
 
@@ -127,7 +133,7 @@ CREATE TABLE Modulo(
 	C_Categoria	INT						NOT NULL,
 	Precio				DECIMAL(8,2)		NOT NULL,
 	Descripcion		VARCHAR(70)		NOT NULL,
-	Estado				BIT						NOT NULL	--> 0=FALSE  ||  1=TRUE 
+	Estado				VARCHAR(10)		NOT NULL	 
 )
 ALTER TABLE Modulo
 	ADD CONSTRAINT PK_Modulo
@@ -139,25 +145,28 @@ ALTER TABLE Modulo
 ALTER TABLE Modulo
 	ADD CONSTRAINT U_DescripcionModulo
 	UNIQUE (Descripcion)
+ALTER TABLE Modulo
+	ADD CONSTRAINT CHK_EstadoModulo
+	CHECK (Estado LIKE 'Activo' OR Estado LIKE 'Inactivo')
 ------------------------------------------------------
 
 
 CREATE TABLE Curso(
 	C_Curso				INT						NOT NULL	IDENTITY(1,1),
 	C_Modulo			INT						NOT NULL,
-	C_Categoria		INT					  	    NOT NULL,
+	C_Categoria		INT					  	NOT NULL,
 	C_Profesor			INT						NOT NULL,
 	C_Horario			INT						NOT NULL,
-	C_CursoR				INT						NULL, ----cambio
-	Descripcion			VARCHAR(70)		        NOT NULL,
-	Requisitos			VARCHAR(250)	            NULL,
-	Objetivo				VARCHAR(250)	        NULL,
+	C_CursoR				INT						NULL, 
+	Descripcion			VARCHAR(70)		NOT NULL,
+	Requisitos			VARCHAR(250)	NULL,
+	Objetivo				VARCHAR(250)	NULL,
 	Temario				TEXT					NOT NULL,
 	Precio					DECIMAL(8,2)		NOT NULL,
-	NumeroHoras		INT						    NOT NULL,
+	NumeroHoras		INT						NOT NULL,
 	FechaInicio			DATE					NOT NULL,
-	FechaFin				DATE				NOT NULL,
-	Estado					BIT					NOT NULL	--> 0=FALSE  ||  1=TRUE 
+	FechaFin				DATE					NOT NULL,
+	Estado					VARCHAR(10)		NOT NULL	
 )
 ALTER TABLE Curso
 	ADD CONSTRAINT PK_Curso
@@ -181,6 +190,9 @@ ALTER TABLE Curso
 ALTER TABLE Curso
 	ADD CONSTRAINT U_DescripcionCurso
 	UNIQUE (Descripcion)
+ALTER TABLE Curso
+	ADD CONSTRAINT CHK_EstadoCurso
+	CHECK (Estado LIKE 'Activo' OR Estado LIKE 'Inactivo')
 ------------------------------------------------------
 
 
@@ -269,29 +281,29 @@ GO
 -- INSERTAMOS DATOS INICIALES
 -- USUARIO
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Flores', 'Quispe', 'Carlos', 'Car.12@hotmail.com', 'M', 'Carlos33', dbo.Encriptar('asdf'), 1)
+VALUES('Flores', 'Quispe', 'Carlos', 'Car.12@hotmail.com', 'M', 'Carlos33', dbo.Encriptar('asdf'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Sanchez', 'Rodriguez', 'Fernando', 'Fernando_123@hotmail.com', 'M', 'Fer', dbo.Encriptar('1234'), 1)
+VALUES('Sanchez', 'Rodriguez', 'Fernando', 'Fernando_123@hotmail.com', 'M', 'Fer', dbo.Encriptar('1234'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('García', 'Rojas', 'Patricia', 'Patricia.09@hotmail.com', 'F', 'Pati', dbo.Encriptar('abcd'), 1)
+VALUES('García', 'Rojas', 'Patricia', 'Patricia.09@hotmail.com', 'F', 'Pati', dbo.Encriptar('abcd'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Gonzales', 'Chavez', 'Milagros', 'Mili22@hotmail.com', 'F', 'MilagrosGC', dbo.Encriptar('4444'), 1)
+VALUES('Gonzales', 'Chavez', 'Milagros', 'Mili22@hotmail.com', 'F', 'MilagrosGC', dbo.Encriptar('4444'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Lopez', 'Diaz', 'Marcos', 'Marcos.33@hotmail.com', 'M', 'Marcos3', dbo.Encriptar('lkjh'), 1)
+VALUES('Lopez', 'Diaz', 'Marcos', 'Marcos.33@hotmail.com', 'M', 'Marcos3', dbo.Encriptar('lkjh'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Ramos', 'Mendoza', 'Martín', 'Martin.77@hotmail.com', 'M', 'Martín34', dbo.Encriptar('9876'), 1)
+VALUES('Ramos', 'Mendoza', 'Martín', 'Martin.77@hotmail.com', 'M', 'Martín34', dbo.Encriptar('9876'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Ramirez', 'Torres', 'William', 'William22@hotmail.com', 'M', 'Will', dbo.Encriptar('vbnm'), 1)
+VALUES('Ramirez', 'Torres', 'William', 'William22@hotmail.com', 'M', 'Will', dbo.Encriptar('vbnm'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Castillo', 'Espinoza', 'Daniel', 'Daniel.55@hotmail.com', 'M', 'Dan23', dbo.Encriptar('ghjk'), 1)
+VALUES('Castillo', 'Espinoza', 'Daniel', 'Daniel.55@hotmail.com', 'M', 'Dan23', dbo.Encriptar('ghjk'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Vasquez', 'Gutierrez', 'David', 'David345@hotmail.com', 'M', 'David123', dbo.Encriptar('1234'), 1)
+VALUES('Vasquez', 'Gutierrez', 'David', 'David345@hotmail.com', 'M', 'David123', dbo.Encriptar('1234'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Huaman', 'Perez', 'Javier', 'Javier33@hotmail.com', 'M', 'Javier33', dbo.Encriptar('vfrt'), 1)
+VALUES('Huaman', 'Perez', 'Javier', 'Javier33@hotmail.com', 'M', 'Javier33', dbo.Encriptar('vfrt'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Vargas', 'Fernandez', 'Victor', 'Victor67@hotmail.com', 'M', 'Victor45', dbo.Encriptar('tgbn'), 1)
+VALUES('Vargas', 'Fernandez', 'Victor', 'Victor67@hotmail.com', 'M', 'Victor45', dbo.Encriptar('tgbn'), 'Activo')
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-VALUES('Mamani', 'Castro', 'Carmen', 'Carmen.345@hotmail.com', 'F', 'CarmenT', dbo.Encriptar('6789'), 1)
+VALUES('Mamani', 'Castro', 'Carmen', 'Carmen.345@hotmail.com', 'F', 'CarmenT', dbo.Encriptar('6789'), 'Activo')
 
 
 
@@ -329,56 +341,56 @@ INSERT INTO dbo.Categoria(Descripcion)VALUES('Hardware y Redes')
 
 -- MÓDULO
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(1,1400,'Especialista en ofimática',1)
+VALUES(1,1400,'Especialista en ofimática','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(1,2400,'Técnico en Computación',1)
+VALUES(1,2400,'Técnico en Computación','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(1,800,'Especialista Excel Empresarial ',1)
+VALUES(1,800,'Especialista Excel Empresarial ','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(2,800,'Data Base Administrador',1)
+VALUES(2,800,'Data Base Administrador','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(2,600,'Administración de BD en Oracle',1)
+VALUES(2,600,'Administración de BD en Oracle','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,600,'Programación Estructurada',1)
+VALUES(3,600,'Programación Estructurada','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,1000,'Visual Basic Developer',1)
+VALUES(3,1000,'Visual Basic Developer','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,800,'NET Developer',1)
+VALUES(3,800,'NET Developer','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,800,'NET C#',1)
+VALUES(3,800,'NET C#','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,600,'PHP Developer',1)
+VALUES(3,600,'PHP Developer','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,600,'Java Developer',1)
+VALUES(3,600,'Java Developer','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,800,'Android Developer',1)
+VALUES(3,800,'Android Developer','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(4,600,'AutoCAD 2014',1)
+VALUES(4,600,'AutoCAD 2014','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(4,1200,'Diseño Gráfico Digital',1)
+VALUES(4,1200,'Diseño Gráfico Digital','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(4,800,'Web Designer Professional',1)
+VALUES(4,800,'Web Designer Professional','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(5,600,'Especialista en Linux',1)
+VALUES(5,600,'Especialista en Linux','Activo')
 
 
 
 
 -- PROFESOR
 INSERT INTO dbo.Profesor (C_Trabajador, ApellidoP, ApellidoM, Nombre, Telefono, Email, Estado)
-VALUES(3,'Ruiz', 'Romero', 'Elizabeth','4565478','Eli5@hotmail.com',1)
+VALUES(3,'Ruiz', 'Romero', 'Elizabeth','4565478','Eli5@hotmail.com','Activo')
 INSERT INTO dbo.Profesor (C_Trabajador, ApellidoP, ApellidoM, Nombre, Telefono, Email, Estado)
-VALUES(4,'Martinez', 'Perez', 'Eduardo','7565478','Eduardo@hotmail.com',1)
+VALUES(4,'Martinez', 'Perez', 'Eduardo','7565478','Eduardo@hotmail.com','Activo')
 INSERT INTO dbo.Profesor (C_Trabajador, ApellidoP, ApellidoM, Nombre, Telefono, Email, Estado)
-VALUES(5,'Salazar', 'Lopez', 'Jesús','4385756','Jesús@hotmail.com',1)
+VALUES(5,'Salazar', 'Lopez', 'Jesús','4385756','Jesús@hotmail.com','Activo')
 INSERT INTO dbo.Profesor (C_Trabajador, ApellidoP, ApellidoM, Nombre, Telefono, Email, Estado)
-VALUES(6,'Leon', 'Huaman', 'Enrique','4253698','Enrique@hotmail.com',1)
+VALUES(6,'Leon', 'Huaman', 'Enrique','4253698','Enrique@hotmail.com','Activo')
 INSERT INTO dbo.Profesor (C_Trabajador, ApellidoP, ApellidoM, Nombre, Telefono, Email, Estado)
-VALUES(7,'Reyes', 'Ramirez', 'Natalia','4758963','Natalia@hotmail.com',1)
+VALUES(7,'Reyes', 'Ramirez', 'Natalia','4758963','Natalia@hotmail.com','Activo')
 INSERT INTO dbo.Profesor (C_Trabajador, ApellidoP, ApellidoM, Nombre, Telefono, Email, Estado)
-VALUES(8,'Huaman', 'Chavez', 'Laura','7583698','Laura@hotmail.com',1)
+VALUES(8,'Huaman', 'Chavez', 'Laura','7583698','Laura@hotmail.com','Activo')
 INSERT INTO dbo.Profesor (C_Trabajador, ApellidoP, ApellidoM, Nombre, Telefono, Email, Estado)
-VALUES(9,'Ramos', 'Rojas', 'Tamara','4753698','Tamara6@hotmail.com',1)
+VALUES(9,'Ramos', 'Rojas', 'Tamara','4753698','Tamara6@hotmail.com','Activo')
 
 
 
@@ -417,7 +429,6 @@ VALUES('Domingo','14:00:00','17:00:00')
 
 
 --CURSO
---SELECT * FROM Curso WHERE C_CursoR IS NULL
 
 INSERT INTO dbo.Curso VALUES(1,1,3,3,null,'Microsoft Windows 8','Ninguno','Personalizar el computador 
 Utilizar las herramientas 
@@ -434,7 +445,7 @@ Instalar y Configurar dispositivos
 Trabajar con programas de Windows 8
 Trabajar con entornos digitales
 Optimizar el sistema
-',200,24,'2014-12-01','2014-12-17',1)
+',200,24,'2014-12-01','2014-12-17','Activo')
 
 INSERT INTO dbo.Curso VALUES(1,1,3,3,1,'Microsoft Word 2013','Conocimientos básicos de Windows a nivel de usuario.
 Tener muchos deseos de aprender y lograr tus metas trazadas
@@ -446,7 +457,7 @@ Definición de párrafos
 Formato
 Insertar Objetos
 Tablas e Imágenes
-Combinar Correspondencia',200,24,'2014-12-19','2015-01-05',1)
+Combinar Correspondencia',200,24,'2014-12-19','2015-01-05','Activo')
 
 INSERT INTO dbo.Curso VALUES(1,1,3,3,2,'Microsoft Excel Básico 2013','Conocimientos de Windows','Conocer los conceptos básicos.
 Resolver problemas específicos a través de la realización de cálculos sencillos utilizando Microsoft Excel 2013.
@@ -463,7 +474,7 @@ Inserción y edición de fórmulas
 Funciones predefinidas de Excel
 Tablas
 Cómo presentar visualmente la información
-Insertar Ilustraciones',200,24,'2015-01-07','2015-01-23',1)
+Insertar Ilustraciones',200,24,'2015-01-07','2015-01-23','Activo')
 
 INSERT INTO dbo.Curso VALUES(1,1,3,3,3,'Microsoft Excel Intermedio 2013','Conocimientos de Windows','Elaborar y editar todo tipo de cuadros.
 Aplicar formatos de celda.
@@ -474,7 +485,7 @@ Esquemas y SubTotales
 Filtros Avanzados
 Herramientas de datos
 Informes de tabla y gráficos dinámicos
-Herramientas de Colaboración y Seguridad',200,24,'2015-01-26','2015-02-11',1)
+Herramientas de Colaboración y Seguridad',200,24,'2015-01-26','2015-02-11','Activo')
 
 INSERT INTO dbo.Curso VALUES(1,1,3,3,4,'Microsoft Power Point 2013','Para un correcto seguimiento del curso es conveniente que el alumno tenga unos conocimientos básicos del MS Windows, del manejo del teclado y del ratón.','Difundir ideas, proyectos o información, al crear, presentar y colaborar en presentaciones que tengan un mayor impacto. Crear diapositivas con gráficos, animaciones y contenido multimedia.','Introducción
 Creación de una presentación Básica
@@ -486,7 +497,7 @@ Añadir sonido y video.
 Transición de Diapositivas y Efectos de presentación.
 Hipervínculos
 Edición del Video usando el Windows Movie Maker
-Formatos de una presentación',200,24,'2014-02-13','2014-03-02',1)
+Formatos de una presentación',200,24,'2014-02-13','2014-03-02','Activo')
 
 INSERT INTO dbo.Curso VALUES(1,1,3,3,5,'Microsoft Access 2013','Windows a nivel usuario.','Identificar la estructura de una base de datos y su configuración.
 Desarrollar una aplicación bajo MS Access que organice y gestione información.','Conceptos básicos sobre bases de datos
@@ -496,7 +507,7 @@ Microsoft Access
 Definición y almacenamiento de datos
 Manipulación y control de datos
 Desarrollo de una aplicación en Access
-',200,24,'2015-03-04','2015-03-20',1)
+',200,24,'2015-03-04','2015-03-20','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,null,'Microsoft  Windows 8 ','Ninguno','Personalizar el computador 
 Utilizar las herramientas 
@@ -513,7 +524,7 @@ Instalar y Configurar dispositivos
 Trabajar con programas de Windows 8
 Trabajar con entornos digitales
 Optimizar el sistema
-',200,24,'2014-12-01','2014-12-17',1)
+',200,24,'2014-12-01','2014-12-17','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,7,'Microsoft  Word 2013','Conocimientos básicos de Windows a nivel de usuario.
 Tener muchos deseos de aprender y lograr tus metas trazadas
@@ -525,7 +536,7 @@ Definición de párrafos
 Formato
 Insertar Objetos
 Tablas e Imágenes
-Combinar Correspondencia',200,24,'2014-12-19','2015-01-05',1)
+Combinar Correspondencia',200,24,'2014-12-19','2015-01-05','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,8,'Microsoft Excel  Básico 2013','Conocimientos de Windows','Conocer los conceptos básicos.
 Resolver problemas específicos a través de la realización de cálculos sencillos utilizando Microsoft Excel 2013.
@@ -542,7 +553,7 @@ Inserción y edición de fórmulas
 Funciones predefinidas de Excel
 Tablas
 Cómo presentar visualmente la información
-Insertar Ilustraciones',200,24,'2015-01-07','2015-01-23',1)
+Insertar Ilustraciones',200,24,'2015-01-07','2015-01-23','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,9,'Microsoft Excel  Intermedio 2013','Conocimientos de Windows','Elaborar y editar todo tipo de cuadros.
 Aplicar formatos de celda.
@@ -553,7 +564,7 @@ Esquemas y SubTotales
 Filtros Avanzados
 Herramientas de datos
 Informes de tabla y gráficos dinámicos
-Herramientas de Colaboración y Seguridad',200,24,'2015-01-26','2015-02-11',1)
+Herramientas de Colaboración y Seguridad',200,24,'2015-01-26','2015-02-11','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,10,'Microsoft Power Point  2013','Para un correcto seguimiento del curso es conveniente que el alumno tenga unos conocimientos básicos del MS Windows, del manejo del teclado y del ratón.','Difundir ideas, proyectos o información, al crear, presentar y colaborar en presentaciones que tengan un mayor impacto. Crear diapositivas con gráficos, animaciones y contenido multimedia.','Introducción
 Creación de una presentación Básica
@@ -565,7 +576,7 @@ Añadir sonido y video.
 Transición de Diapositivas y Efectos de presentación.
 Hipervínculos
 Edición del Video usando el Windows Movie Maker
-Formatos de una presentación',200,24,'2014-02-13','2014-03-02',1)
+Formatos de una presentación',200,24,'2014-02-13','2014-03-02','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,11,'Microsoft Access  2013','Windows a nivel usuario.','Identificar la estructura de una base de datos y su configuración.
 Desarrollar una aplicación bajo MS Access que organice y gestione información.','Conceptos básicos sobre bases de datos
@@ -575,7 +586,7 @@ Microsoft Access
 Definición y almacenamiento de datos
 Manipulación y control de datos
 Desarrollo de una aplicación en Access
-',200,24,'2015-03-04','2015-03-20',1)
+',200,24,'2015-03-04','2015-03-20','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,12,'Gestión de Redes Sociales - Web 2.0','Nociones básicas de marketing o haber trabajo en áreas similares. Es recomendable poder leer en inglés ya que las últimas publicaciones sobre este tema no están traducidas.
 ','Interpretar planificaciones y gestionar programas de marketing 2.0 en los medios sociales en Internet. Crear estrategias, cronogramas, medir resultados y restablecer acciones necesarias para el logro de objetivos.','Marketing en la web. manejo de la reputación online.
@@ -583,7 +594,7 @@ Actitudes y aptitudes de un Community Manager. Reglas de la conversación 2.0. Co
 Cómo armar un plan de presencia en medios sociales. Resumen ejecutivo. Análisis inicial del mercado y la dinámica organizacional. Evaluación de las oportunidades.
 Objetivos específicos. Estrategias y herramientas. Análisis de la inversión y resultados esperados. Recursos.
 Taller: Gestión de aplicaciones
-Taller de herramientas de medición: Google Analytics, Google Insights, Google Alerts. Estadísticas de Facbook. Herramientas de medición de Twitter.',200,24,'2015-03-04','2015-03-20',1)
+Taller de herramientas de medición: Google Analytics, Google Insights, Google Alerts. Estadísticas de Facbook. Herramientas de medición de Twitter.',200,24,'2015-03-04','2015-03-20','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,13,'Adobe Dreamweaver CS6 - Designer','Haber realizado el curso de dreamweaver cs6 designer o acreditar conocimientos equivalentes a juicio de la Institución','Gracias a este curso sabrá organizar un sitio web y conocerá la utilidad de crear las páginas dentro de éste desde el principio; configurar las propiedades de las páginas; insertar plug-ins y controles ActiveX, applets de Java, elementos de interfaz','Aspectos básicos del programa
 Creación de un estilo de Clase
@@ -591,7 +602,7 @@ Vínculos o hipervínculos de documentos
 Insertar Imágenes
 Diseño de paginas
 Pagina de marcos
-Creación de Plantillas',200,24,'2015-03-23','2015-04-08',1)
+Creación de Plantillas',200,24,'2015-03-23','2015-04-08','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,14,'CorelDRAW X6 - Designer','La actual o una versión anterior de CorelDraw X5
 Microsoft Windows XP o Microsoft Windows 2000 o Microsoft Windows Vista','El alumno comprenda los fundamentos y criterios básicos de la Preprensea
@@ -606,7 +617,7 @@ Diseño de un Recibo por honorarios
 Herramienta Bezier (curvas)
 Rellano Uniforme
 Herramienta Mezcla Interactiva
-Herramienta Silueta Interactiva',200,24,'2015-03-10','2015-04-27',1)
+Herramienta Silueta Interactiva',200,24,'2015-03-10','2015-04-27','Activo')
 
 INSERT INTO dbo.Curso VALUES(2,1,3,3,15,'Ensambleje de PC','Ninguno','Comprender el funcionamiento de una computadora y sus periféricos.
 Reconocer y describir las especificaciones técnicas de las partes de una computadora.
@@ -615,7 +626,7 @@ El Gabinete
  La Placa Base
 Procesador y Memoria
  Medios de Almacenamiento
-Tarjetas de Expansión',200,24,'2015-04-29','2015-05-15',1)
+Tarjetas de Expansión',200,24,'2015-04-29','2015-05-15','Activo')
 
 INSERT INTO dbo.Curso VALUES(3,1,5,4,null,'Microsoft  Excel  Básico 2013','Conocimientos de Windows','Conocer los conceptos básicos.
 Resolver problemas específicos a través de la realización de cálculos sencillos utilizando Microsoft Excel 2013.
@@ -632,7 +643,7 @@ Inserción y edición de fórmulas
 Funciones predefinidas de Excel
 Tablas
 Cómo presentar visualmente la información
-Insertar Ilustraciones',200,24,'2014-12-02','2014-12-25',1)
+Insertar Ilustraciones',200,24,'2014-12-02','2014-12-25','Activo')
 
 INSERT INTO dbo.Curso VALUES(3,1,5,4,17,'Microsoft  Excel  Intermedio 2013','Conocimientos de Windows','Elaborar y editar todo tipo de cuadros.
 Aplicar formatos de celda.
@@ -643,7 +654,7 @@ Esquemas y SubTotales
 Filtros Avanzados
 Herramientas de datos
 Informes de tabla y gráficos dinámicos
-Herramientas de Colaboración y Seguridad',200,24,'2014-12-30','2015-01-15',1)
+Herramientas de Colaboración y Seguridad',200,24,'2014-12-30','2015-01-15','Activo')
 
 
 INSERT INTO dbo.Curso VALUES(3,1,5,4,18,'Microsoft Excel Producción y Administración','Tener conocimientos previos de Excel a nivel intermedio (Excel I y II).','Aplicar las funciones y las herramientas de análisis estadístico. 
@@ -654,7 +665,7 @@ Análisis (para cálculos de costos, y de producción)
 Control de Existencia en Almacenes
 Detección de stock mínimo
 Consolidación de existencias en almacenes múltiples
-',200,24,'2015-01-27','2015-02-19',1)
+',200,24,'2015-01-27','2015-02-19','Activo')
 
 INSERT INTO dbo.Curso VALUES(3,1,5,4,19,' Microsoft Excel Financiero','Conocimiento intermedio del Excel.','La determinación de intereses simples y compuestos. 
 El calculo de tasas efectivas asi como conversiones entre las mismas. 
@@ -666,7 +677,7 @@ Descuentos
 Factores financieros – anualidades y rentas
 Depreciación
 Evaluación de proyectos
-',200,24,'2015-02-24','2014-03-19',1)
+',200,24,'2015-02-24','2014-03-19','Activo')
 
 INSERT INTO dbo.Curso VALUES(4,2,6,10,null,'Modelamiento de Datos','Conocimiento básico de algún lenguaje de programación Vidual y/o técnicas de
 programación como estructura de datos.','Aprender los beneficios de la utilización de UML en el desarrollo de software.
@@ -679,7 +690,7 @@ Clases y Objetos
 Diagrama de clases
 Clase entidad y modelo E/R
 Tercera forma normal
-Cuarta forma normal',200,12,'2014-12-06','2014-12-27',1)
+Cuarta forma normal',200,12,'2014-12-06','2014-12-27','Activo')
 
 INSERT INTO dbo.Curso VALUES(4,2,6,10,21,'Ms SQL Server I - Implementación','Conocimientos de Modelamiento de Datos','Proporcionar al alumno los conocimientos del lenguaje SQL
 Mostrar la integración de herramientas de SQL Server 2012','Concepto de base de datos relacional. Sistemas administradores de bases de datos.
@@ -688,7 +699,7 @@ Creación y optimización de índices
 La sentencia SELECT, precedencia de modificadores, campos calculados, funciones SQL
 Consultas avanzadas: Agrupamiento de datos, subconsultas, condicionales, uniones
 Programación en SQL Server 2012
-Implementación de desencadenadores',200,12,'2015-01-03','2015-01-24',1)
+Implementación de desencadenadores',200,12,'2015-01-03','2015-01-24','Activo')
 
 
 INSERT INTO dbo.Curso VALUES(4,2,6,10,22,'Ms SQL Server III - Administración','Modelamiento de Datos
@@ -699,7 +710,7 @@ Administración de la Seguridad
 Transferencia de Datos
 Automatización de Tareas Administrativas
 Monitoreando al SQL Server 2012
-Implementando un DataBase Mirroring',200,12,'2015-01-31','2015-02-21',1)
+Implementando un DataBase Mirroring',200,12,'2015-01-31','2015-02-21','Activo')
 
 INSERT INTO dbo.Curso VALUES(4,2,6,10,23,'Inteligencia de Negocios Nivel I (Diseño y Carga del Data Warehouse)','Conocimiento de Conceptos Generales de Base de Datos.
 Conocimiento Básico de Modelamiento de Datos.','Este curso proporciona a los estudiantes con los conocimientos y prácticas necesarias para diseñar, 
@@ -712,7 +723,7 @@ Diseñando Data Mart
 Planificación del ETL
 Componentes de Reporting Services 
 Creación de informes básicos 
-Conexión a datos externos desde MS Excel',200,12,'2015-02-28','2015-03-21',1)
+Conexión a datos externos desde MS Excel',200,12,'2015-02-28','2015-03-21','Activo')
 
 INSERT INTO dbo.Curso VALUES(5,2,6,10,null,'Introducción a SQL','Conocimientos de Modelamiento de Datos','Utilizar las sentencias SELECT en todas sus modalidades.
 Utilizar la sintaxis DDL del SQL para crear, modificar o destruir objetos de la base de datos de Oracle.
@@ -723,7 +734,7 @@ Manipulación de datos en las tablas
 Gestión de objetos
 Otros objetos de la base de datos
 PL/SQL: Bloques, cursores y excepciones
-Bloques nominados',200,12,'2014-12-06','2014-12-27',1)
+Bloques nominados',200,12,'2014-12-06','2014-12-27','Activo')
 
 INSERT INTO dbo.Curso VALUES(5,2,6,10,25,'Administración de Base de Datos','Base de Datos Oracle 11g: Introducción a SQL','Instalar y configurar la Base de Datos Oracle 11g
 Controlar, solucionar problemas y mantener la Base de Datos Oracle 11g
@@ -735,7 +746,7 @@ Administracion de Usuarios
 Seguridad de Base de Datos Oracle
 Servicios de Red de Oracle
 Gestión de Deshacer
-Conceptos de Copia de Seguridad y Recuperación',200,12,'2015-01-03','2015-01-24',1)
+Conceptos de Copia de Seguridad y Recuperación',200,12,'2015-01-03','2015-01-24','Activo')
 
 INSERT INTO dbo.Curso VALUES(5,2,6,10,26,'Administración de Backup y Afinamiento','Base de Datos Oracle 11g: Administración
 Base de Datos Oracle 11g: Introducción a SQL','Recuperar la base de datos hasta un punto anterior en el tiempo
@@ -748,7 +759,7 @@ Flashback de Base de Datos
 Recuperación de Errores de Usuario
 Gestión y Control de Memoria
 Gestión de Recursos
-Automatización de Tareas con el Planificador',200,12,'2015-01-31','2015-02-21',1)
+Automatización de Tareas con el Planificador',200,12,'2015-01-31','2015-02-21','Activo')
 
 
 INSERT INTO dbo.Curso VALUES(6,3,1,5,null,'Algoritmos Estructurado Básico','Tener muchos deseos de aprender y lograr tus metas trazadas.
@@ -760,7 +771,7 @@ Estructuras de control de programa
 Programación Modular SubAlgoritmos
 Arreglos de datos
 Matrices de datos
-',200,24,'2014-12-01','2014-12-17',1)
+',200,24,'2014-12-01','2014-12-17','Activo')
 
 INSERT INTO dbo.Curso VALUES(6,3,1,5,28,'Algoritmos Estructurado Avanzado','Tener muchos deseos de aprender y lograr tus metas trazadas.
 Conocimientos básicos de cualquier sistema operativo','Utilizar colecciones de datos en memoria con diferentes tipo de datos
@@ -770,7 +781,7 @@ Archivo de datos(Ficheros)
 Métodos de ordenamiento y búsqueda de datos
 Operaciones con cadena de datos
 Estructuras dinámicas lineales de datos (pilas, colas y listas enlazadas)
-Recursividad',200,24,'2014-12-19','2015-01-05',1)
+Recursividad',200,24,'2014-12-19','2015-01-05','Activo')
 
 INSERT INTO dbo.Curso VALUES(6,3,1,5,29,'Fundamentos De Programación Orientada A Objetos','Tener muchos deseos de aprender y lograr tus metas trazadas.
 Conocimientos básicos de cualquier sistema operativo','Conocer los conceptos generales de POO
@@ -781,7 +792,7 @@ Atributos y Métodos
 Interfaces
 Encapsulamiento
 Herencia
-Polimorfismo',200,24,'2015-01-07','2014-01-23',1)
+Polimorfismo',200,24,'2015-01-07','2014-01-23','Activo')
 
 INSERT INTO dbo.Curso VALUES(7,3,2,10,null,'Modelamiento de  Datos','Conocimiento básico de algún lenguaje de programación Vidual y/o técnicas de
 programación como estructura de datos.','Aprender los beneficios de la utilización de UML en el desarrollo de software.
@@ -794,7 +805,7 @@ Clases y Objetos
 Diagrama de clases
 Clase entidad y modelo E/R
 Tercera forma normal
-Cuarta forma normal',200,12,'2014-12-06','2014-12-27',1)
+Cuarta forma normal',200,12,'2014-12-06','2014-12-27','Activo')
 
 INSERT INTO dbo.Curso VALUES(7,3,2,10,31,'MS SQL Server 2012 - Implementación','Conocimientos de Modelamiento de Datos','Proporcionar al alumno los conocimientos del lenguaje SQL
 Mostrar la integración de herramientas de SQL Server 2012
@@ -804,7 +815,7 @@ Creación y optimización de índices
 La sentencia SELECT, precedencia de modificadores, campos calculados, funciones SQL.
 Consultas avanzadas: Agrupamiento de datos, subconsultas, condicionales, uniones.
 Programación en SQL Server 2012.
-Implementación de desencadenadores.',200,12,'2015-01-03','2015-01-24',1)
+Implementación de desencadenadores.',200,12,'2015-01-03','2015-01-24','Activo')
 
 INSERT INTO dbo.Curso VALUES(7,3,2,10,32,'MS Visual Basic 6.0 - Básico','Conocimiento Basico de Visual Basic 6.0
 Microsoft Windows XP o Microsoft Windows 2000 o Microsoft Windows Vista
@@ -816,7 +827,7 @@ Administración de Proyectos
 Controles Básicos
 TextBox, Command, Label
 Mecánica de la escritura de código
-Módulos de código',200,12,'2015-01-31','2015-02-21',1)
+Módulos de código',200,12,'2015-01-31','2015-02-21','Activo')
 
 INSERT INTO dbo.Curso VALUES(7,3,2,10,33,'MS Visual Basic - Base de Datos','Conocimientos de SQL Server 2000
 Experiencia en desarrollo de aplicaciones con alguna herramienta visual, de
@@ -827,7 +838,7 @@ ActiveX Data Object
 Objeto Recordset
 Control ADO Data
 OBJETOS Command y Parameters
-Módulos de Clase y Dlls',200,12,'2015-02-28','2015-03-21',1)
+Módulos de Clase y Dlls',200,12,'2015-02-28','2015-03-21','Activo')
 
 INSERT INTO dbo.Curso VALUES(7,3,2,10,34,'Desarrollo de Aplicaciones .NET con VS.-2012','Conocimiento o experiencia
 en programación o desarrollo de aplicaciones y que deseen desarrollar aplicaciones en la
@@ -839,7 +850,7 @@ nstrucciones y excepciones
 Tablas
 Programación orientada a objetos
 Uso de variables de tipo referencia
-Herencia en VB',200,12,'2015-03-28','2015-04-18',1)
+Herencia en VB',200,12,'2015-03-28','2015-04-18','Activo')
 
 INSERT INTO dbo.Curso VALUES(8,3,4,12,null,'Desarrollo de Aplicaciones .NET Con Visual Studio 2012','Conocimientos de programación, POO, bases de datos, ADO.NET, SQL SERVER 2008','Proporcionar al alumno los conocimientos para el desarrollo de aplicaciones en entornos distribuidos con tecnologías de última generación Microsoft','Programación Orientada A Objetos
 Desarrollo de interfaz de usuario Windows
@@ -848,7 +859,7 @@ Acceso al sistema de archivos
 Programando con Hilos
 Usando Expresiones Regulares para validación de datos
 Pruebas y depuración de errores
-Distribución de aplicaciones Windows',200,12,'2014-12-06','2014-12-27',1)
+Distribución de aplicaciones Windows',200,12,'2014-12-06','2014-12-27','Activo')
 
 INSERT INTO dbo.Curso VALUES(8,3,4,12,36,'Acceso a Datos con ADO . NET 4.0 y Visual Studio 2012','Ninguno','Manejar las herramientas de acceso a datos mediante ADO .NET 4.0
 Transacciones en 2 capas con LINQ
@@ -858,7 +869,7 @@ Manejo de Transacciones.
 Trabajo desconectado.
 Consumir reportes locales y de Servidor Reporting Services
 Acceso a Datos con Entity Data Model y Linq para entidades
-Acceso a datos en los servicios en la nube con Windows Azure',200,12,'2015-01-03','2015-01-24',1)
+Acceso a datos en los servicios en la nube con Windows Azure',200,12,'2015-01-03','2015-01-24','Activo')
 
 INSERT INTO dbo.Curso VALUES(8,3,4,12,37,'Desarrollo de Aplicaciones Web con ASP .NET Ajax','Ninguno','Al término del curso el alumno estará en la capacidad de desarrollar una aplicación Web con ASP.Net con acceso a una base de datos e implementarla.','Crear Aplicaciones Web con Visual Studio 2012
 Agregar Código a un Formulario Web ASP.NET 4.0
@@ -868,7 +879,7 @@ Creación e Implementación de Controles de Usuario
 Configuración, Optimización y Despliegue de Aplicaciones Web ASP.NET 4.0
  Configuración de la Seguridad en Aplicaciones Web ASP.NET 4.0
 ASP.NET 4.0 AJAX en el servidor
-Desarrolle aplicaciones con ASP.NET 4.0 con MVC 3',200,12,'2015-01-31','2015-02-21',1)
+Desarrolle aplicaciones con ASP.NET 4.0 con MVC 3',200,12,'2015-01-31','2015-02-21','Activo')
 
 INSERT INTO dbo.Curso VALUES(8,3,4,12,38,'Taller de desarrollo de Aplicaciones Distribuidas en N capas','Ninguno','Desarrollar de aplicaciones en entornos distribuidos con tecnologías de última generación Microsoft, integración de herramientas de SQL Server 2008, utilizando como herramienta Microsoft Visual Studio 2012 y NET Framework 4.0','Fundamentos de Desarrollo de aplicaciones distribuidas
 Introducción a SOA - REST
@@ -887,7 +898,7 @@ Generar la capa de negocios
 Exponer los servicios WCF de la capa de negocios por IIS 7.0
 Generar la capa de presentación Web
 Consumiendo reportes de Reporting Services y SQL SERVER 2008
-Instalación de un aplicación Web en IIS 7.0',200,12,'2015-02-28','2015-03-21',1)
+Instalación de un aplicación Web en IIS 7.0',200,12,'2015-02-28','2015-03-21','Activo')
 
 INSERT INTO dbo.Curso VALUES(9,3,7,15,null,'Desarrollo Aplicaciones.NET con C#','Conocimientos de programación, POO,  bases de datos, ADO.NET','En este curso los alumnos aprenderán  los fundamentos del Lenguaje de programación  C#  Orientada a Objeto con  NET  Framework 4.0.
 ','Introducción a MICROSOFT .NET y C#
@@ -897,7 +908,7 @@ Trabajar con Menús
 Arreglo y Colecciones
 Flujos de Datos
 Windows Presentation Foundation
-Distribución de Aplicaciones Windows',200,12,'2014-12-07','2014-12-28',1)
+Distribución de Aplicaciones Windows',200,12,'2014-12-07','2014-12-28','Activo')
 
 INSERT INTO dbo.Curso VALUES(9,3,7,15,40,'Desarrollo Aplicaciones con ADO.NET 4.0 y C#','Conocimientos de programación, POO,  bases de datos, ADO.NET','El objetivo de este curso es presentar las técnicas de programación para bases de datos en la plataforma .NET, utilizando C# como lenguaje base.','SQL Server 2008 para Desarrolladores.
  Arquitectura de ADO.NET 4.0.
@@ -905,7 +916,7 @@ Acceso Desconectado.
 Consulta y Mantenimiento de Datos en Forma Conectada.
 Manejo de Transacciones.
 Generar Reportes con CRYSTAL REPORTS
-Acceso a Datos con LINQ',200,12,'2015-01-04','2015-01-25',1)
+Acceso a Datos con LINQ',200,12,'2015-01-04','2015-01-25','Activo')
 
 INSERT INTO dbo.Curso VALUES(9,3,7,15,41,'Desarrollo Aplicaciones Web con C# ASP.NET AJAX','Conocimientos de programación, POO,  bases de datos, ADO.NET','Este curso otorga los fundamentos necesarios para la implementación de aplicaciones Web ASP.NET usando  Visual C#, enfocado en el ambiente de desarrollo de Visual Studio.NET.','Introducción a ASP.NET  AJAX
 Uso de los Controles Estándar
@@ -914,7 +925,7 @@ Visión General de Acceso a Datos
 Acceso a Datos con LINQ to SQL
 Administración del Estado
 Uso de Autenticación Basada en Formularios
-Reportes en ASP.NET',200,12,'2015-02-01','2015-02-25',1)
+Reportes en ASP.NET',200,12,'2015-02-01','2015-02-25','Activo')
 
 INSERT INTO dbo.Curso VALUES(9,3,7,15,42,'Desarrollo Aplicaciones Web Distribuidas en N capas con C#','Conocimientos de programación, POO,  bases de datos, ADO.NET','Proporcionar a los estudiantes los conocimientos y habilidades necesarias para desarrollar soluciones basadas  en Capas y Servicios Web para solucionar problemas comunes en un dominio de aplicación distribuida.',' Implementación de Componentes
 Arquitectura en Capas
@@ -922,7 +933,7 @@ Servicios Web XML
 Windows Communication Foundation (WCF)
 Configuración de Servicios WCF
 Consumiendo Servicios WCF
-Microsoft Entity Framework',200,12,'2015-03-01','2015-03-22',1)
+Microsoft Entity Framework',200,12,'2015-03-01','2015-03-22','Activo')
 
 INSERT INTO dbo.Curso VALUES(10,3,6,14,null,'PHP Nivel I - Programación Web','Conocimiento básico del lenguaje HTML.
 Conocimiento de programación estructurada','Comprender el desarrollo evolutivo de la Web a nivel mundial
@@ -939,7 +950,7 @@ PHP Utilizando Java Script
  Instalando una Herramienta de Administración – MysqlGui Tools
 Sentencias de SQL
 Conexión al Mysql desde PHP. Configuración del archivo INI
-Procesos Básicos de Mantenimiento',200,12,'2014-12-07','2014-12-28',1)
+Procesos Básicos de Mantenimiento',200,12,'2014-12-07','2014-12-28','Activo')
 
 INSERT INTO dbo.Curso VALUES(10,3,6,14,44,'PHP Nivel II - DAO-POO','Conocimiento del lenguaje HTML (indispensable)
 Conocimiento de programación estructurada','Comprender la sintaxis completa del lenguaje
@@ -950,7 +961,7 @@ PHP 5.X Orientación a Objetos
 Manejo de Sesiones y Gráficos
 Carrito de Compra, Upload , PDF y Códigos de Validación
 Email y Carrito de Compra
-Manejo de Capas – MVC y Ajax',200,12,'2015-01-04','2015-01-25',1)
+Manejo de Capas – MVC y Ajax',200,12,'2015-01-04','2015-01-25','Activo')
 
 INSERT INTO dbo.Curso VALUES(10,3,6,14,45,'PHP Nivel III - PHP Avanzado','Conocimiento de PHP Nivel II - DAO-POO
 Nociones de Servidor web. ','Comprender la relación de PHP con los servidores Web (Apache)
@@ -961,7 +972,7 @@ Framework con PHP
 Definiciones previas. Frameworks – Librerías externas – APIs.
 Kumbia
 ZendFramework
-Synfony',200,12,'2015-02-01','2015-02-25',1)
+Synfony',200,12,'2015-02-01','2015-02-25','Activo')
 
 
 INSERT INTO dbo.Curso VALUES(11,3,2,8,null,'Java Fundamentos','Lenguaje de programación estructurado, así como los conceptos de orientación a objetos.
@@ -973,7 +984,7 @@ Inner classes (clases internas)
 Interfaz grafica de usuario (GUI).
 JDialog y JOptionPane
 Eventos:definición
-Asociación de clases Bean con eventos',200,24,'2014-12-01','2015-12-17',1)
+Asociación de clases Bean con eventos',200,24,'2014-12-01','2015-12-17','Activo')
 
 INSERT INTO dbo.Curso VALUES(11,3,2,8,47,'Java Cliente / Servidor','Los alumnos necesitarán tener experiencia con el lenguaje de programación Java para poder comprender lamateria del curso con éxito.','Conocer las características del lenguaje java y su uso en el desarrollo de aplicaciones informáticas de todo nivel usando los conceptos de la programación orientada a objetos así
 como las características del modelo cliente/servidor','Conversión de datos
@@ -983,7 +994,7 @@ Concurrencia
 JDBC
 Uso de Statement
 Uso de PreparedStatement
-Reportes',200,24,'2014-12-19','2015-01-05',1)
+Reportes',200,24,'2014-12-19','2015-01-05','Activo')
 
 INSERT INTO dbo.Curso VALUES(11,3,2,8,48,'Java Aplicaciones Web','Los alumnos necesitarán tener experiencia con el lenguaje de programación Java para poder comprender la materia del curso con éxito ','Conocer las características del lenguaje java y su uso en el desarrollo de aplicaciones informáticas de todo nivel usando los conceptos de la programación orientada a objetos así
 como las características del modelo cliente/servidor','Aplicaciones WEB
@@ -992,7 +1003,7 @@ Uso de Ajax
 Java Bean - Uso
 Persistencia
 Sesiones en JSP
-JSON',200,24,'2015-01-07','2015-01-23',1)
+JSON',200,24,'2015-01-07','2015-01-23','Activo')
 
 INSERT INTO dbo.Curso VALUES(12,3,1,9,null,'Android Básico','Educación media o superior con conocimientos básico de programación.','Conozcan los principales componentes para desarrollar una aplicación en Android
 Obtengan conocimientos de los componentes visuales de aplicaciones móviles
@@ -1010,7 +1021,7 @@ Unidades de medida en Android. DP y SP.
 Eventos. Uso de OnClickListener y OnItemClickListener 
 Menu en Android. Tipos. Uso de Option Menu y ContextMenu. 
 Dialogo. Uso de AlertDialog y ProgressDialog 
-Toast. Uso de notificaciones',200,24,'2014-12-02','2014-12-25',1)
+Toast. Uso de notificaciones',200,24,'2014-12-02','2014-12-25','Activo')
 
 INSERT INTO dbo.Curso VALUES(12,3,1,9,50,'Android Intermedio','Educación media o superior con conocimientos básico de programación.
 Android Básico','A lo largo del curso, el alumno aprenderá a realizar tareas en segundo plano, utilizar los sensores del dispositivo, crear gráficos en 2D, almacenar datos entre sesiones, crear animaciones, etc.','ActionBar. Uso en API 17 
@@ -1025,7 +1036,7 @@ Video y Camara en Android. SurfaceView y SurfaceHandler.
 Notificaciones en Android. Luz, zumbador, icono. 
 Preferencias. Uso PreferenceActivity y PreferenceScreen 
 Archivos en Android. Uso de OutputStream e InputStream. 
-Archivos en memoria interna y memoria externa. Clase Environment.',200,24,'2014-12-30','2015-01-22',1)
+Archivos en memoria interna y memoria externa. Clase Environment.',200,24,'2014-12-30','2015-01-22','Activo')
 
 INSERT INTO dbo.Curso VALUES(12,3,1,9,51,'Android Avanzado','Educación media o superior con conocimientos básico de programación.
 Android Intermedio','Construir juegos y aplicaciones graficas con un nivel de sofisticacion requeridas por el usuario.
@@ -1041,7 +1052,7 @@ Procedimiento para creación de API Key en Google Map.
 Manejo de mapas en Android. Uso de MapController. 
 Web Services en Android. Diferencias entre SOAP y REST. 
 Uso de KSOAP2 para webservices SOAP. Ejemplos usando .NET y PHP. 
-Despliegue y publicación de aplicaciones en Google Play. Criterios. ',200,24,'2015-01-27','2015-02-19',1)
+Despliegue y publicación de aplicaciones en Google Play. Criterios. ',200,24,'2015-01-27','2015-02-19','Activo')
 
 INSERT INTO dbo.Curso VALUES(12,3,1,9,52,'Android App Inventor','Educación media o superior con conocimientos básico de programación.
 Android Avanzado','Al finalizar el curso el alumno será capaz de manejar el entorno de programación y crear una aplicación completa para dispositivos Android.','MIT AppInventor. Características y requerimientos. 
@@ -1058,7 +1069,7 @@ Activity Starter. Uso de Intent en AppInventor.
 Uso de objetos Web y WebViewer, Uso de GooleMap y Google StreetView. 
 Canvas. Gráficos en Android. 
 TinyDB. Uso de Base de datos en Android. 
-',200,24,'2015-02-24','2015-03-19',1)
+',200,24,'2015-02-24','2015-03-19','Activo')
 
 INSERT INTO dbo.Curso VALUES(13,4,3,6,null,'Autocad 2014 - Básico ','Se necesita conocimientos previos en Windows a nivel de usuario, además tener algún conocimiento básico de dibujo técnico, ello facilitara su aprendizaje del software.','Manejar las herramientas de dibujo y edición de objetos. los cuales le permitirán desarrollar un dibujo técnico de manera rápida y sencilla a la vez.','Entorno de trabajo
 Unidades de medida y sistema de coordenadas
@@ -1067,7 +1078,7 @@ Capas y Propiedades de Objetos
 Crear estilos de texto y sombreado
 Dimensionado
 Configuraciones de página y Ploteo
-Escala',200,24,'2014-12-01','2015-01-01',1)
+Escala',200,24,'2014-12-01','2015-01-01','Activo')
 
 INSERT INTO dbo.Curso VALUES(13,4,3,6,54,'Autocad 2014 - Intermedio',' La actual o una versión anterior de AutoCAD
 Creación y edición de objetos básicos de AutoCAD','Aplicación de técnicas de Edición (Uso de grips)
@@ -1079,7 +1090,7 @@ ENLACE CON ARCHIVOS EXTERNOS E IMÁGENES
  POLIGONALES Y CURVAS
 LAYOUTS Y PLOTEO
 UTILIDADES
-PERSONALIZACIÓN DEL AUTOCAD',200,24,'2014-01-02','2015-02-04',1)
+PERSONALIZACIÓN DEL AUTOCAD',200,24,'2014-01-02','2015-02-04','Activo')
 
 INSERT INTO dbo.Curso VALUES(13,4,3,6,55,'Autocad 2014 - Avanzado ','Se requieren conocimientos de AutoCAD Básico y Intermedio.','Manejar adecuadamente el espacio de trabajo en 3d.
 Conocer y utilizar rápidamente los diferentes comandos de navegación en 3d.','Herramientas visualización y trazado 3D
@@ -1089,7 +1100,7 @@ Creación de Sólidos y superficies
 Edición de Sólidos
 Modelado con Superficies y mallas
 Presentación Foto realista
-Configuraciones de página y Layouts',200,24,'2015-02-05','2015-03-10',1)
+Configuraciones de página y Layouts',200,24,'2015-02-05','2015-03-10','Activo')
 
 INSERT INTO dbo.Curso VALUES(14,4,7,7,null,'Corel Draw X6 - Designer','La actual o una versión anterior de CorelDraw X5
 Microsoft Windows XP o Microsoft Windows 2000 o Microsoft Windows Vista','Lograr que el alumno comprenda los fundamentos y criterios básicos de la Presa digital, elaborando diseños publicitarios de manera eficiente y efectiva, para que queden listos para la Preimpresión.','En entorno de diseño
@@ -1105,7 +1116,7 @@ Rellano Uniforme
 Relleno Degradé
 Relleno Patrón
 Relleno Textura
-Herramienta Texto (uso avanzado)',200,24,'2014-12-01','2015-01-01',1)
+Herramienta Texto (uso avanzado)',200,24,'2014-12-01','2015-01-01','Activo')
 
 INSERT INTO dbo.Curso VALUES(14,4,7,7,57,'Corel Draw X6 - Expert','Haber realizado el curso de Corel Draw Designer o acreditar conocimientos
 equivalentes a juicio de la Institución','Capacitar al alumno en el manejo de la interfase de Corel Draw, la creación y edición de diseños simples usando figuras geométricas, curvas libres, definición de filetes y rellenos','Manejo de imágenes
@@ -1115,7 +1126,7 @@ Trabajar con Capas
 Crear una plantilla de estilo
 PowerTrace
 Vectorización de Imágenes
-Impresión',200,24,'2014-01-02','2015-02-04',1)
+Impresión',200,24,'2014-01-02','2015-02-04','Activo')
 
 INSERT INTO dbo.Curso VALUES(14,4,7,7,58,'Adobe Illustrator CS6 - Designer','nose requiere conocimiento alguno','Teoría: Uso de herramientas para dibujo (vectorial), texto en párrafo o artístico y diagramación de cuadros estadísticos. Utilización de filtros para formas en la imagen y cambios de color.','EL ÁREA DE TRABAJO
 ASISTENTE DE BIENVENIDA
@@ -1128,7 +1139,7 @@ ATRIBUTOS DE ASPECTO, ESTILOS Y EFECTOS
 CREACIÓN Y EDICIÓN DE TEXTOS
 FUSIONAR FORMAS Y COLORES
 CREAR EFECTOS
-GRÁFICOS PARA LA WEB E IMPRESION',200,24,'2015-02-05','2015-03-10',1)
+GRÁFICOS PARA LA WEB E IMPRESION',200,24,'2015-02-05','2015-03-10','Activo')
 
 INSERT INTO dbo.Curso VALUES(14,4,7,7,59,'Adobe Photoshop CS6 - Designer','Tener muchos deseos de aprender y lograr tus metas trazadas.
 Conocimientos básicos de cualquier sistema operativo','Concepto de resolución y manejo de las imágenes en capas. Empleo de herramientas para selección y retoque fotográfico. Cambio de los modos de color, uso de filtros para la creación de texturas.
@@ -1140,7 +1151,7 @@ Capas de texto
 Líneas guías
 Opciones de Ajustes de Color
 Bloqueo de capas
-Modos de fusión de capas',200,24,'2015-03-11','2015-04-13',1)
+Modos de fusión de capas',200,24,'2015-03-11','2015-04-13','Activo')
 
 INSERT INTO dbo.Curso VALUES(14,4,7,7,60,'Adobe Photoshop CS6 - Expert','Haber llevado el modulo de Photoshop Designer.','Concepto de resolución y manejo de las imágenes en capas. Empleo de herramientas para selección y retoque fotográfico.
 Recortar, retocar y efectos para presentación de fotografías profesionales.','Imagen Raw
@@ -1165,7 +1176,7 @@ Máscara de capas
 PDF
 Animación y creación de una WEB
 Acciones
-Impresión',200,24,'2015-04-14','2015-05-15',1)
+Impresión',200,24,'2015-04-14','2015-05-15','Activo')
 
 INSERT INTO dbo.Curso VALUES(14,4,7,7,61,'Adobe Indesign CS6','Haber realizado el curso de Operación Básica de Microsoft Windows o acreditar
 conocimientos equivalentes a juicio de la Institución.','Proporcionar los conocimientos teórico/prácticos en la diagramación, necesarios
@@ -1190,7 +1201,7 @@ Colores y el Editor de textos
 Edicion Avanzada de Texto.
 Páginas Maestras
 Páginas maestras: Opciones.
-Manejo de Páginas - Plugins',200,24,'2015-05-18','2015-06-18',1)
+Manejo de Páginas - Plugins',200,24,'2015-05-18','2015-06-18','Activo')
 
 INSERT INTO dbo.Curso VALUES(15,4,1,4,null,'Adobe Dreamweaver CS6','Tener muchos deseos de aprender y lograr tus metas trazadas.
 Conocimientos básicos de cualquier sistema operativo','Planificación de la estructura de Sitios locales y remotos
@@ -1205,7 +1216,7 @@ Creación de Plantillas
 Crear una plantilla nueva
 Crear regiones editables en la plantilla
 Aplicar una plantilla a un documento.
-Bloquear una región editable',200,24,'2014-12-01','2015-01-01',1)
+Bloquear una región editable',200,24,'2014-12-01','2015-01-01','Activo')
 
 INSERT INTO dbo.Curso VALUES(15,4,1,4,63,'Adobe Dreamweaver CS6 - Acceso BD & Adobe Fireworks CS6','Haber realizado el curso de dreamweaver cs6 designer o acreditar conocimientos equivalentes a juicio de la Institución','Como generar mejores efectos animados, es un software especializado para la creación, administración y edición de páginas Web multimedia (texto, sonido e imágenes).','Elementos DIV
 Elementos Div PA
@@ -1218,7 +1229,7 @@ Mapas de bits
 Texto
 Optimización y exportación
 Acerca de la optimización
-Exportación desde Fireworks',200,24,'2014-01-02','2015-02-04',1)
+Exportación desde Fireworks',200,24,'2014-01-02','2015-02-04','Activo')
 
 INSERT INTO dbo.Curso VALUES(15,4,1,4,64,'Adobe Flash CS6 - Animaciones Básicas','Conocimientos básicos de Adobe Flash a nivel de usuario.','Manejo de conceptos para la animación, empleo de herramientas para dibujo, texto y color. Manipulación de las librerías y paneles de efectos. ','Iniciar Flash.
 Área de trabajo.
@@ -1237,7 +1248,7 @@ Introducción a ActionScript
 Acciones básicas: Control de la línea de tiempo
 Acciones a fotogramas
 Acciones a Botones
-Proyectores autoejecutables',200,24,'2015-02-05','2015-03-10',1)
+Proyectores autoejecutables',200,24,'2015-02-05','2015-03-10','Activo')
 
 INSERT INTO dbo.Curso VALUES(15,4,1,4,65,'Adobe Flash CS6 - Animaciones Avanzadas','Se requiere conocimiento de adobe Flash Basico o intermedio.','El participante, al finalizar el módulo, podrá crear activos para las páginas Web y también diseñar páginas estáticas y dinámicas eficientes, atractivas y fáciles de navegar.','Fundamentos de ActionScript 
 Uso de texto estático (Static Text)
@@ -1253,7 +1264,7 @@ Matrices
 Uso de componentes para crear interfaces de usuario (UI)
 Componentes VS tamaño de película
 Uso de los comandos FSCommnad
-Settings de publicación',200,24,'2015-03-11','2015-04-13',1)
+Settings de publicación',200,24,'2015-03-11','2015-04-13','Activo')
 
 
 INSERT INTO dbo.Curso VALUES(16,5,5,13,null,'Linux - Administración','Conocimientos de redes de computadoras 
@@ -1264,7 +1275,7 @@ Aplicaciones
 Instalación del Sistema Operativo
 Networking bajo Linux
 Grupos, usuarios, archivos, propiedades y permisos
-Compartición de Archivos',200,12,'2014-12-06','2014-12-27',1)
+Compartición de Archivos',200,12,'2014-12-06','2014-12-27','Activo')
 
 INSERT INTO dbo.Curso VALUES(16,5,5,13,67,'Linux - Administración de Servicios Intranet','Conocimientos básicos en redes, conectividad y TCP/IP
 Linux – Administracións','Usar el Filtrado de paquetes Por medio de TCP/IP.
@@ -1272,7 +1283,7 @@ Instalar y configurar entornos Microsoft como servidor Proxy y Firewall para un 
 Sendmail
 Apache Web Server
 Dynamic Host Control Protocol (DHCP)
-Squid Proxy Server',200,12,'2015-01-03','2015-01-24',1)
+Squid Proxy Server',200,12,'2015-01-03','2015-01-24','Activo')
 
 INSERT INTO dbo.Curso VALUES(16,5,5,13,68,'Linux - Seguridad en Redes','Conocimientos de redes de computadoras 
 Tener experiencia de trabajo instalando y configurando redes 
@@ -1282,7 +1293,7 @@ Servicio HTTPS
 Servicio SENDMAIL Seguro
 Servicio OpenSSH
 Servicio IPtables
-Servicio VPN',200,12,'2015-01-31','2015-02-21',1)
+Servicio VPN',200,12,'2015-01-31','2015-02-21','Activo')
 
 
 
@@ -1387,13 +1398,7 @@ AS
 		END
 GO
 
-SELECT Nick, dbo.Desencriptar(Contrasena) AS 'Contraseña', C_Alumno 
-FROM Alumno A JOIN Usuario U ON C_Usuario = C_Alumno
-
-
-SELECT Nick, dbo.Desencriptar(Contrasena) AS 'Contraseña', C_Administrador 
-FROM Administrador A JOIN Usuario U ON C_Usuario = C_Administrador
-
+-- CÓDIGO DE PRUEBA
 EXECUTE usp_AlumnoAdministrador 'Pati', 'abcd'			-- ALUMNO
 EXECUTE usp_AlumnoAdministrador 'Carlos33', 'asdf'		-- ADMINISTRADOR
 ------------------------------------------------------------------------------------
@@ -1426,7 +1431,7 @@ EXECUTE usp_AlumnoAdministrador 'Carlos33', 'asdf'		-- ADMINISTRADOR
 	29. La fecha de inicio sea menor que la fecha de fin.
 	20. La fecha de inicio y fecha de fin no sean iguales.
 */
-create PROCEDURE usp_AgregarCurso
+CREATE PROCEDURE usp_AgregarCurso
 @C_Modulo			INT				= NULL,
 @C_Categoria			INT				= NULL,
 @C_Profesor			INT				= NULL,
@@ -1572,7 +1577,7 @@ AS
 	INSERT INTO Curso(C_Modulo, C_Categoria, C_Profesor, C_Horario, C_CursoR, Descripcion,
 									 Requisitos, Objetivo, Temario, Precio, NumeroHoras, FechaInicio, FechaFin, Estado)
 	VALUES(@C_Modulo, @C_Categoria, @C_Profesor, @C_Horario, @C_CursoR, @Descripcion,
-					@Requisitos, @Objetivo, @Temario, @Precio, @NumeroHoras, @FechaInicio, @FechaFin, 1)
+					@Requisitos, @Objetivo, @Temario, @Precio, @NumeroHoras, @FechaInicio, @FechaFin, 'Activo')
 	IF(@@ERROR <> 0)
 		BEGIN
 			PRINT 'Error al agregar curso'
@@ -1657,7 +1662,7 @@ CREATE PROCEDURE usp_ModificarCurso
 @NumeroHoras		INT				= NULL,
 @FechaInicio			DATE					= NULL,
 @FechaFin				DATE					= NULL,
-@Estado					BIT						= NULL
+@Estado					VARCHAR(10)						= NULL
 AS
 	IF(@C_Modulo IS NULL OR LEN(@C_Modulo) = 0)
 		BEGIN
@@ -1825,7 +1830,7 @@ AS
 GO
 
 -- CÓDIGO DE PRUEBA
-EXECUTE usp_ModificarCurso 70,1, 1, 1, 3, 1, 'CursoPrueba', 'Ninguno', 'objetivo', 'Temario', 500, 24, '05/11/2014', '12/12/2014', 1					-- ÉXITO	
+EXECUTE usp_ModificarCurso 70,1, 1, 1, 3, 1, 'CursoPrueba', 'Ninguno', 'objetivo', 'Temario', 500, 24, '05/11/2014', '12/12/2014', 'Activo'					-- ÉXITO	
 EXECUTE usp_ModificarCurso null,1, 1, 1, 3, 1, 'CursoPrueba', 'Ninguno', 'objetivo', 'Temario', 500, 24, '05/11/2014', '12/12/2014', 1					-- Curso NULL
 EXECUTE usp_ModificarCurso ' ',1, 1, 1, 3, 1, 'CursoPrueba', 'Ninguno', 'objetivo', 'Temario', 500, 24, '05/11/2014', '12/12/2014', 1						-- Curso vacío
 EXECUTE usp_ModificarCurso 70,null, 1, 1, 3, 1, 'CursoPrueba', 'Ninguno', 'objetivo', 'Temario', 500, 24, '05/11/2014', '12/12/2014', 1				-- Módulo NULL
@@ -1857,6 +1862,53 @@ EXECUTE usp_ModificarCurso 70, 1, 1, 1, 1, 3, 'CursoPrueba', 'Ninguno', 'objetiv
 EXECUTE usp_ModificarCurso 70, 1, 1, 1, 3, 1, 'CursoPrueba3', 'Ninguno', 'objetivo', 'TemarioPrueba', 200, 12, '12/12/2014', '12/12/2014', 1		-- Fecha de inicio igual a fecha de fin
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
+
+
+
+
+---- STORE PROCEDURE para modificar Curso ----
+/*
+	Sin validaciones:
+	Para usarlo en el GridView
+*/
+CREATE PROCEDURE usp_ModificarCursoGV
+@C_Curso				INT,
+@C_Modulo			INT,
+@C_Categoria			INT,
+@C_Profesor			INT,
+@C_Horario			INT,
+@C_CursoR				INT,
+@Descripcion			VARCHAR(70),
+@Requisitos			VARCHAR(250),
+@Objetivo				VARCHAR(250),
+@Temario				TEXT,
+@Precio					DECIMAL(8,2),
+@NumeroHoras		INT,
+@FechaInicio			DATE,
+@FechaFin				DATE,
+@Estado					VARCHAR(10)
+AS
+--MODIFICAMOS CURSO
+	UPDATE Curso
+	SET	C_Modulo		=	@C_Modulo,
+			C_Categoria	=	@C_Categoria,
+			C_Profesor		=	@C_Categoria,
+			C_Horario		=	@C_Horario,
+			C_CursoR			=	@C_CursoR,
+			Descripcion		=	@Descripcion,
+			Requisitos		=	@Requisitos,
+			Objetivo			=	@Objetivo,
+			Temario			=	@Temario,
+			Precio				=	@Precio,
+			NumeroHoras	=	@NumeroHoras,
+			FechaInicio		=	@FechaInicio,
+			FechaFin			=	@FechaFin,
+			Estado				=	@Estado
+			WHERE C_Curso = @C_Curso
+GO
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+
 
 
 
@@ -1900,7 +1952,9 @@ AS
 		END
 		
 	-- ELIMINAMOS CURSO
-	DELETE FROM Curso WHERE C_Curso = @C_Curso
+	UPDATE Curso
+	SET Estado = 'Inactivo'
+	WHERE C_Curso = @C_Curso
 	
 	RETURN 0
 GO
@@ -2236,7 +2290,7 @@ AS
 		
 		-- INSERTAMOS EN TABLA USUARIO
 		INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-		VALUES(@ApellidoP, @ApellidoM, @Nombre, @Email, @Sexo, @Nick, dbo.Encriptar(@Contrasena1), 1)
+		VALUES(@ApellidoP, @ApellidoM, @Nombre, @Email, @Sexo, @Nick, dbo.Encriptar(@Contrasena1), 'Activo')
 		IF(@@ERROR <> 0)
 			BEGIN
 				PRINT 'Error al insertar usuario'
@@ -2416,7 +2470,7 @@ IF(@Nombre IS NULL OR LEN(@Nombre) = 0)
 		END	
 
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-		VALUES(@ApellidoP, @ApellidoM, @Nombre, @Email, @Sexo, @Nick, dbo.Encriptar(@Contrasena1), 1)
+		VALUES(@ApellidoP, @ApellidoM, @Nombre, @Email, @Sexo, @Nick, dbo.Encriptar(@Contrasena1), 'Activo')
 		IF(@@ERROR <> 0)
 			BEGIN
 				PRINT 'Error al insertar usuario'
@@ -2487,7 +2541,7 @@ SELECT * FROM MatriculaModulo
 ----------------------------------------------------------------
 
 
-create PROCEDURE usp_AgregarAdministrador
+CREATE PROCEDURE usp_AgregarAdministrador
 @Nombre			    VARCHAR(50),
 @ApellidoP			VARCHAR(50),
 @ApellidoM		    VARCHAR(50),
@@ -2573,7 +2627,7 @@ IF(@Nombre IS NULL OR LEN(@Nombre) = 0)
     ----------------------------------------------------
 
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
-	   VALUES    (@ApellidoP, @ApellidoM, @Nombre, @Email, @Sexo, @Nick, dbo.Encriptar(@Contrasena1), 1)
+	   VALUES    (@ApellidoP, @ApellidoM, @Nombre, @Email, @Sexo, @Nick, dbo.Encriptar(@Contrasena1), 'Activo')
 	   
 BEGIN TRANSACTION
 
@@ -2592,17 +2646,17 @@ COMMIT TRANSACTION
 	RETURN 0
 GO 
 
-exec usp_AgregarAdministrador 'Laura','Solano' , 'Diaz', 'F' , '14' , 'laura_19@gmail.com', 'Laura_19', '555' , '555' --EXITO
-exec usp_AgregarAdministrador NULL, 'Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '123' , '123'--Debe ingresar nombre de usuario
-exec usp_AgregarAdministrador 'Claudia', NULL, 'Guzman' , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '123' , '123'--Debe ingresar apellido paterno de usuario
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', NULL , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '1234' , '1234'--Debe ingresar apellido materno de usuario
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , ' ' , 'romi1234@gmail.com', 'Romi789', '1234' , '1234'--Debe ingresar codigo de trabajador
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , NULL , 'Romi789', '1234' , '1234'--Debe ingresar correo de usuario
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , null , '1234' , '1234'--Debe ingresar nick de usuario
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , null , '1234'--Debe ingresar contraseña
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , null --Debe ingresar contraseña de confirmacion
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'laura_19@gmail.com' , 'Romi789' , '1234' , '1234' --El Email ya existe
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Laura_19' , '1234' , '1234' --El Nick ya existe
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '14' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1234' --El codigo de trabajador ya existe
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1235' --Las contrasenas no coinciden
-exec usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1234' --EXITO2
+EXECUTE usp_AgregarAdministrador 'Laura','Solano' , 'Diaz', 'F' , '14' , 'laura_19@gmail.com', 'Laura_19', '555' , '555' --EXITO
+EXECUTE usp_AgregarAdministrador NULL, 'Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '123' , '123'--Debe ingresar nombre de usuario
+EXECUTE usp_AgregarAdministrador 'Claudia', NULL, 'Guzman' , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '123' , '123'--Debe ingresar apellido paterno de usuario
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', NULL , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '1234' , '1234'--Debe ingresar apellido materno de usuario
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , ' ' , 'romi1234@gmail.com', 'Romi789', '1234' , '1234'--Debe ingresar codigo de trabajador
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , NULL , 'Romi789', '1234' , '1234'--Debe ingresar correo de usuario
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , null , '1234' , '1234'--Debe ingresar nick de usuario
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , null , '1234'--Debe ingresar contraseña
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , null --Debe ingresar contraseña de confirmacion
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'laura_19@gmail.com' , 'Romi789' , '1234' , '1234' --El Email ya existe
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Laura_19' , '1234' , '1234' --El Nick ya existe
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '14' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1234' --El codigo de trabajador ya existe
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1235' --Las contrasenas no coinciden
+EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1234' --EXITO2
