@@ -113,7 +113,8 @@ namespace AcademyCourses.Vista
 
                 if (retorno > 0)
                 {
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje1", "alertaRegistroCurso();", true);
+                    //ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje1", "alertaRegistroCurso();", true);
+                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje1", "Alert.render('Registrado en curso satisfactoriamente.')", true);
 
                 }
 
@@ -132,7 +133,8 @@ namespace AcademyCourses.Vista
 
                 if (retorno > 0)
                 {
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje2", "alertaRegistroModulo();", true);
+                    //ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje2", "alertaRegistroModulo();", true);
+                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje2", "Alert.render('Registrado en modulo satisfactoriamente.')", true);
 
                 }
 

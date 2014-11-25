@@ -41,7 +41,8 @@ namespace AcademyCourses.Vista
             if (retorno > 0)
             {
 
-                ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "alertaRegistroAdmin();", true);
+                //ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "alertaRegistroAdmin();", true);
+                ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje1", "Alert.render('Administrador registrado correctamente.')", true);
                 //Server.Transfer("Index Administrador.aspx");
 
             }
