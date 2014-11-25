@@ -30,11 +30,11 @@ namespace AcademyCourses.Vista
                     int rpta = LoginDAO.AlumnoAdministrador(objUsuario);
                     if (rpta == 1)
                     {
-                        Server.Transfer("indexalumno.aspx");
+                        Server.Transfer("indexAlumno.aspx");
                     }
                     else
                     {
-                        Server.Transfer("Index Administrador.aspx");
+                        Server.Transfer("IndexAdministrador.aspx");
                     }
                     break;
 
@@ -138,6 +138,11 @@ namespace AcademyCourses.Vista
 
 
             }
+        }
+
+        protected void TextBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

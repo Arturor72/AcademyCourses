@@ -68,7 +68,7 @@
 								<img class="nav-user-photo" src="../App_Themes/Tema/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Bienvenido</small>
-									Jason
+									Pati
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -154,7 +154,14 @@
 								<ul class="submenu">
 									<li>
 										<a href="">
-											<i class="icon-leaf"></i>
+											<i class="icon-pencil"></i>
+											Excel
+										</a>
+									</li>
+                                    
+                                    <li>
+										<a href="">
+											<i class="icon-pencil"></i>
 											Java
 										</a>
 									</li>
@@ -182,6 +189,13 @@
 												</a>
 											</li>
 										</ul>
+									</li>
+
+                                    <li>
+										<a href="">
+											<i class="icon-pencil"></i>
+											Modelamiento 
+										</a>
 									</li>
 								</ul>
 							</li>
@@ -242,6 +256,71 @@
 					<div class="row-fluid">
 						<div class="span12">
 							<!--INICIO HOJA-->
+
+                    <div class="row-fluid">
+                            <div class="span8">
+									<h3 class="header smaller lighter green">Tu progreso:</h3>
+
+									<div class="row-fluid">
+										<div class="span12">
+                                            <h4>Microsoft Excel básico</h4>
+											<div class="progress progress-yellow progress-striped active" data-percent="60%" >
+												<div class="bar" style="width: 60%"></div>
+											</div>
+
+                                            <h4>Java Fundamentos</h4>
+											<div class="progress progress-success progress-striped" data-percent="25%">
+												<div class="bar" style="width: 25%;"></div>
+											</div>
+
+                                            <h4>Android intermedio</h4>
+											<div class="progress progress-purple progress-striped" data-percent="65%">
+												<div class="bar" style="width: 65%"></div>
+											</div>
+
+                                            <h4>Modelamiento de datos</h4>
+											<div class="progress progress-pink progress-striped" data-percent="40%">
+												<div class="bar" style="width: 40%"></div>
+											</div>
+
+										</div><!--/span-->
+
+										
+									</div><!--/row-fluid-->
+								</div><!--/span-->
+
+
+
+
+
+                            <div class="span4">
+									<div class="widget-box">
+										<div class="widget-header">
+											<h4 class="smaller">
+												Promociones
+												
+											</h4>
+										</div>
+
+										<div class="widget-body">
+											<div class="widget-main" style="text-align:justify">
+												<p class="muted" style="font-size:medium" >
+													Solo hasta el 30 de noviembre, aprovecha el 15% de descuento en todos nuestros cursos! Para más información ingresa
+													<a title="Para más información ingresa" data-rel="tooltip" href="#">aqui.</a>
+													
+												</p>
+
+												
+											</div>
+										</div>
+									</div>
+								</div><!--/span-->
+
+
+
+                </div>
+
+
 
 
 

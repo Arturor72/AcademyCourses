@@ -68,7 +68,7 @@
 								<img class="nav-user-photo" src="../App_Themes/Tema/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Bienvenido</small>
-									Jason
+									Pati
 								</span>
 
 								<i class="icon-caret-down"></i>

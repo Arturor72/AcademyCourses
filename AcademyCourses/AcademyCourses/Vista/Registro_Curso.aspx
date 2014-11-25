@@ -72,7 +72,7 @@
 								<img class="nav-user-photo" src="../App_Themes/Tema/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Bienvenido</small>
-									Jason
+									Fer
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -128,14 +128,6 @@
 				<!--/.LISTA DE MENU-->				
 				<ul class="nav nav-list">
 					
-					<!--/.INICIO-->	
-					<li>
-						<a href="indexalumno.html">
-							<i class="icon-home home-icon"></i>
-							<span class="menu-text"> Inicio </span>
-						</a>
-					</li>
-					<!--/.FIN INICIO-->	
 
 					<!--/.CURSOS-->	
 					<li>
@@ -148,7 +140,7 @@
 
 						<ul class="submenu">
 							    <li>
-								    <a href="#">
+								    <a href="IndexAdministrador.aspx">
 									    <i class="icon-double-angle-right"></i>
 									    Listar  
 								    </a>

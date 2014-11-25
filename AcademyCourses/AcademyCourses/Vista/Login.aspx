@@ -140,7 +140,7 @@
 
 														<label>
 															<span class="block input-icon input-icon-right">
-                                                                <asp:TextBox ID="TextBox5" class="span12" placeholder="Apellido paterrno" runat="server"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBox5" class="span12" placeholder="Apellido paterrno" runat="server" OnTextChanged="TextBox5_TextChanged"></asp:TextBox>
 															</span>
 														</label>
 
