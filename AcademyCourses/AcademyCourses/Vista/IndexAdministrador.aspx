@@ -229,45 +229,21 @@
                                      <asp:GridView ID="gvCursos" PageSize="5" class="table-striped table-bordered table-hover" Width="1000px" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="C_Curso" DataSourceID="SqlDataSource1" >
                                          <Columns>
                                              <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                             <asp:BoundField DataField="C_Curso" HeaderText="Codigo" InsertVisible="False" ReadOnly="True" SortExpression="C_Curso" ItemStyle-HorizontalAlign="Center">
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="C_Modulo" HeaderText="Modulo" SortExpression="C_Modulo" ItemStyle-HorizontalAlign="Center" >
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="C_Categoria" HeaderText="Categoria" SortExpression="C_Categoria" ItemStyle-HorizontalAlign="Center" >
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="C_Profesor" HeaderText="Profesor" SortExpression="C_Profesor" ItemStyle-HorizontalAlign="Center">
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="C_Horario" HeaderText="Horario" SortExpression="C_Horario" ItemStyle-HorizontalAlign="Center">
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="C_CursoR" HeaderText="Curso Requisito" SortExpression="C_CursoR" ItemStyle-HorizontalAlign="Center">
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
+                                             <asp:BoundField DataField="C_Curso" HeaderText="Codigo" InsertVisible="False" ReadOnly="True" SortExpression="C_Curso" ItemStyle-HorizontalAlign="Center"></asp:BoundField>
+                                             <asp:BoundField DataField="C_Modulo" HeaderText="Modulo" SortExpression="C_Modulo" ItemStyle-HorizontalAlign="Center" ></asp:BoundField>
+                                             <asp:BoundField DataField="C_Categoria" HeaderText="Categoria" SortExpression="C_Categoria" ItemStyle-HorizontalAlign="Center" ></asp:BoundField>
+                                             <asp:BoundField DataField="C_Profesor" HeaderText="Profesor" SortExpression="C_Profesor" ItemStyle-HorizontalAlign="Center"></asp:BoundField>
+                                             <asp:BoundField DataField="C_Horario" HeaderText="Horario" SortExpression="C_Horario" ItemStyle-HorizontalAlign="Center"></asp:BoundField>
+                                             <asp:BoundField DataField="C_CursoR" HeaderText="Curso Requisito" SortExpression="C_CursoR" ItemStyle-HorizontalAlign="Center"></asp:BoundField>
                                              <asp:BoundField DataField="Descripcion" HeaderText="Nombre" SortExpression="Descripcion" />
                                              <asp:BoundField DataField="Requisitos" HeaderText="Requisitos" SortExpression="Requisitos" />
                                              <asp:BoundField DataField="Objetivo" HeaderText="Objetivo" SortExpression="Objetivo" />
-                                             <asp:BoundField DataField="Temario" HeaderText="Temario" SortExpression="Temario" ItemStyle-Width="500px" ItemStyle-HorizontalAlign="Justify" >
-<ItemStyle HorizontalAlign="Justify" Width="500px"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" ItemStyle-HorizontalAlign="Center" >
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="NumeroHoras" HeaderText="Numero de Horas" SortExpression="NumeroHoras" ItemStyle-HorizontalAlign="Center" >
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="FechaInicio" HeaderText="Fecha de Inicio" SortExpression="FechaInicio" ItemStyle-HorizontalAlign="Center" DataFormatString="{0:d}">
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="FechaFin" HeaderText="Fecha de Fin" SortExpression="FechaFin" ItemStyle-HorizontalAlign="Center" DataFormatString="{0:d}">
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
-                                             <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" ItemStyle-HorizontalAlign="Center" >
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                             </asp:BoundField>
+                                             <asp:BoundField DataField="Temario" HeaderText="Temario" SortExpression="Temario" ItemStyle-Width="500px" ItemStyle-HorizontalAlign="Justify" ></asp:BoundField>
+                                             <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" ItemStyle-HorizontalAlign="Center" ></asp:BoundField>
+                                             <asp:BoundField DataField="NumeroHoras" HeaderText="Numero de Horas" SortExpression="NumeroHoras" ItemStyle-HorizontalAlign="Center" ></asp:BoundField>
+                                             <asp:BoundField DataField="FechaInicio" HeaderText="Fecha de Inicio" SortExpression="FechaInicio" ItemStyle-HorizontalAlign="Center" DataFormatString="{0:d}"></asp:BoundField>
+                                             <asp:BoundField DataField="FechaFin" HeaderText="Fecha de Fin" SortExpression="FechaFin" ItemStyle-HorizontalAlign="Center" DataFormatString="{0:d}"></asp:BoundField>
+                                             <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" ItemStyle-HorizontalAlign="Center" ></asp:BoundField>
                                          </Columns>
                                      </asp:GridView>
                                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString3 %>" DeleteCommand="usp_EliminarCursoGV" DeleteCommandType="StoredProcedure" SelectCommand="usp_ListarCurso" SelectCommandType="StoredProcedure" UpdateCommand="usp_ModificarCursoGV" UpdateCommandType="StoredProcedure">

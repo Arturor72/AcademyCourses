@@ -12,8 +12,11 @@ namespace AcademyCourses
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //gvCursos.Columns[10].ItemStyle.Width = 100;
-            //gvCursos.Columns[10].ItemStyle.Wrap = false;
+        }
+
+        protected void gvCursos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            
         }
     }
 }
