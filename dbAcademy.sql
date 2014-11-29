@@ -341,9 +341,9 @@ INSERT INTO dbo.Categoria(Descripcion)VALUES('Hardware y Redes')
 
 -- MÓDULO
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(1,1400,'Especialista en ofimática','Activo')
+VALUES(1,1400,'Ofimática','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(1,2400,'Técnico en Computación','Activo')
+VALUES(1,2400,'Computación','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
 VALUES(1,800,'Especialista Excel Empresarial ','Activo')
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
