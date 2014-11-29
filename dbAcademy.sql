@@ -560,7 +560,7 @@ Detección de stock mínimo
 Consolidación de existencias en almacenes múltiples
 ',200,24,'2015-01-27','2015-02-19','Activo')
 
-INSERT INTO dbo.Curso VALUES(3,1,5,4,11,' Microsoft Excel Financiero','Conocimiento intermedio del Excel.','La determinación de intereses simples y compuestos. 
+INSERT INTO dbo.Curso VALUES(3,1,5,4,11,'Microsoft Excel Financiero','Conocimiento intermedio del Excel.','La determinación de intereses simples y compuestos. 
 El calculo de tasas efectivas asi como conversiones entre las mismas. 
 El calculo del descuento bancario compuesto y determinación del costo efectivo del crédito.','Interés simple
 Interés compuesto
