@@ -75,12 +75,6 @@
 							</a>
 
 							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
-								<li>
-									<a href="#">
-										<i class="icon-cog"></i>
-										Configuraciones
-									</a>
-								</li>
 
 								<li>
 									<a href="#">
@@ -144,64 +138,18 @@
 
 						<ul class="submenu">
 							<li>
-								<a href="" class="dropdown-toggle">
+								<a href="CursosInscritos.aspx" >
 									<i class="icon-double-angle-right"></i>
 
 									Inscritos 
-									<b class="arrow icon-angle-down"></b>
+									
 								</a>
 
-								<ul class="submenu">
-									<li>
-										<a href="">
-											<i class="icon-pencil"></i>
-											Excel
-										</a>
-									</li>
-                                    
-                                    <li>
-										<a href="">
-											<i class="icon-pencil"></i>
-											Java
-										</a>
-									</li>
-
-									<li>
-										<a href="" class="dropdown-toggle">
-											<i class="icon-pencil"></i>
-
-											Android
-											<b class="arrow icon-angle-down"></b>
-										</a>
-
-										<ul class="submenu">
-											<li>
-												<a href="">
-													<i class="icon-plus"></i>
-													Tareas
-												</a>
-											</li>
-
-											<li>
-												<a href="">
-													<i class="icon-eye-open"></i>
-													Sillabus
-												</a>
-											</li>
-										</ul>
-									</li>
-
-                                    <li>
-										<a href="">
-											<i class="icon-pencil"></i>
-											Modelamiento 
-										</a>
-									</li>
-								</ul>
+						
 							</li>
 
 							<li>
-								<a href="">
+								<a href="MasCursos.aspx">
 									<i class="icon-double-angle-right"></i>
 									Más cursos
 								</a>
@@ -217,20 +165,8 @@
 							
 						</ul>
 					</li>					<!--/.FIN CURSOS-->	
+	
 
-					<!--/. -->	
-					<li>
-						<a href="#">
-							<i class="icon-text-width"></i>
-							<span class="menu-text"> Cursos </span>
-						</a>
-					</li>
-					<!--/.FIN-->	
-					
-
-
-							
-					
 				</ul><!--/.nav-list-->
 				<!--/.FIN LISTA DE MENU-->
 
@@ -245,7 +181,7 @@
 					<ul class="breadcrumb">
 						<li>
 							
-							<h2 >Inicio</h2>
+							<h2 >Matricula</h2>
 						</li>
 					</ul>
 	
