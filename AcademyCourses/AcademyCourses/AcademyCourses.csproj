@@ -324,11 +324,13 @@
     <Content Include="App_Themes\Tema\js\bootstrap.js" />
     <Content Include="App_Themes\Tema\js\bootstrap.min.js" />
     <Content Include="App_Themes\Tema\js\jquery.js" />
+    <Content Include="Vista\CursosInscritos.aspx" />
     <Content Include="Vista\IndexAdministrador.aspx" />
     <Content Include="Vista\Android.aspx" />
     <Content Include="Vista\Index.aspx" />
     <Content Include="Vista\IndexAlumno.aspx" />
     <Content Include="Vista\Login.aspx" />
+    <Content Include="Vista\MasCursos.aspx" />
     <Content Include="Vista\Registro Administrador.aspx" />
     <Content Include="Vista\Registro Curso2.aspx" />
     <Content Include="Vista\Registro_Curso.aspx" />
@@ -340,6 +342,13 @@
     <Compile Include="CategoriaBE.cs" />
     <Compile Include="CursoBE.cs" />
     <Compile Include="CursoDAO.cs" />
+    <Compile Include="Vista\CursosInscritos.aspx.cs">
+      <DependentUpon>CursosInscritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\CursosInscritos.aspx.designer.cs">
+      <DependentUpon>CursosInscritos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\IndexAdministrador.aspx.cs">
       <DependentUpon>IndexAdministrador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -383,6 +392,13 @@
     </Compile>
     <Compile Include="Vista\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\MasCursos.aspx.cs">
+      <DependentUpon>MasCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\MasCursos.aspx.designer.cs">
+      <DependentUpon>MasCursos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Registro Administrador.aspx.cs">
       <DependentUpon>Registro Administrador.aspx</DependentUpon>

@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IndexAlumno.aspx.cs" Inherits="AcademyCourses.Vista.IndexAlumno" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CursosInscritos.aspx.cs" Inherits="AcademyCourses.Vista.CursosInscritos" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-		<meta charset="utf-8" />
+
 		<title>Academy Courses</title>
 
 		<meta name="description" content="" />
@@ -75,7 +76,7 @@
 							</a>
 
 							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
-
+								
 								<li>
 									<a href="#">
 										<i class="icon-user"></i>
@@ -129,7 +130,7 @@
 
 					<!--/.CURSOS-->	
 					<li>
-						<a href="#" class="dropdown-toggle">
+						<a href="" class="dropdown-toggle">
 							<i class="icon-desktop"></i>
 							<span class="menu-text"> Cursos </span>
 
@@ -167,7 +168,7 @@
 					</li>
 					<!--/.FIN CURSOS-->	
 
-					
+		
 				</ul><!--/.nav-list-->
 				<!--/.FIN LISTA DE MENU-->
 
@@ -182,7 +183,7 @@
 					<ul class="breadcrumb">
 						<li>
 							
-							<h2 >Inicio</h2>
+							<h2 >Cursos-Inscritos</h2>
 						</li>
 					</ul>
 	
@@ -193,72 +194,18 @@
 						<div class="span12">
 							<!--INICIO HOJA-->
 
-                    <div class="row-fluid">
-                            <div class="span8">
-									<h3 class="header smaller lighter green">Tu progreso:</h3>
+                            <div style="overflow:scroll">
+                              <form id="form1" runat="server">
+                                  
 
-									<div class="row-fluid">
-										<div class="span12">
-                                            <h4>Microsoft Excel básico</h4>
-											<div class="progress progress-yellow progress-striped active" data-percent="60%" >
-												<div class="bar" style="width: 60%"></div>
-											</div>
+                                  <asp:GridView ID="GridView1" PageSize="5" class="table-striped table-bordered table-hover " AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" runat="server">
 
-                                            <h4>Java Fundamentos</h4>
-											<div class="progress progress-success progress-striped" data-percent="25%">
-												<div class="bar" style="width: 25%;"></div>
-											</div>
-
-                                            <h4>Android intermedio</h4>
-											<div class="progress progress-purple progress-striped" data-percent="65%">
-												<div class="bar" style="width: 65%"></div>
-											</div>
-
-                                            <h4>Modelamiento de datos</h4>
-											<div class="progress progress-pink progress-striped" data-percent="40%">
-												<div class="bar" style="width: 40%"></div>
-											</div>
-
-										</div><!--/span-->
-
-										
-									</div><!--/row-fluid-->
-								</div><!--/span-->
+                                  </asp:GridView>
 
 
-
-
-
-                            <div class="span4">
-									<div class="widget-box">
-										<div class="widget-header">
-											<h4 class="smaller">
-												Promociones
-												
-											</h4>
-										</div>
-
-										<div class="widget-body">
-											<div class="widget-main" style="text-align:justify">
-												<p class="muted" style="font-size:medium" >
-													Solo hasta el 30 de noviembre, aprovecha el 15% de descuento en todos nuestros cursos! Para más información ingresa
-													<a title="Para más información ingresa" data-rel="tooltip" href="#">aqui.</a>
-													
-												</p>
-
-												
-											</div>
-										</div>
-									</div>
-								</div><!--/span-->
-
-
-
-                </div>
-
-
-
-
+                              </form>
+                            </div>
+                              
 
 							<!--FIN HOJA-->
 						</div><!--/.span-->

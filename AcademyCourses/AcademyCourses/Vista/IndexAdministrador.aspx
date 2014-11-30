@@ -246,7 +246,7 @@
                                              <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" ItemStyle-HorizontalAlign="Center" ></asp:BoundField>
                                          </Columns>
                                      </asp:GridView>
-                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString3 %>" DeleteCommand="usp_EliminarCursoGV" DeleteCommandType="StoredProcedure" SelectCommand="usp_ListarCurso" SelectCommandType="StoredProcedure" UpdateCommand="usp_ModificarCursoGV" UpdateCommandType="StoredProcedure">
+                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString5 %>" DeleteCommand="usp_EliminarCursoGV" DeleteCommandType="StoredProcedure" SelectCommand="usp_ListarCurso" SelectCommandType="StoredProcedure" UpdateCommand="usp_ModificarCursoGV" UpdateCommandType="StoredProcedure">
                                          <DeleteParameters>
                                              <asp:Parameter Name="C_Curso" Type="Int32" />
                                          </DeleteParameters>
