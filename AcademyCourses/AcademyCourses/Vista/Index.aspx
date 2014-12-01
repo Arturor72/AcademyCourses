@@ -231,11 +231,11 @@
 
             <!--IMAGEN 6-->
             <div class="col-lg-4 col-sm-6 text-center post-body">
-                <img class="img-circle img-responsive img-center" src="../App_Themes/Tema/pag_principal/images/excel2.png" alt="">
-                <h3>Especialista Excel Empresarial 
+                <img class="img-circle img-responsive img-center" src="../App_Themes/Tema/pag_principal/images/office.png" alt="">
+                <h3>Computación
                    
                 </h3>
-                <p>Realizará aplicaciones a casos específicos de la gestión empresarial, con uso de fórmulas, gráficos tablas, informes, análisis de datos, búsquedas y mucho más.</p>
+                <p>Este programa le permitirá elaborar, utilizar, administrar y dar soporte técnico a sistemas informáticos para empresas. Comprende Word 2013, PowerPoint 2013, Excel.</p>
             </div>
 
 
@@ -261,11 +261,11 @@
 
             <!--IMAGEN 9-->
             <div class="col-lg-4 col-sm-6 text-center post-body">
-                <img class="img-circle img-responsive img-center" src="../App_Themes/Tema/pag_principal/images/office.png" alt="">
-                <h3>Especialista en ofimática
+                <img class="img-circle img-responsive img-center" src="../App_Themes/Tema/pag_principal/images/java.jpg" alt="">
+                <h3>Java Developer
                     
                 </h3>
-                <p>El objetivo principal es el poder ingresar y manejar el ambiente de Windows y las aplicaciones más utilizadas en una oficina, o en el hogar.</p>
+                <p>Proporciona y facilita los conocimientos que Ud. necesita, para desplegar aplicaciones y manejar los servicios orientadas a aplicaciones cliente/servidor o Web. </p>
             </div>
         </div>
 
