@@ -2434,12 +2434,15 @@ EXECUTE usp_AgregarAlumnoModulo 'Diego',  'Zavaleta' , 'Fernandez' ,  'M' ,  'Es
 SELECT * FROM Usuario
 SELECT * FROM alumno
 SELECT * FROM MatriculaModulo
-
-
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 
 
+
+
+
+
+-- STORE PROCEDURE para agregar un administrador --
 CREATE PROCEDURE usp_AgregarAdministrador
 @Nombre			    VARCHAR(50),
 @ApellidoP			VARCHAR(50),
@@ -2545,6 +2548,7 @@ COMMIT TRANSACTION
 	RETURN 0
 GO 
 
+-- CÓDIGO DE PRUEBA
 EXECUTE usp_AgregarAdministrador 'Laura','Solano' , 'Diaz', 'F' , '14' , 'laura_19@gmail.com', 'Laura_19', '555' , '555' --EXITO
 EXECUTE usp_AgregarAdministrador NULL, 'Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '123' , '123'--Debe ingresar nombre de usuario
 EXECUTE usp_AgregarAdministrador 'Claudia', NULL, 'Guzman' , 'F' , '15' , 'romi1234@gmail.com', 'Romi789', '123' , '123'--Debe ingresar apellido paterno de usuario
@@ -2559,3 +2563,205 @@ EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' ,
 EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '14' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1234' --El codigo de trabajador ya existe
 EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1235' --Las contrasenas no coinciden
 EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' , 'romi1234@gmail.com' , 'Romi789' , '1234' , '1234' --EXITO2
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+
+
+
+
+
+-- STORE PROCEDURE para matricular a un Curso--
+/*
+	Validar:
+	01. El código de alumno no sea NULL ni vacío.
+	02. El código de curso no sea NULL ni vacío.
+	03. El código de alumno exista.
+	04. El código de curso exista.
+*/
+CREATE PROCEDURE usp_MatricularCurso
+@C_Alumno	INT,
+@C_Curso		INT
+AS
+	IF(@C_Alumno IS NULL OR LEN(@C_Alumno)=0)
+		BEGIN
+			PRINT 'Debe ingresar codigo de alumno'
+			RETURN 1
+		END
+	IF(@C_Curso IS NULL OR LEN(@C_Curso)=0)
+		BEGIN
+			PRINT 'Debe ingresar codigo de curso'
+			RETURN 2
+		END
+	IF NOT EXISTS(SELECT 1 FROM Alumno WHERE C_Alumno = @C_Alumno)
+		BEGIN
+			PRINT 'El codigo de alumno no existe'
+			RETURN 3
+		END
+	IF NOT EXISTS(SELECT 1 FROM Curso WHERE C_Curso = @C_Curso)
+		BEGIN
+			PRINT 'El codigo de curso no existe'
+			RETURN 4
+		END
+	-----------------------------------------------------------------------------------
+	
+	-- Obtenemos el valor del último código de recibo
+	DECLARE @C_Recibo INT
+	SELECT @C_Recibo = (MAX(C_Recibo)+1) FROM MatriculaCurso
+	
+	-- Matriculamos al curso
+	INSERT INTO MatriculaCurso(C_Alumno, C_Curso, C_Recibo, FechaMatricula)
+	VALUES (@C_Alumno, @C_Curso, @C_Recibo, GETDATE())
+	IF(@@ERROR <> 0)
+		BEGIN
+			PRINT 'Error al insertar'
+			RETURN 5
+		END
+	
+	PRINT 'Se matriculo al curso'
+	RETURN 0
+GO
+
+-- CÓDIGO DE PRUEBA
+EXECUTE usp_MatricularCurso 14, 1			-- ÉXITO!
+EXECUTE usp_MatricularCurso NULL, 1		-- Alumno NULL
+EXECUTE usp_MatricularCurso ' ', 1			-- Alumno vacío	
+EXECUTE usp_MatricularCurso 14, NULL	-- Curso NULL
+EXECUTE usp_MatricularCurso 14, ' '			-- Curso vacío
+EXECUTE usp_MatricularCurso 144, 1		-- Alumno no existe
+EXECUTE usp_MatricularCurso 14, 1000	-- Curso no existe	
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+
+
+
+-- STORE PROCEDURE para validar el curso prerequisito --
+CREATE PROCEDURE usp_ValidarCursoRequisito
+@C_Alumno	INT,
+@C_Curso		INT
+AS
+	-- Validamos que el alumno esté matriculado por módulo
+	IF EXISTS (SELECT 1 FROM MatriculaModulo 
+					 WHERE C_Alumno = @C_Alumno)
+		BEGIN
+			DECLARE @C_Modulo	INT
+			-- Obtenemos el código del módulo matriculado
+			SELECT @C_Modulo = C_Modulo FROM MatriculaModulo
+												  WHERE C_Alumno = @C_Alumno
+			-- Validamos que el curso pertenezca al módulo matriculado
+			IF EXISTS (SELECT 1 FROM Curso 
+							 WHERE C_Curso = @C_Curso
+							 AND C_Modulo = @C_Modulo)
+				BEGIN
+					DECLARE @C_CursoR INT
+					-- Obtenemos el código del curso prerequisito
+					SELECT @C_CursoR = C_CursoR FROM Curso 
+					WHERE C_Curso = @C_Curso
+					IF(@C_CursoR IS NULL)
+						BEGIN
+							PRINT 'No hay ningun requisito'
+							RETURN 1
+						END
+					IF EXISTS (SELECT 1 FROM MatriculaCurso
+									 WHERE C_Alumno = @C_Alumno
+									 AND C_Curso = @C_CursoR)
+						BEGIN
+							PRINT 'Si puede matricularse, porque ya llevo el curso prerequisito'
+							RETURN 2
+							END  
+					ELSE
+						BEGIN
+							PRINT 'No puede matricularse. Debe llevar el curso prerequisito'
+							RETURN 3
+						END
+				END
+				ELSE
+					BEGIN
+						PRINT 'El curso no pertenece al modulo'
+						RETURN 4
+					END
+		END
+	ELSE
+		BEGIN
+			PRINT 'El alumno no esta matriculado por modulo'
+			RETURN 5
+		END
+GO
+
+
+-- ¿Qué alumnos están matriculados por módulo?
+SELECT C_Alumno, C_Modulo
+FROM MatriculaModulo
+
+-- Probamos
+EXECUTE usp_ValidarCursoRequisito 14, 1	-- Sí está matriculado
+EXECUTE usp_ValidarCursoRequisito 1, 1		-- No está matriculado
+
+
+
+-- Después de validar que el alumno está matriculado, vemos qué cursos pertenecen al módulo
+SELECT C_Curso, M.C_Modulo
+FROM Curso C JOIN Modulo M
+ON C.C_Modulo = M.C_Modulo
+JOIN MatriculaModulo MM
+ON M.C_Modulo = MM.C_Modulo
+JOIN Alumno A
+ON MM.C_Alumno = A.C_Alumno
+WHERE A.C_Alumno = 14
+
+-- Probamos
+EXECUTE usp_ValidarCursoRequisito 14, 50		-- Sí pertenece al módulo
+EXECUTE usp_ValidarCursoRequisito 14, 1		-- No pertenece al módulo
+
+
+
+-- Después de validar que el curso pertenece al módulo, vemos que cursos ha llevado ese alumno
+SELECT C.C_Curso, C.Descripcion
+FROM Curso C JOIN MatriculaCurso MC
+ON C.C_Curso = MC.C_Curso
+JOIN Alumno A
+ON MC.C_Alumno = A.C_Alumno
+WHERE A.C_Alumno = 14
+
+
+
+-- No está matriculado en ningún curso, entonces lo matriculamos
+INSERT INTO MatriculaCurso(C_Alumno, C_Curso, C_Recibo, FechaMatricula)
+VALUES (14, 50, 250, GETDATE())
+INSERT INTO MatriculaCurso(C_Alumno, C_Curso, C_Recibo, FechaMatricula)
+VALUES (14, 51, 251, GETDATE())
+INSERT INTO MatriculaCurso(C_Alumno, C_Curso, C_Recibo, FechaMatricula)
+VALUES (14, 53, 252, GETDATE())
+
+
+
+-- Volvemos a comprobar qué cursos ha llevado ese alumno
+SELECT C.C_Curso, C.Descripcion
+FROM Curso C JOIN MatriculaCurso MC
+ON C.C_Curso = MC.C_Curso
+JOIN Alumno A
+ON MC.C_Alumno = A.C_Alumno
+WHERE A.C_Alumno = 14
+
+
+
+
+/* Ahora, hay tres posibilidades
+	1. Que ese curso no tenga curso prerequisito
+	2. Que el curso si tenga curso prerequisito y el alumno lo haya llevado
+	3. Que el curso si tenga curso prerequisito y el alumno no lo haya llevado
+*/
+SELECT C.C_Curso, C.C_CursoR, M.C_Modulo
+FROM Curso C JOIN Modulo M
+ON C.C_Modulo = M.C_Modulo
+JOIN MatriculaModulo MM
+ON M.C_Modulo = MM.C_Modulo
+JOIN Alumno A
+ON MM.C_Alumno = A.C_Alumno
+WHERE A.C_Alumno = 14
+
+-- Probamos
+EXECUTE usp_ValidarCursoRequisito 14, 50		-- No hay curso prerequisito
+EXECUTE usp_ValidarCursoRequisito 14, 53		-- Si hay curso prerequisito. El alumno no lo llevó
+EXECUTE usp_ValidarCursoRequisito 14, 51		-- ÉXITO! Si hay curso prerequisito. El alumno sí lo llevó
