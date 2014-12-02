@@ -2679,3 +2679,59 @@ AS
 GO
 
 EXECUTE usp_ObtenerCodigoAlumno 'Pati'
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+
+
+
+-- STORE PROCEDURE para mostrar cursos inscritos por alumno --
+CREATE PROCEDURE usp_MostrarCursosInscritos
+@C_Alumno	INT
+AS
+	SELECT C.C_Curso AS 'Codigo',
+				 Descripcion AS 'Nombre',
+				 FechaInicio AS 'Fecha de Inicio',
+				 FechaFin AS 'Fecha de Fin'  
+	FROM Alumno A JOIN MatriculaCurso MC 
+	ON A.C_Alumno = MC.C_Alumno
+	JOIN Curso C
+	ON MC.C_Curso = C.C_Curso
+	WHERE MC.C_Alumno = @C_Alumno 
+GO
+
+EXECUTE usp_MostrarCursosInscritos 3
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+
+
+
+-- STORE PROCEDURE para mostrar cursos NO inscritos por alumno --
+CREATE PROCEDURE usp_MostrarCursosNoInscritos
+@C_Alumno	INT
+AS
+	SELECT C_Curso AS 'Codigo',
+				 Descripcion AS 'Nombre',
+				 FechaInicio AS 'Fecha de Inicio',
+				 FechaFin AS 'Fecha de Fin'  
+	FROM Curso 
+	WHERE C_Curso NOT IN(	SELECT C.C_Curso
+												FROM Alumno A JOIN MatriculaCurso MC 
+												ON A.C_Alumno = MC.C_Alumno
+												JOIN Curso C
+												ON MC.C_Curso = C.C_Curso
+												WHERE MC.C_Alumno = @C_Alumno )
+GO
+
+EXECUTE usp_MostrarCursosNoInscritos 3
+
+
+
+
+	
+	
+	
+	
+
+	
