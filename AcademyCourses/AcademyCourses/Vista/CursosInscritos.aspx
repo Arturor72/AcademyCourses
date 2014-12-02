@@ -201,10 +201,10 @@
 
                                   <asp:GridView ID="GridView1" PageSize="5" class="table-striped table-bordered table-hover " AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" runat="server" DataKeyNames="Codigo" DataSourceID="SqlDataSource1">
                                       <Columns>
-                                          <asp:BoundField DataField="Codigo" HeaderText="Codigo" InsertVisible="False" ReadOnly="True" SortExpression="Codigo" />
-                                          <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                                          <asp:BoundField DataField="Fecha de Inicio" HeaderText="Fecha de Inicio" SortExpression="Fecha de Inicio" DataFormatString="{0:d}"/>
-                                          <asp:BoundField DataField="Fecha de Fin" HeaderText="Fecha de Fin" SortExpression="Fecha de Fin" DataFormatString="{0:d}"/>
+                                          <asp:BoundField DataField="Codigo" HeaderText="Codigo" InsertVisible="False" ReadOnly="True" SortExpression="Codigo" ItemStyle-HorizontalAlign="Center" />
+                                          <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre"  />
+                                          <asp:BoundField DataField="Fecha de Inicio" HeaderText="Fecha de Inicio" SortExpression="Fecha de Inicio" DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center"/>
+                                          <asp:BoundField DataField="Fecha de Fin" HeaderText="Fecha de Fin" SortExpression="Fecha de Fin" DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center"/>
                                       </Columns>
 
                                   </asp:GridView>
