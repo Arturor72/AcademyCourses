@@ -276,8 +276,6 @@ GO
 -----------------------------------------------------------------------------------------
 
 
-
-
 -- INSERTAMOS DATOS INICIALES
 -- USUARIO
 INSERT INTO Usuario(ApellidoP, ApellidoM, Nombre, Email, Sexo, Nick, Contrasena, Estado)
@@ -338,40 +336,35 @@ INSERT INTO dbo.Categoria(Descripcion)VALUES('Diseño')
 INSERT INTO dbo.Categoria(Descripcion)VALUES('Hardware y Redes')
 
 
-
 -- MÓDULO
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(1,1400,'Ofimática','Activo')
+VALUES(1,2400,'Computación','Activo') -- 1
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(1,2400,'Computación','Activo')
+VALUES(2,800,'Data Base Administrador','Activo') -- 2
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(1,800,'Especialista Excel Empresarial ','Activo')
+VALUES(2,600,'Administración de BD en Oracle','Activo') --3
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(2,800,'Data Base Administrador','Activo')
+VALUES(3,600,'Programación Estructurada','Activo') --4
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(2,600,'Administración de BD en Oracle','Activo')
+VALUES(3,1000,'Visual Basic Developer','Activo') --5
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,600,'Programación Estructurada','Activo')
+VALUES(3,800,'NET Developer','Activo') --6
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,1000,'Visual Basic Developer','Activo')
+VALUES(3,800,'NET C#','Activo') --7
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,800,'NET Developer','Activo')
+VALUES(3,600,'PHP Developer','Activo') --8
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,800,'NET C#','Activo')
+VALUES(3,600,'Java Developer','Activo')  --9
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,600,'PHP Developer','Activo')
+VALUES(3,800,'Android Developer','Activo')  --10
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,600,'Java Developer','Activo')
+VALUES(4,600,'AutoCAD 2014','Activo') --11
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(3,800,'Android Developer','Activo')
+VALUES(4,1200,'Diseño Gráfico Digital','Activo')  --12
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(4,600,'AutoCAD 2014','Activo')
+VALUES(4,800,'Web Designer Professional','Activo') --13
 INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(4,1200,'Diseño Gráfico Digital','Activo')
-INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(4,800,'Web Designer Professional','Activo')
-INSERT INTO dbo.Modulo (C_Categoria,Precio,Descripcion,Estado)
-VALUES(5,600,'Especialista en Linux','Activo')
+VALUES(5,600,'Especialista en Linux','Activo') --14
 
 
 
@@ -427,27 +420,22 @@ VALUES('Domingo','10:00:00','14:00:00')
 INSERT INTO dbo.Horario (Dias,HoraInicio,HoraFin)
 VALUES('Domingo','14:00:00','17:00:00')
 
-
 --CURSO
-
-INSERT INTO dbo.Curso VALUES(1,1,3,3,null,'Microsoft Windows 8','Ninguno','Personalizar el computador 
-Utilizar las herramientas 
-Trabajar con varios Programas simultáneamente y Administrar archivos y carpetas 
-Conocer la Funciones básicas de las Aplicaciones','Las partes de su Sistema Informático
-Explorando Windows 8
-Gestionar sus cuentas de usuario
-Navegando por ventanas y carpetas
-Comprender los archivos y carpetas
-Conceptos básicos de Internet
-Trabajando Internet Explorer 10
-Personalizar Windows 8
-Instalar y Configurar dispositivos
-Trabajar con programas de Windows 8
-Trabajar con entornos digitales
-Optimizar el sistema
-',200,24,'2014-12-01','2014-12-17','Activo')
-
-INSERT INTO dbo.Curso VALUES(1,1,3,3,1,'Microsoft Excel Básico 2013','Conocimientos de Windows','Conocer los conceptos básicos.
+--1
+INSERT INTO dbo.Curso VALUES(1,1,3,3,null,'Microsoft  Word 2013','Conocimientos básicos de Windows a nivel de usuario.
+Tener muchos deseos de aprender y lograr tus metas trazadas
+','Conocer la nueva interfaz de Word 2013, las nuevas características y sobre todo el uso de las nuevas tecnologías automáticas
+Realizar un uso adecuado y coherente.
+Elaborar plantillas, modelos y formatos de documentos empresariales.','Interfaz de Word 2013
+Un nuevo formato de archivos
+Definición de párrafos
+Formato
+Insertar Objetos
+Tablas e Imágenes
+Combinar Correspondencia',200,24,'2014-12-19','2015-01-05','Activo')
+--2
+INSERT INTO dbo.Curso 
+VALUES(1,1,3,3,null,'Microsoft Excel 2013','Conocimientos de Windows','Conocer los conceptos básicos.
 Resolver problemas específicos a través de la realización de cálculos sencillos utilizando Microsoft Excel 2013.
 Organizar información mediante cuadros, tablas dinámicas y gráficos.','Identificar los elementos de la interfaz
 Personalizar la ventana del programa
@@ -463,8 +451,9 @@ Funciones predefinidas de Excel
 Tablas
 Cómo presentar visualmente la información
 Insertar Ilustraciones',200,24,'2015-01-07','2015-01-23','Activo')
-
-INSERT INTO dbo.Curso VALUES(1,1,3,3,2,'Microsoft Power Point 2013','Para un correcto seguimiento del curso es conveniente que el alumno tenga unos conocimientos básicos del MS Windows, del manejo del teclado y del ratón.','Difundir ideas, proyectos o información, al crear, presentar y colaborar en presentaciones que tengan un mayor impacto. Crear diapositivas con gráficos, animaciones y contenido multimedia.','Introducción
+--3
+INSERT INTO dbo.Curso 
+VALUES(1,1,3,3,null,'Microsoft Power Point 2013','Para un correcto seguimiento del curso es conveniente que el alumno tenga unos conocimientos básicos del MS Windows, del manejo del teclado y del ratón.','Difundir ideas, proyectos o información, al crear, presentar y colaborar en presentaciones que tengan un mayor impacto. Crear diapositivas con gráficos, animaciones y contenido multimedia.','Introducción
 Creación de una presentación Básica
 Creación de una presentación desde una plantilla, tema o presentación existente
 Formato y edición de textos.
@@ -476,45 +465,24 @@ Hipervínculos
 Edición del Video usando el Windows Movie Maker
 Formatos de una presentación',200,24,'2014-02-13','2014-03-02','Activo')
 
-INSERT INTO dbo.Curso VALUES(1,1,3,3,3,'Microsoft Access 2013','Windows a nivel usuario.','Identificar la estructura de una base de datos y su configuración.
-Desarrollar una aplicación bajo MS Access que organice y gestione información.','Conceptos básicos sobre bases de datos
-Bases de datos relacionales
-Posibilidades de las bases de datos
-Microsoft Access
-Definición y almacenamiento de datos
-Manipulación y control de datos
-Desarrollo de una aplicación en Access
-',200,24,'2015-03-04','2015-03-20','Activo')
-
-INSERT INTO dbo.Curso VALUES(2,1,3,3,null,'Microsoft  Word 2013','Conocimientos básicos de Windows a nivel de usuario.
-Tener muchos deseos de aprender y lograr tus metas trazadas
-','Conocer la nueva interfaz de Word 2013, las nuevas características y sobre todo el uso de las nuevas tecnologías automáticas
-Realizar un uso adecuado y coherente.
-Elaborar plantillas, modelos y formatos de documentos empresariales.','Interfaz de Word 2013
-Un nuevo formato de archivos
-Definición de párrafos
-Formato
-Insertar Objetos
-Tablas e Imágenes
-Combinar Correspondencia',200,24,'2014-12-19','2015-01-05','Activo')
-
-INSERT INTO dbo.Curso VALUES(2,1,3,3,5,'Gestión de Redes Sociales - Web 2.0','Nociones básicas de marketing o haber trabajo en áreas similares. Es recomendable poder leer en inglés ya que las últimas publicaciones sobre este tema no están traducidas.
+--4
+INSERT INTO dbo.Curso VALUES(1,1,3,3,null,'Gestión de Redes Sociales - Web 2.0','Nociones básicas de marketing o haber trabajo en áreas similares. Es recomendable poder leer en inglés ya que las últimas publicaciones sobre este tema no están traducidas.
 ','Interpretar planificaciones y gestionar programas de marketing 2.0 en los medios sociales en Internet. Crear estrategias, cronogramas, medir resultados y restablecer acciones necesarias para el logro de objetivos.','Marketing en la web. manejo de la reputación online.
 Actitudes y aptitudes de un Community Manager. Reglas de la conversación 2.0. Compendio de herramientas disponibles: Contenidos multimedia. Publicación de información en sitios web y en blogs. Socialización. Redes sociales. Casos de estudio.
 Cómo armar un plan de presencia en medios sociales. Resumen ejecutivo. Análisis inicial del mercado y la dinámica organizacional. Evaluación de las oportunidades.
 Objetivos específicos. Estrategias y herramientas. Análisis de la inversión y resultados esperados. Recursos.
 Taller: Gestión de aplicaciones
 Taller de herramientas de medición: Google Analytics, Google Insights, Google Alerts. Estadísticas de Facbook. Herramientas de medición de Twitter.',200,24,'2015-03-04','2015-03-20','Activo')
-
-INSERT INTO dbo.Curso VALUES(2,1,3,3,6,'Adobe Dreamweaver CS6 - Designer','Haber realizado el curso de dreamweaver cs6 designer o acreditar conocimientos equivalentes a juicio de la Institución','Gracias a este curso sabrá organizar un sitio web y conocerá la utilidad de crear las páginas dentro de éste desde el principio; configurar las propiedades de las páginas; insertar plug-ins y controles ActiveX, applets de Java, elementos de interfaz','Aspectos básicos del programa
+--5
+INSERT INTO dbo.Curso VALUES(1,1,3,3,null,'Adobe Dreamweaver CS6 - Designer','Haber realizado el curso de dreamweaver cs6 designer o acreditar conocimientos equivalentes a juicio de la Institución','Gracias a este curso sabrá organizar un sitio web y conocerá la utilidad de crear las páginas dentro de éste desde el principio; configurar las propiedades de las páginas; insertar plug-ins y controles ActiveX, applets de Java, elementos de interfaz','Aspectos básicos del programa
 Creación de un estilo de Clase
 Vínculos o hipervínculos de documentos
 Insertar Imágenes
 Diseño de paginas
 Pagina de marcos
 Creación de Plantillas',200,24,'2015-03-23','2015-04-08','Activo')
-
-INSERT INTO dbo.Curso VALUES(2,1,3,3,7,'CorelDRAW X6 - Designer','La actual o una versión anterior de CorelDraw X5
+--6
+INSERT INTO dbo.Curso VALUES(1,1,3,3,null,'CorelDRAW X6 - Designer','La actual o una versión anterior de CorelDraw X5
 Microsoft Windows XP o Microsoft Windows 2000 o Microsoft Windows Vista','El alumno comprenda los fundamentos y criterios básicos de la Preprensea
 digital, elaborando diseños publicitarios de manera eficiente y efectiva, para que queden','En entorno de diseño
 Configurar el documento de CorelDraw X6
@@ -528,8 +496,8 @@ Herramienta Bezier (curvas)
 Rellano Uniforme
 Herramienta Mezcla Interactiva
 Herramienta Silueta Interactiva',200,24,'2015-03-10','2015-04-27','Activo')
-
-INSERT INTO dbo.Curso VALUES(2,1,3,3,8,'Ensambleje de PC','Ninguno','Comprender el funcionamiento de una computadora y sus periféricos.
+--7
+INSERT INTO dbo.Curso VALUES(1,1,3,3,null,'Ensamblaje de PC','Ninguno','Comprender el funcionamiento de una computadora y sus periféricos.
 Reconocer y describir las especificaciones técnicas de las partes de una computadora.
 Seleccionar el hardware apropiado para una PC.','Partes de una PC.
 El Gabinete
@@ -538,41 +506,8 @@ Procesador y Memoria
  Medios de Almacenamiento
 Tarjetas de Expansión',200,24,'2015-04-29','2015-05-15','Activo')
 
-INSERT INTO dbo.Curso VALUES(3,1,5,4,null,'Microsoft  Excel  Intermedio 2013','Conocimientos de Windows','Elaborar y editar todo tipo de cuadros.
-Aplicar formatos de celda.
-Aplicar funciones y crear fórmulas.
-Realizar operaciones con una base de datos.','Funciones
-Listas Personalizadas, Ordenar y filtrar
-Esquemas y SubTotales
-Filtros Avanzados
-Herramientas de datos
-Informes de tabla y gráficos dinámicos
-Herramientas de Colaboración y Seguridad',200,24,'2014-12-30','2015-01-15','Activo')
-
-
-INSERT INTO dbo.Curso VALUES(3,1,5,4,10,'Microsoft Excel Producción y Administración','Tener conocimientos previos de Excel a nivel intermedio (Excel I y II).','Aplicar las funciones y las herramientas de análisis estadístico. 
-Desarrollar análisis con bases de datos externas. Calculo de costos y diagramas de producción. Diagrama de Pareto Resolver casos de simulación de eventos.','Análisis Estadístico de datos
-Detección de errores en el ingreso de datos
-Obtener información de Bases de datos Externas
-Análisis (para cálculos de costos, y de producción)
-Control de Existencia en Almacenes
-Detección de stock mínimo
-Consolidación de existencias en almacenes múltiples
-',200,24,'2015-01-27','2015-02-19','Activo')
-
-INSERT INTO dbo.Curso VALUES(3,1,5,4,11,'Microsoft Excel Financiero','Conocimiento intermedio del Excel.','La determinación de intereses simples y compuestos. 
-El calculo de tasas efectivas asi como conversiones entre las mismas. 
-El calculo del descuento bancario compuesto y determinación del costo efectivo del crédito.','Interés simple
-Interés compuesto
-Tasa de interés
-Cronograma de pagos
-Descuentos
-Factores financieros – anualidades y rentas
-Depreciación
-Evaluación de proyectos
-',200,24,'2015-02-24','2014-03-19','Activo')
-
-INSERT INTO dbo.Curso VALUES(4,2,6,10,null,'Modelamiento de Datos','Conocimiento básico de algún lenguaje de programación Vidual y/o técnicas de
+--8
+INSERT INTO dbo.Curso VALUES(2,2,6,10,null,'Modelamiento de Datos','Conocimiento básico de algún lenguaje de programación Vidual y/o técnicas de
 programación como estructura de datos.','Aprender los beneficios de la utilización de UML en el desarrollo de software.
 Identificar los beneficios del análisis, diseño y programación orientada a objetos..
 Aprender a modelar sistemas con UML.','Introducción al lenguaje de modelado: UML
@@ -584,8 +519,8 @@ Diagrama de clases
 Clase entidad y modelo E/R
 Tercera forma normal
 Cuarta forma normal',200,12,'2014-12-06','2014-12-27','Activo')
-
-INSERT INTO dbo.Curso VALUES(4,2,6,10,13,'Ms SQL Server I - Implementación','Conocimientos de Modelamiento de Datos','Proporcionar al alumno los conocimientos del lenguaje SQL
+--9
+INSERT INTO dbo.Curso VALUES(2,2,6,10,8,'Ms SQL Server I - Implementación','Conocimientos de Modelamiento de Datos','Proporcionar al alumno los conocimientos del lenguaje SQL
 Mostrar la integración de herramientas de SQL Server 2012','Concepto de base de datos relacional. Sistemas administradores de bases de datos.
 Los tipos de datos del sistema que ofrece SQL Server 2012
 Creación y optimización de índices
@@ -594,8 +529,8 @@ Consultas avanzadas: Agrupamiento de datos, subconsultas, condicionales, uniones
 Programación en SQL Server 2012
 Implementación de desencadenadores',200,12,'2015-01-03','2015-01-24','Activo')
 
-
-INSERT INTO dbo.Curso VALUES(4,2,6,10,14,'Ms SQL Server III - Administración','Modelamiento de Datos
+--10
+INSERT INTO dbo.Curso VALUES(2,2,6,10,9,'Ms SQL Server III - Administración','Modelamiento de Datos
 SQL Server 2012 – Implementación','Conocer y aplicar las herramientas esenciales para administrar las base de datos y los servidores que trabajan bajo SQL Server 2012','Instalación y configuración del SQL Server 2012
 Administración de la Base de Datos y Archivos
 Planificación de una Estrategia de Backups
@@ -604,8 +539,8 @@ Transferencia de Datos
 Automatización de Tareas Administrativas
 Monitoreando al SQL Server 2012
 Implementando un DataBase Mirroring',200,12,'2015-01-31','2015-02-21','Activo')
-
-INSERT INTO dbo.Curso VALUES(4,2,6,10,15,'Inteligencia de Negocios Nivel I (Diseño y Carga del Data Warehouse)','Conocimiento de Conceptos Generales de Base de Datos.
+--11
+INSERT INTO dbo.Curso VALUES(2,2,6,10,10,'Inteligencia de Negocios Nivel I (Diseño y Carga del Data Warehouse)','Conocimiento de Conceptos Generales de Base de Datos.
 Conocimiento Básico de Modelamiento de Datos.','Este curso proporciona a los estudiantes con los conocimientos y prácticas necesarias para diseñar, 
 implementar, y distribuir soluciones con bases de datos multidimensionales OLAP','Inteligencia de Negocios 
 Gestión de la Información con Inteligencia de Negocios 
@@ -617,8 +552,8 @@ Planificación del ETL
 Componentes de Reporting Services 
 Creación de informes básicos 
 Conexión a datos externos desde MS Excel',200,12,'2015-02-28','2015-03-21','Activo')
-
-INSERT INTO dbo.Curso VALUES(5,2,6,10,null,'Introducción a SQL','Conocimientos de Modelamiento de Datos','Utilizar las sentencias SELECT en todas sus modalidades.
+--12 -------------
+INSERT INTO dbo.Curso VALUES(3,2,6,10,null,'Introducción a SQL','Conocimientos de Modelamiento de Datos','Utilizar las sentencias SELECT en todas sus modalidades.
 Utilizar la sintaxis DDL del SQL para crear, modificar o destruir objetos de la base de datos de Oracle.
 Reconocer y aplicar las reglas de las restricciones.','Sentencias básicas del lenguaje SQL
 Consultas avanzadas con SQL
@@ -628,8 +563,8 @@ Gestión de objetos
 Otros objetos de la base de datos
 PL/SQL: Bloques, cursores y excepciones
 Bloques nominados',200,12,'2014-12-06','2014-12-27','Activo')
-
-INSERT INTO dbo.Curso VALUES(5,2,6,10,17,'Administración de Base de Datos','Base de Datos Oracle 11g: Introducción a SQL','Instalar y configurar la Base de Datos Oracle 11g
+--13
+INSERT INTO dbo.Curso VALUES(3,2,6,10,12,'Administración de Base de Datos','Base de Datos Oracle 11g: Introducción a SQL','Instalar y configurar la Base de Datos Oracle 11g
 Controlar, solucionar problemas y mantener la Base de Datos Oracle 11g
 Configurar los servicios de Red de Oracle para la Base de Datos Oracle 11g','Instalación del Software de la Base de Datos Oracle 11g
 Creación de una Base de Datos Oracle
@@ -640,8 +575,8 @@ Seguridad de Base de Datos Oracle
 Servicios de Red de Oracle
 Gestión de Deshacer
 Conceptos de Copia de Seguridad y Recuperación',200,12,'2015-01-03','2015-01-24','Activo')
-
-INSERT INTO dbo.Curso VALUES(5,2,6,10,18,'Administración de Backup y Afinamiento','Base de Datos Oracle 11g: Administración
+--14
+INSERT INTO dbo.Curso VALUES(3,2,6,10,13,'Administración de Backup y Afinamiento','Base de Datos Oracle 11g: Administración
 Base de Datos Oracle 11g: Introducción a SQL','Recuperar la base de datos hasta un punto anterior en el tiempo
 Utilizar la tecnología Flashback de Oracle para recuperar la base de datos.
 Controlar el uso de recursos de la base de datos con el Administrador de Recursos','Seguridad de Oracle Listener
@@ -654,8 +589,8 @@ Gestión y Control de Memoria
 Gestión de Recursos
 Automatización de Tareas con el Planificador',200,12,'2015-01-31','2015-02-21','Activo')
 
-
-INSERT INTO dbo.Curso VALUES(6,3,1,5,null,'Algoritmos Estructurado Básico','Tener muchos deseos de aprender y lograr tus metas trazadas.
+--15
+INSERT INTO dbo.Curso VALUES(4,3,1,5,null,'Algoritmos Estructurado Básico','Tener muchos deseos de aprender y lograr tus metas trazadas.
 Conocimientos básicos de cualquier sistema operativo','Conocer los elementos de la programación
 Conocer y comprender el desarrollo y funcionamiento de las fases del desarrollo del algoritmo
 Acceso a datos en la colección de datos','Conceptos de fundamentos de programación.
@@ -665,8 +600,8 @@ Programación Modular SubAlgoritmos
 Arreglos de datos
 Matrices de datos
 ',200,24,'2014-12-01','2014-12-17','Activo')
-
-INSERT INTO dbo.Curso VALUES(6,3,1,5,20,'Algoritmos Estructurado Avanzado','Tener muchos deseos de aprender y lograr tus metas trazadas.
+--16 -------------------------
+INSERT INTO dbo.Curso VALUES(4,3,1,5,15,'Algoritmos Estructurado Avanzado','Tener muchos deseos de aprender y lograr tus metas trazadas.
 Conocimientos básicos de cualquier sistema operativo','Utilizar colecciones de datos en memoria con diferentes tipo de datos
 Aplicar el uso de pilas de datos
 Reutilizar una función dentro de la misma función','Registros de datos
@@ -675,8 +610,8 @@ Métodos de ordenamiento y búsqueda de datos
 Operaciones con cadena de datos
 Estructuras dinámicas lineales de datos (pilas, colas y listas enlazadas)
 Recursividad',200,24,'2014-12-19','2015-01-05','Activo')
-
-INSERT INTO dbo.Curso VALUES(6,3,1,5,21,'Fundamentos De Programación Orientada A Objetos','Tener muchos deseos de aprender y lograr tus metas trazadas.
+--17
+INSERT INTO dbo.Curso VALUES(4,3,1,5,16,'Fundamentos De Programación Orientada A Objetos','Tener muchos deseos de aprender y lograr tus metas trazadas.
 Conocimientos básicos de cualquier sistema operativo','Conocer los conceptos generales de POO
 Conocer el uso de un atributo clase y de un objeto
 Aplicar los conceptos del encapsulamiento, Interfaces, Herencia, Polimorfismo','Conceptos fundamentales de POO
@@ -686,8 +621,8 @@ Interfaces
 Encapsulamiento
 Herencia
 Polimorfismo',200,24,'2015-01-07','2014-01-23','Activo')
-
-INSERT INTO dbo.Curso VALUES(7,3,2,10,null,'MS SQL Server 2012 - Implementación','Conocimientos de Modelamiento de Datos','Proporcionar al alumno los conocimientos del lenguaje SQL
+--18
+INSERT INTO dbo.Curso VALUES(5,3,2,10,null,'MS SQL Server 2012 - Implementación','Conocimientos de Modelamiento de Datos','Proporcionar al alumno los conocimientos del lenguaje SQL
 Mostrar la integración de herramientas de SQL Server 2012
 Proporcionar al alumno las técnicas de manejo de objetos de SQL y programación en SQL Transact y .NET','Concepto de base de datos relacional. Sistemas 
 Los tipos de datos del sistema que ofrece SQL Server 2012.
@@ -696,8 +631,8 @@ La sentencia SELECT, precedencia de modificadores, campos calculados, funciones 
 Consultas avanzadas: Agrupamiento de datos, subconsultas, condicionales, uniones.
 Programación en SQL Server 2012.
 Implementación de desencadenadores.',200,12,'2015-01-03','2015-01-24','Activo')
-
-INSERT INTO dbo.Curso VALUES(7,3,2,10,23,'MS Visual Basic 6.0 - Básico','Conocimiento Basico de Visual Basic 6.0
+--19
+INSERT INTO dbo.Curso VALUES(5,3,2,10,18,'MS Visual Basic 6.0 - Básico','Conocimiento Basico de Visual Basic 6.0
 Microsoft Windows XP o Microsoft Windows 2000 o Microsoft Windows Vista
 ','Conocer y Manejar el modelo de programación orientada a objetos aplicando las diferentes
 técnicas de programación.','Conceptos Fundamentales de Programación
@@ -708,8 +643,8 @@ Controles Básicos
 TextBox, Command, Label
 Mecánica de la escritura de código
 Módulos de código',200,12,'2015-01-31','2015-02-21','Activo')
-
-INSERT INTO dbo.Curso VALUES(7,3,2,10,24,'MS Visual Basic - Base de Datos','Conocimientos de SQL Server 2000
+--20
+INSERT INTO dbo.Curso VALUES(5,3,2,10,19,'MS Visual Basic - Base de Datos','Conocimientos de SQL Server 2000
 Experiencia en desarrollo de aplicaciones con alguna herramienta visual, de
 preferencia Visual Basic.','Aplicar técnicas de programación orientadas a objetos con acceso a base de datos en SQL – SERVER 2000
 Administración de proyectos y el acceso a base de datos usando controles enlazados.
@@ -719,8 +654,8 @@ Objeto Recordset
 Control ADO Data
 OBJETOS Command y Parameters
 Módulos de Clase y Dlls',200,12,'2015-02-28','2015-03-21','Activo')
-
-INSERT INTO dbo.Curso VALUES(7,3,2,10,25,'Desarrollo de Aplicaciones .NET con VS.-2012','Conocimiento o experiencia
+--21
+INSERT INTO dbo.Curso VALUES(5,3,2,10,20,'Desarrollo de Aplicaciones .NET con VS.-2012','Conocimiento o experiencia
 en programación o desarrollo de aplicaciones y que deseen desarrollar aplicaciones en la
 plataforma .Net con Visual Basic .Net','Conocer la estrategia Microsoft .NET y los componentes del Marco .NET
 o Describir las características de Visual Studio .NET
@@ -731,8 +666,8 @@ Tablas
 Programación orientada a objetos
 Uso de variables de tipo referencia
 Herencia en VB',200,12,'2015-03-28','2015-04-18','Activo')
-
-INSERT INTO dbo.Curso VALUES(8,3,4,12,null,'Desarrollo de Aplicaciones .NET Con Visual Studio 2012','Conocimientos de programación, POO, bases de datos, ADO.NET, SQL SERVER 2008','Proporcionar al alumno los conocimientos para el desarrollo de aplicaciones en entornos distribuidos con tecnologías de última generación Microsoft','Programación Orientada A Objetos
+--22
+INSERT INTO dbo.Curso VALUES(6,3,4,12,null,'Desarrollo de Aplicaciones .NET Con Visual Studio 2012','Conocimientos de programación, POO, bases de datos, ADO.NET, SQL SERVER 2008','Proporcionar al alumno los conocimientos para el desarrollo de aplicaciones en entornos distribuidos con tecnologías de última generación Microsoft','Programación Orientada A Objetos
 Desarrollo de interfaz de usuario Windows
 Trabajando con colecciones de datos
 Acceso al sistema de archivos
@@ -740,8 +675,8 @@ Programando con Hilos
 Usando Expresiones Regulares para validación de datos
 Pruebas y depuración de errores
 Distribución de aplicaciones Windows',200,12,'2014-12-06','2014-12-27','Activo')
-
-INSERT INTO dbo.Curso VALUES(8,3,4,12,27,'Acceso a Datos con ADO . NET 4.0 y Visual Studio 2012','Ninguno','Manejar las herramientas de acceso a datos mediante ADO .NET 4.0
+--23
+INSERT INTO dbo.Curso VALUES(6,3,4,12,22,'Acceso a Datos con ADO . NET 4.0 y Visual Studio 2012','Ninguno','Manejar las herramientas de acceso a datos mediante ADO .NET 4.0
 Transacciones en 2 capas con LINQ
 Aprender a trabajar con informes empresariales de Crystal Reports.','Arquitectura de ADO.NET 4.0
 Consulta y mantenimiento de datos en forma conectada.
@@ -750,8 +685,8 @@ Trabajo desconectado.
 Consumir reportes locales y de Servidor Reporting Services
 Acceso a Datos con Entity Data Model y Linq para entidades
 Acceso a datos en los servicios en la nube con Windows Azure',200,12,'2015-01-03','2015-01-24','Activo')
-
-INSERT INTO dbo.Curso VALUES(8,3,4,12,28,'Desarrollo de Aplicaciones Web con ASP .NET Ajax','Ninguno','Al término del curso el alumno estará en la capacidad de desarrollar una aplicación Web con ASP.Net con acceso a una base de datos e implementarla.','Crear Aplicaciones Web con Visual Studio 2012
+--24
+INSERT INTO dbo.Curso VALUES(6,3,4,12,23,'Desarrollo de Aplicaciones Web con ASP .NET Ajax','Ninguno','Al término del curso el alumno estará en la capacidad de desarrollar una aplicación Web con ASP.Net con acceso a una base de datos e implementarla.','Crear Aplicaciones Web con Visual Studio 2012
 Agregar Código a un Formulario Web ASP.NET 4.0
 Traceo de Aplicaciones Web ASP.NET 4.0
 Validación de Entradas de Usuarios
@@ -760,8 +695,8 @@ Configuración, Optimización y Despliegue de Aplicaciones Web ASP.NET 4.0
  Configuración de la Seguridad en Aplicaciones Web ASP.NET 4.0
 ASP.NET 4.0 AJAX en el servidor
 Desarrolle aplicaciones con ASP.NET 4.0 con MVC 3',200,12,'2015-01-31','2015-02-21','Activo')
-
-INSERT INTO dbo.Curso VALUES(8,3,4,12,29,'Taller de desarrollo de Aplicaciones Distribuidas en N capas','Ninguno','Desarrollar de aplicaciones en entornos distribuidos con tecnologías de última generación Microsoft, integración de herramientas de SQL Server 2008, utilizando como herramienta Microsoft Visual Studio 2012 y NET Framework 4.0','Fundamentos de Desarrollo de aplicaciones distribuidas
+--25
+INSERT INTO dbo.Curso VALUES(6,3,4,12,24,'Taller de desarrollo de Aplicaciones Distribuidas en N capas','Ninguno','Desarrollar de aplicaciones en entornos distribuidos con tecnologías de última generación Microsoft, integración de herramientas de SQL Server 2008, utilizando como herramienta Microsoft Visual Studio 2012 y NET Framework 4.0','Fundamentos de Desarrollo de aplicaciones distribuidas
 Introducción a SOA - REST
 Introducción  a .NET Remoting
 Publicar servicios con .NET Remoting
@@ -779,8 +714,8 @@ Exponer los servicios WCF de la capa de negocios por IIS 7.0
 Generar la capa de presentación Web
 Consumiendo reportes de Reporting Services y SQL SERVER 2008
 Instalación de un aplicación Web en IIS 7.0',200,12,'2015-02-28','2015-03-21','Activo')
-
-INSERT INTO dbo.Curso VALUES(9,3,7,15,null,'Desarrollo Aplicaciones.NET con C#','Conocimientos de programación, POO,  bases de datos, ADO.NET','En este curso los alumnos aprenderán  los fundamentos del Lenguaje de programación  C#  Orientada a Objeto con  NET  Framework 4.0.
+--26
+INSERT INTO dbo.Curso VALUES(7,3,7,15,null,'Desarrollo Aplicaciones.NET con C#','Conocimientos de programación, POO,  bases de datos, ADO.NET','En este curso los alumnos aprenderán  los fundamentos del Lenguaje de programación  C#  Orientada a Objeto con  NET  Framework 4.0.
 ','Introducción a MICROSOFT .NET y C#
 Programación Orientada a Objetos
 Herencia
@@ -789,16 +724,16 @@ Arreglo y Colecciones
 Flujos de Datos
 Windows Presentation Foundation
 Distribución de Aplicaciones Windows',200,12,'2014-12-07','2014-12-28','Activo')
-
-INSERT INTO dbo.Curso VALUES(9,3,7,15,31,'Desarrollo Aplicaciones con ADO.NET 4.0 y C#','Conocimientos de programación, POO,  bases de datos, ADO.NET','El objetivo de este curso es presentar las técnicas de programación para bases de datos en la plataforma .NET, utilizando C# como lenguaje base.','SQL Server 2008 para Desarrolladores.
+--27
+INSERT INTO dbo.Curso VALUES(7,3,7,15,26,'Desarrollo Aplicaciones con ADO.NET 4.0 y C#','Conocimientos de programación, POO,  bases de datos, ADO.NET','El objetivo de este curso es presentar las técnicas de programación para bases de datos en la plataforma .NET, utilizando C# como lenguaje base.','SQL Server 2008 para Desarrolladores.
  Arquitectura de ADO.NET 4.0.
 Acceso Desconectado.
 Consulta y Mantenimiento de Datos en Forma Conectada.
 Manejo de Transacciones.
 Generar Reportes con CRYSTAL REPORTS
 Acceso a Datos con LINQ',200,12,'2015-01-04','2015-01-25','Activo')
-
-INSERT INTO dbo.Curso VALUES(9,3,7,15,32,'Desarrollo Aplicaciones Web con C# ASP.NET AJAX','Conocimientos de programación, POO,  bases de datos, ADO.NET','Este curso otorga los fundamentos necesarios para la implementación de aplicaciones Web ASP.NET usando  Visual C#, enfocado en el ambiente de desarrollo de Visual Studio.NET.','Introducción a ASP.NET  AJAX
+--28
+INSERT INTO dbo.Curso VALUES(7,3,7,15,27,'Desarrollo Aplicaciones Web con C# ASP.NET AJAX','Conocimientos de programación, POO,  bases de datos, ADO.NET','Este curso otorga los fundamentos necesarios para la implementación de aplicaciones Web ASP.NET usando  Visual C#, enfocado en el ambiente de desarrollo de Visual Studio.NET.','Introducción a ASP.NET  AJAX
 Uso de los Controles Estándar
 Diseño de Sitios Web con Páginas Maestras
 Visión General de Acceso a Datos
@@ -806,16 +741,16 @@ Acceso a Datos con LINQ to SQL
 Administración del Estado
 Uso de Autenticación Basada en Formularios
 Reportes en ASP.NET',200,12,'2015-02-01','2015-02-25','Activo')
-
-INSERT INTO dbo.Curso VALUES(9,3,7,15,33,'Desarrollo Aplicaciones Web Distribuidas en N capas con C#','Conocimientos de programación, POO,  bases de datos, ADO.NET','Proporcionar a los estudiantes los conocimientos y habilidades necesarias para desarrollar soluciones basadas  en Capas y Servicios Web para solucionar problemas comunes en un dominio de aplicación distribuida.',' Implementación de Componentes
+--29
+INSERT INTO dbo.Curso VALUES(7,3,7,15,28,'Desarrollo Aplicaciones Web Distribuidas en N capas con C#','Conocimientos de programación, POO,  bases de datos, ADO.NET','Proporcionar a los estudiantes los conocimientos y habilidades necesarias para desarrollar soluciones basadas  en Capas y Servicios Web para solucionar problemas comunes en un dominio de aplicación distribuida.',' Implementación de Componentes
 Arquitectura en Capas
 Servicios Web XML
 Windows Communication Foundation (WCF)
 Configuración de Servicios WCF
 Consumiendo Servicios WCF
 Microsoft Entity Framework',200,12,'2015-03-01','2015-03-22','Activo')
-
-INSERT INTO dbo.Curso VALUES(10,3,6,14,null,'PHP Nivel I - Programación Web','Conocimiento básico del lenguaje HTML.
+--30
+INSERT INTO dbo.Curso VALUES(8,3,6,14,null,'PHP Nivel I - Programación Web','Conocimiento básico del lenguaje HTML.
 Conocimiento de programación estructurada','Comprender el desarrollo evolutivo de la Web a nivel mundial
 Extender su conocimiento en desarrollo de sitios web, basado en la experiencia del usuario.','Introducción al módulo - Web 2.0.
 HTML.
@@ -831,8 +766,8 @@ PHP Utilizando Java Script
 Sentencias de SQL
 Conexión al Mysql desde PHP. Configuración del archivo INI
 Procesos Básicos de Mantenimiento',200,12,'2014-12-07','2014-12-28','Activo')
-
-INSERT INTO dbo.Curso VALUES(10,3,6,14,35,'PHP Nivel II - DAO-POO','Conocimiento del lenguaje HTML (indispensable)
+--31
+INSERT INTO dbo.Curso VALUES(8,3,6,14,30,'PHP Nivel II - DAO-POO','Conocimiento del lenguaje HTML (indispensable)
 Conocimiento de programación estructurada','Comprender la sintaxis completa del lenguaje
 Comprender la relación de PHP con los servidores Web (Apache)','PHP 5.X Características avanzadas
 MySql Básico – PostGress Basico
@@ -842,8 +777,8 @@ Manejo de Sesiones y Gráficos
 Carrito de Compra, Upload , PDF y Códigos de Validación
 Email y Carrito de Compra
 Manejo de Capas – MVC y Ajax',200,12,'2015-01-04','2015-01-25','Activo')
-
-INSERT INTO dbo.Curso VALUES(10,3,6,14,36,'PHP Nivel III - PHP Avanzado','Conocimiento de PHP Nivel II - DAO-POO
+--32
+INSERT INTO dbo.Curso VALUES(8,3,6,14,31,'PHP Nivel III - PHP Avanzado','Conocimiento de PHP Nivel II - DAO-POO
 Nociones de Servidor web. ','Comprender la relación de PHP con los servidores Web (Apache)
 Realizar conexiones con MYSQL para la creación hojas dinámicas','Patrones de Diseño
 Motor de Plantillas PHP - Smarty
@@ -854,8 +789,8 @@ Kumbia
 ZendFramework
 Synfony',200,12,'2015-02-01','2015-02-25','Activo')
 
-
-INSERT INTO dbo.Curso VALUES(11,3,2,8,null,'Java Fundamentos','Lenguaje de programación estructurado, así como los conceptos de orientación a objetos.
+--33
+INSERT INTO dbo.Curso VALUES(9,3,2,8,null,'Java Fundamentos','Lenguaje de programación estructurado, así como los conceptos de orientación a objetos.
 Recomendables pero no requeridos conocimientos de C ó C++','Conocer las características del lenguaje java y su uso en el desarrollo de aplicaciones informáticas de todo nivel usando los conceptos de la programación orientada a objetos así
 como las características del modelo cliente/servidor.','Estructura de un sistema informático
 Atributos: Tipos y ámbitos
@@ -865,8 +800,8 @@ Interfaz grafica de usuario (GUI).
 JDialog y JOptionPane
 Eventos:definición
 Asociación de clases Bean con eventos',200,24,'2014-12-01','2015-12-17','Activo')
-
-INSERT INTO dbo.Curso VALUES(11,3,2,8,38,'Java Cliente / Servidor','Los alumnos necesitarán tener experiencia con el lenguaje de programación Java para poder comprender lamateria del curso con éxito.','Conocer las características del lenguaje java y su uso en el desarrollo de aplicaciones informáticas de todo nivel usando los conceptos de la programación orientada a objetos así
+--34
+INSERT INTO dbo.Curso VALUES(9,3,2,8,33,'Java Cliente / Servidor','Los alumnos necesitarán tener experiencia con el lenguaje de programación Java para poder comprender lamateria del curso con éxito.','Conocer las características del lenguaje java y su uso en el desarrollo de aplicaciones informáticas de todo nivel usando los conceptos de la programación orientada a objetos así
 como las características del modelo cliente/servidor','Conversión de datos
 Utilidades
 Colecciones
@@ -875,8 +810,8 @@ JDBC
 Uso de Statement
 Uso de PreparedStatement
 Reportes',200,24,'2014-12-19','2015-01-05','Activo')
-
-INSERT INTO dbo.Curso VALUES(11,3,2,8,39,'Java Aplicaciones Web','Los alumnos necesitarán tener experiencia con el lenguaje de programación Java para poder comprender la materia del curso con éxito ','Conocer las características del lenguaje java y su uso en el desarrollo de aplicaciones informáticas de todo nivel usando los conceptos de la programación orientada a objetos así
+--35
+INSERT INTO dbo.Curso VALUES(9,3,2,8,34,'Java Aplicaciones Web','Los alumnos necesitarán tener experiencia con el lenguaje de programación Java para poder comprender la materia del curso con éxito ','Conocer las características del lenguaje java y su uso en el desarrollo de aplicaciones informáticas de todo nivel usando los conceptos de la programación orientada a objetos así
 como las características del modelo cliente/servidor','Aplicaciones WEB
 JSP
 Uso de Ajax
@@ -884,8 +819,8 @@ Java Bean - Uso
 Persistencia
 Sesiones en JSP
 JSON',200,24,'2015-01-07','2015-01-23','Activo')
-
-INSERT INTO dbo.Curso VALUES(12,3,1,9,null,'Android Básico','Educación media o superior con conocimientos básico de programación.','Conozcan los principales componentes para desarrollar una aplicación en Android
+--36
+INSERT INTO dbo.Curso VALUES(10,3,1,9,null,'Android Básico','Educación media o superior con conocimientos básico de programación.','Conozcan los principales componentes para desarrollar una aplicación en Android
 Obtengan conocimientos de los componentes visuales de aplicaciones móviles
 Conozcan las APIs más avanzadas','SDK Manager y AVD Manager 
 Elementos de una aplicación en Android. 
@@ -902,8 +837,8 @@ Eventos. Uso de OnClickListener y OnItemClickListener
 Menu en Android. Tipos. Uso de Option Menu y ContextMenu. 
 Dialogo. Uso de AlertDialog y ProgressDialog 
 Toast. Uso de notificaciones',200,24,'2014-12-02','2014-12-25','Activo')
-
-INSERT INTO dbo.Curso VALUES(12,3,1,9,41,'Android Intermedio','Educación media o superior con conocimientos básico de programación.
+--37
+INSERT INTO dbo.Curso VALUES(10,3,1,9,36,'Android Intermedio','Educación media o superior con conocimientos básico de programación.
 Android Básico','A lo largo del curso, el alumno aprenderá a realizar tareas en segundo plano, utilizar los sensores del dispositivo, crear gráficos en 2D, almacenar datos entre sesiones, crear animaciones, etc.','ActionBar. Uso en API 17 
 Fragmentos. Caracteristicas y uso. 
 Preferencias. Caracteristicas. Uso de SharedPreferences. 
@@ -917,8 +852,8 @@ Notificaciones en Android. Luz, zumbador, icono.
 Preferencias. Uso PreferenceActivity y PreferenceScreen 
 Archivos en Android. Uso de OutputStream e InputStream. 
 Archivos en memoria interna y memoria externa. Clase Environment.',200,24,'2014-12-30','2015-01-22','Activo')
-
-INSERT INTO dbo.Curso VALUES(12,3,1,9,42,'Android Avanzado','Educación media o superior con conocimientos básico de programación.
+--38
+INSERT INTO dbo.Curso VALUES(10,3,1,9,37,'Android Avanzado','Educación media o superior con conocimientos básico de programación.
 Android Intermedio','Construir juegos y aplicaciones graficas con un nivel de sofisticacion requeridas por el usuario.
 Elaborar aplicaciones móviles en modo visual y en la nube usando MIT AppInventor.','Base de datos SqLite. Caracteristicas. 
 Sintaxis de sentencias SQL para SQLITE. 
@@ -933,8 +868,8 @@ Manejo de mapas en Android. Uso de MapController.
 Web Services en Android. Diferencias entre SOAP y REST. 
 Uso de KSOAP2 para webservices SOAP. Ejemplos usando .NET y PHP. 
 Despliegue y publicación de aplicaciones en Google Play. Criterios. ',200,24,'2015-01-27','2015-02-19','Activo')
-
-INSERT INTO dbo.Curso VALUES(12,3,1,9,43,'Android App Inventor','Educación media o superior con conocimientos básico de programación.
+--39
+INSERT INTO dbo.Curso VALUES(10,3,1,9,38,'Android App Inventor','Educación media o superior con conocimientos básico de programación.
 Android Avanzado','Al finalizar el curso el alumno será capaz de manejar el entorno de programación y crear una aplicación completa para dispositivos Android.','MIT AppInventor. Características y requerimientos. 
 Instalación de requisitos para AppInventor. 
 Elementos de AppInventor: Visual Designer, Block Editor y Emulator. 
@@ -950,8 +885,8 @@ Uso de objetos Web y WebViewer, Uso de GooleMap y Google StreetView.
 Canvas. Gráficos en Android. 
 TinyDB. Uso de Base de datos en Android. 
 ',200,24,'2015-02-24','2015-03-19','Activo')
-
-INSERT INTO dbo.Curso VALUES(13,4,3,6,null,'Autocad 2014 - Básico ','Se necesita conocimientos previos en Windows a nivel de usuario, además tener algún conocimiento básico de dibujo técnico, ello facilitara su aprendizaje del software.','Manejar las herramientas de dibujo y edición de objetos. los cuales le permitirán desarrollar un dibujo técnico de manera rápida y sencilla a la vez.','Entorno de trabajo
+--40
+INSERT INTO dbo.Curso VALUES(11,4,3,6,null,'Autocad 2014 - Básico ','Se necesita conocimientos previos en Windows a nivel de usuario, además tener algún conocimiento básico de dibujo técnico, ello facilitara su aprendizaje del software.','Manejar las herramientas de dibujo y edición de objetos. los cuales le permitirán desarrollar un dibujo técnico de manera rápida y sencilla a la vez.','Entorno de trabajo
 Unidades de medida y sistema de coordenadas
 Edición y dibujo de Objetos
 Capas y Propiedades de Objetos
@@ -959,8 +894,8 @@ Crear estilos de texto y sombreado
 Dimensionado
 Configuraciones de página y Ploteo
 Escala',200,24,'2014-12-01','2015-01-01','Activo')
-
-INSERT INTO dbo.Curso VALUES(13,4,3,6,45,'Autocad 2014 - Intermedio',' La actual o una versión anterior de AutoCAD
+--41
+INSERT INTO dbo.Curso VALUES(11,4,3,6,40,'Autocad 2014 - Intermedio',' La actual o una versión anterior de AutoCAD
 Creación y edición de objetos básicos de AutoCAD','Aplicación de técnicas de Edición (Uso de grips)
 Aplicación de restricciones geométricas
 Dibujo Isométrico (piezas mecánicas, tuberías, Vivienda)','HERRAMIENTAS DE PRODUCTIVIDAD E ISOMETRÍA
@@ -971,8 +906,8 @@ ENLACE CON ARCHIVOS EXTERNOS E IMÁGENES
 LAYOUTS Y PLOTEO
 UTILIDADES
 PERSONALIZACIÓN DEL AUTOCAD',200,24,'2014-01-02','2015-02-04','Activo')
-
-INSERT INTO dbo.Curso VALUES(13,4,3,6,46,'Autocad 2014 - Avanzado ','Se requieren conocimientos de AutoCAD Básico y Intermedio.','Manejar adecuadamente el espacio de trabajo en 3d.
+--42
+INSERT INTO dbo.Curso VALUES(11,4,3,6,41,'Autocad 2014 - Avanzado ','Se requieren conocimientos de AutoCAD Básico y Intermedio.','Manejar adecuadamente el espacio de trabajo en 3d.
 Conocer y utilizar rápidamente los diferentes comandos de navegación en 3d.','Herramientas visualización y trazado 3D
 Modelado con Sólidos
 Modificar Sólidos y superficies
@@ -981,8 +916,8 @@ Edición de Sólidos
 Modelado con Superficies y mallas
 Presentación Foto realista
 Configuraciones de página y Layouts',200,24,'2015-02-05','2015-03-10','Activo')
-
-INSERT INTO dbo.Curso VALUES(14,4,7,7,null,'Corel Draw X6 - Designer','La actual o una versión anterior de CorelDraw X5
+--43
+INSERT INTO dbo.Curso VALUES(12,4,7,7,null,'Corel Draw X6 - Designer','La actual o una versión anterior de CorelDraw X5
 Microsoft Windows XP o Microsoft Windows 2000 o Microsoft Windows Vista','Lograr que el alumno comprenda los fundamentos y criterios básicos de la Presa digital, elaborando diseños publicitarios de manera eficiente y efectiva, para que queden listos para la Preimpresión.','En entorno de diseño
 Configurar el documento de CorelDraw X6
 Herramientas de formas básicas
@@ -997,8 +932,8 @@ Relleno Degradé
 Relleno Patrón
 Relleno Textura
 Herramienta Texto (uso avanzado)',200,24,'2014-12-01','2015-01-01','Activo')
-
-INSERT INTO dbo.Curso VALUES(14,4,7,7,48,'Corel Draw X6 - Expert','Haber realizado el curso de Corel Draw Designer o acreditar conocimientos
+--44
+INSERT INTO dbo.Curso VALUES(12,4,7,7,43,'Corel Draw X6 - Expert','Haber realizado el curso de Corel Draw Designer o acreditar conocimientos
 equivalentes a juicio de la Institución','Capacitar al alumno en el manejo de la interfase de Corel Draw, la creación y edición de diseños simples usando figuras geométricas, curvas libres, definición de filetes y rellenos','Manejo de imágenes
 Insertando como Objeto Nuevo
 Viñetas y Numeración
@@ -1007,8 +942,8 @@ Crear una plantilla de estilo
 PowerTrace
 Vectorización de Imágenes
 Impresión',200,24,'2014-01-02','2015-02-04','Activo')
-
-INSERT INTO dbo.Curso VALUES(14,4,7,7,49,'Adobe Illustrator CS6 - Designer','nose requiere conocimiento alguno','Teoría: Uso de herramientas para dibujo (vectorial), texto en párrafo o artístico y diagramación de cuadros estadísticos. Utilización de filtros para formas en la imagen y cambios de color.','EL ÁREA DE TRABAJO
+--45
+INSERT INTO dbo.Curso VALUES(12,4,7,7,44,'Adobe Illustrator CS6 - Designer','nose requiere conocimiento alguno','Teoría: Uso de herramientas para dibujo (vectorial), texto en párrafo o artístico y diagramación de cuadros estadísticos. Utilización de filtros para formas en la imagen y cambios de color.','EL ÁREA DE TRABAJO
 ASISTENTE DE BIENVENIDA
 ELABORACIÓN DE ILUSTRACIONES
 SELECCIÓN.
@@ -1020,8 +955,8 @@ CREACIÓN Y EDICIÓN DE TEXTOS
 FUSIONAR FORMAS Y COLORES
 CREAR EFECTOS
 GRÁFICOS PARA LA WEB E IMPRESION',200,24,'2015-02-05','2015-03-10','Activo')
-
-INSERT INTO dbo.Curso VALUES(14,4,7,7,50,'Adobe Photoshop CS6 - Designer','Tener muchos deseos de aprender y lograr tus metas trazadas.
+--46
+INSERT INTO dbo.Curso VALUES(12,4,7,7,45,'Adobe Photoshop CS6 - Designer','Tener muchos deseos de aprender y lograr tus metas trazadas.
 Conocimientos básicos de cualquier sistema operativo','Concepto de resolución y manejo de las imágenes en capas. Empleo de herramientas para selección y retoque fotográfico. Cambio de los modos de color, uso de filtros para la creación de texturas.
 ','Requerimientos del Sistema para la instalación del software
 Herramientas para seleccionar básicas, marco rectangular,, elipse, lazo, lazo poligonal, lazo magnético, varita y selección rápida.
@@ -1032,8 +967,8 @@ Líneas guías
 Opciones de Ajustes de Color
 Bloqueo de capas
 Modos de fusión de capas',200,24,'2015-03-11','2015-04-13','Activo')
-
-INSERT INTO dbo.Curso VALUES(14,4,7,7,51,'Adobe Photoshop CS6 - Expert','Haber llevado el modulo de Photoshop Designer.','Concepto de resolución y manejo de las imágenes en capas. Empleo de herramientas para selección y retoque fotográfico.
+--47
+INSERT INTO dbo.Curso VALUES(12,4,7,7,46,'Adobe Photoshop CS6 - Expert','Haber llevado el modulo de Photoshop Designer.','Concepto de resolución y manejo de las imágenes en capas. Empleo de herramientas para selección y retoque fotográfico.
 Recortar, retocar y efectos para presentación de fotografías profesionales.','Imagen Raw
 Canales de color
 Canales alfa
@@ -1057,8 +992,8 @@ PDF
 Animación y creación de una WEB
 Acciones
 Impresión',200,24,'2015-04-14','2015-05-15','Activo')
-
-INSERT INTO dbo.Curso VALUES(14,4,7,7,52,'Adobe Indesign CS6','Haber realizado el curso de Operación Básica de Microsoft Windows o acreditar
+--48
+INSERT INTO dbo.Curso VALUES(12,4,7,7,47,'Adobe Indesign CS6','Haber realizado el curso de Operación Básica de Microsoft Windows o acreditar
 conocimientos equivalentes a juicio de la Institución.','Proporcionar los conocimientos teórico/prácticos en la diagramación, necesarios
 para la elaboración de Revistas, folletos, boletines, catálogos, etc.','Conceptos Básicos
 Ventana de trabajo, Opciones
@@ -1082,8 +1017,8 @@ Edicion Avanzada de Texto.
 Páginas Maestras
 Páginas maestras: Opciones.
 Manejo de Páginas - Plugins',200,24,'2015-05-18','2015-06-18','Activo')
-
-INSERT INTO dbo.Curso VALUES(15,4,1,4,null,'Adobe Dreamweaver CS6','Tener muchos deseos de aprender y lograr tus metas trazadas.
+--49
+INSERT INTO dbo.Curso VALUES(13,4,1,4,null,'Adobe Dreamweaver CS6','Tener muchos deseos de aprender y lograr tus metas trazadas.
 Conocimientos básicos de cualquier sistema operativo','Planificación de la estructura de Sitios locales y remotos
 Brindar al alumno las posibilidades que ofrece el programa
 Creación de documentos HTML','Aspectos básicos del programa
@@ -1097,8 +1032,8 @@ Crear una plantilla nueva
 Crear regiones editables en la plantilla
 Aplicar una plantilla a un documento.
 Bloquear una región editable',200,24,'2014-12-01','2015-01-01','Activo')
-
-INSERT INTO dbo.Curso VALUES(15,4,1,4,54,'Adobe Dreamweaver CS6 - Acceso BD & Adobe Fireworks CS6','Haber realizado el curso de dreamweaver cs6 designer o acreditar conocimientos equivalentes a juicio de la Institución','Como generar mejores efectos animados, es un software especializado para la creación, administración y edición de páginas Web multimedia (texto, sonido e imágenes).','Elementos DIV
+--50
+INSERT INTO dbo.Curso VALUES(13,4,1,4,49,'Adobe Dreamweaver CS6 - Acceso BD & Adobe Fireworks CS6','Haber realizado el curso de dreamweaver cs6 designer o acreditar conocimientos equivalentes a juicio de la Institución','Como generar mejores efectos animados, es un software especializado para la creación, administración y edición de páginas Web multimedia (texto, sonido e imágenes).','Elementos DIV
 Elementos Div PA
 Código de las páginas
 Comportamientos
@@ -1110,8 +1045,8 @@ Texto
 Optimización y exportación
 Acerca de la optimización
 Exportación desde Fireworks',200,24,'2014-01-02','2015-02-04','Activo')
-
-INSERT INTO dbo.Curso VALUES(15,4,1,4,55,'Adobe Flash CS6 - Animaciones Básicas','Conocimientos básicos de Adobe Flash a nivel de usuario.','Manejo de conceptos para la animación, empleo de herramientas para dibujo, texto y color. Manipulación de las librerías y paneles de efectos. ','Iniciar Flash.
+--51
+INSERT INTO dbo.Curso VALUES(13,4,1,4,50,'Adobe Flash CS6 - Animaciones Básicas','Conocimientos básicos de Adobe Flash a nivel de usuario.','Manejo de conceptos para la animación, empleo de herramientas para dibujo, texto y color. Manipulación de las librerías y paneles de efectos. ','Iniciar Flash.
 Área de trabajo.
 El Escenario, configuración.
 Insertar una animación flash en una página web
@@ -1129,8 +1064,8 @@ Acciones básicas: Control de la línea de tiempo
 Acciones a fotogramas
 Acciones a Botones
 Proyectores autoejecutables',200,24,'2015-02-05','2015-03-10','Activo')
-
-INSERT INTO dbo.Curso VALUES(15,4,1,4,56,'Adobe Flash CS6 - Animaciones Avanzadas','Se requiere conocimiento de adobe Flash Basico o intermedio.','El participante, al finalizar el módulo, podrá crear activos para las páginas Web y también diseñar páginas estáticas y dinámicas eficientes, atractivas y fáciles de navegar.','Fundamentos de ActionScript 
+--52
+INSERT INTO dbo.Curso VALUES(13,4,1,4,51,'Adobe Flash CS6 - Animaciones Avanzadas','Se requiere conocimiento de adobe Flash Basico o intermedio.','El participante, al finalizar el módulo, podrá crear activos para las páginas Web y también diseñar páginas estáticas y dinámicas eficientes, atractivas y fáciles de navegar.','Fundamentos de ActionScript 
 Uso de texto estático (Static Text)
 Uso de texto dinámico (Dinamic Text)
 Utilización de variables.
@@ -1145,9 +1080,8 @@ Uso de componentes para crear interfaces de usuario (UI)
 Componentes VS tamaño de película
 Uso de los comandos FSCommnad
 Settings de publicación',200,24,'2015-03-11','2015-04-13','Activo')
-
-
-INSERT INTO dbo.Curso VALUES(16,5,5,13,null,'Linux - Administración','Conocimientos de redes de computadoras 
+--53
+INSERT INTO dbo.Curso VALUES(14,5,5,13,null,'Linux - Administración','Conocimientos de redes de computadoras 
 Tener experiencia de trabajo instalando y configurando redes 
 Conocimientos de TCP/IP','Capacitar al participante en las técnicas básicas de personalización y reducción de puntos de vulnerabilidad en el filtrado de paquetes y control de ciertos contenidos maliciosos, así como también en criptografía y cifrado','Introducción de Sistemas Operativos con Linux
 Sistema de Archivos
@@ -1156,16 +1090,16 @@ Instalación del Sistema Operativo
 Networking bajo Linux
 Grupos, usuarios, archivos, propiedades y permisos
 Compartición de Archivos',200,12,'2014-12-06','2014-12-27','Activo')
-
-INSERT INTO dbo.Curso VALUES(16,5,5,13,58,'Linux - Administración de Servicios Intranet','Conocimientos básicos en redes, conectividad y TCP/IP
+--54
+INSERT INTO dbo.Curso VALUES(14,5,5,13,53,'Linux - Administración de Servicios Intranet','Conocimientos básicos en redes, conectividad y TCP/IP
 Linux – Administracións','Usar el Filtrado de paquetes Por medio de TCP/IP.
 Instalar y configurar entornos Microsoft como servidor Proxy y Firewall para un entorno empresarial.','Domain Name Service (DNS)
 Sendmail
 Apache Web Server
 Dynamic Host Control Protocol (DHCP)
 Squid Proxy Server',200,12,'2015-01-03','2015-01-24','Activo')
-
-INSERT INTO dbo.Curso VALUES(16,5,5,13,59,'Linux - Seguridad en Redes','Conocimientos de redes de computadoras 
+--55
+INSERT INTO dbo.Curso VALUES(14,5,5,13,54,'Linux - Seguridad en Redes','Conocimientos de redes de computadoras 
 Tener experiencia de trabajo instalando y configurando redes 
 Conocimientos de TCP/IP
 ','Capacitar al participante en las técnicas básicas de personalización y reducción de puntos de vulnerabilidad en el filtrado de paquetes y control de ciertos contenidos maliciosos, así como también en criptografía y cifrado','PKI - Criptografía de Clave Pública
@@ -1179,111 +1113,21 @@ Servicio VPN',200,12,'2015-01-31','2015-02-21','Activo')
 
 
 
+
 -- MATRÍCULA CURSO
 INSERT INTO dbo.MatriculaCurso VALUES(3,7,10001,'2014-11-15T14:25:10')
-INSERT INTO dbo.MatriculaCurso VALUES(5,1,10003,'2014-11-17T14:10:10')
-INSERT INTO dbo.MatriculaCurso VALUES(6,17,10004,'2014-11-18T06:05:10')
-INSERT INTO dbo.MatriculaCurso VALUES(8,25,10006,'2014-11-20T14:25:10')
-INSERT INTO dbo.MatriculaCurso VALUES(10,28,10008,'2014-11-22T14:13:10')
-INSERT INTO dbo.MatriculaCurso VALUES(11,44,10009,'2014-11-23T14:25:10')
-INSERT INTO dbo.MatriculaCurso VALUES(12,36,10010,'2014-11-24T14:25:10')
-
-
-
+INSERT INTO dbo.MatriculaCurso VALUES(5,1,10002,'2014-11-17T14:10:10')
+INSERT INTO dbo.MatriculaCurso VALUES(6,17,10003,'2014-11-18T06:05:10')
+INSERT INTO dbo.MatriculaCurso VALUES(8,25,10004,'2014-11-20T14:25:10')
+INSERT INTO dbo.MatriculaCurso VALUES(10,28,10005,'2014-11-22T14:13:10')
+INSERT INTO dbo.MatriculaCurso VALUES(11,44,10006,'2014-11-23T14:25:10')
+INSERT INTO dbo.MatriculaCurso VALUES(12,36,10007,'2014-11-24T14:25:10')
 
 -- MATRÍCULA MÓDULO
-INSERT INTO dbo.MatriculaModulo VALUES(4,10,3,10002,'2014-11-16T21:08:10')
-INSERT INTO dbo.MatriculaModulo VALUES(7,6,3,10005,'2014-11-19T22:25:10')
-INSERT INTO dbo.MatriculaModulo VALUES(9,2,1,10007,'2014-11-21T20:10:10')
+
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
-
-
-
-
----- STORE PROCEDURE ----
-
-
----- STORE PROCEDURE para validar el Login ----
-/*
-	Validar:
-	01. El usuario no sea NULL ni vacío.
-	02. La contraseña no sea NULL ni vacía.
-	03. El usuario y contraseña sean válidos.
-*/
-
-CREATE PROCEDURE usp_ValidarLogin
-@Nick			VARCHAR(25)			= NULL,
-@Password	VARCHAR(40)			= NULL
-AS
-	IF(@Nick IS NULL OR LEN(@Nick)=0)
-		BEGIN
-			PRINT 'Debe ingresar su nombre de usuario'
-			RETURN 1
-		END
-	----------------------------------------------------
-	IF(@Password IS NULL OR LEN(@Password)=0)
-		BEGIN
-			PRINT 'Debe ingresar su contrasena'
-			RETURN 2
-		END
-	----------------------------------------------------
-
-	IF NOT EXISTS( SELECT 1 FROM Usuario 
-					 WHERE Nick = @Nick
-					 AND	  dbo.Desencriptar(Contrasena) = @Password )
-		BEGIN
-			PRINT 'Usuario invalido'
-			RETURN 3
-		END
-	ELSE
-		BEGIN
-			PRINT 'Usuario valido'
-			RETURN 0	-- EXITO
-		END
-GO
-
--- CÓDIGO DE PRUEBA
-EXECUTE usp_ValidarLogin 'Carlos33', 'asdf'			-- ÉXITO
-EXECUTE usp_ValidarLogin NULL, 'asdf'				-- Usuario NULL
-EXECUTE usp_ValidarLogin ' ', 'asdf'				-- Usuario vacío
-EXECUTE usp_ValidarLogin 'Carlos33', NULL			-- Contraseña NULL
-EXECUTE usp_ValidarLogin 'Carlos33', ' '			-- Contraseña vacía
-EXECUTE usp_ValidarLogin 'Carlos33', 'asdfg'		-- Usuario inválido
-
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-
-
-
-
----- STORE PROCEDURE para identificar ALUMNO o ADMINISTRADOR ----
-CREATE PROCEDURE usp_AlumnoAdministrador
-@Nick	VARCHAR(25),
-@Password VARCHAR(40)
-AS
-	DECLARE @C_Usuario	INT
-	SELECT @C_Usuario = C_Usuario FROM Usuario WHERE Nick = @Nick
-	IF EXISTS(SELECT 1 FROM Alumno WHERE C_Alumno = @C_Usuario)
-		BEGIN
-			PRINT 'Es ALUMNO'
-			RETURN 1
-		END
-	------------------------------------------------------------------------------
-	IF EXISTS(SELECT 1 FROM Administrador WHERE C_Administrador = @C_Usuario)
-		BEGIN
-			PRINT 'Es ADMINISTRADOR'
-			RETURN 2
-		END
-GO
-
--- CÓDIGO DE PRUEBA
-EXECUTE usp_AlumnoAdministrador 'Pati', 'abcd'			-- ALUMNO
-EXECUTE usp_AlumnoAdministrador 'Carlos33', 'asdf'		-- ADMINISTRADOR
-------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------
-
 
 
 
