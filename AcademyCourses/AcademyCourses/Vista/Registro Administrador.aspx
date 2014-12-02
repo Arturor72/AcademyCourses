@@ -305,7 +305,9 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="TextBox1" class="span12" placeholder="Nombre" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                         </div>
 
                                                             <div class="row-fluid">
@@ -313,7 +315,9 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="TextBox2" class="span12" placeholder="Apellido paterrno" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                         </div>
 
                                                             <div class="row-fluid">
@@ -321,7 +325,9 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="TextBox3" class="span12" placeholder="Apellido materrno" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Camo obligatorio" ControlToValidate="TextBox3"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                         </div>
 
                                                             <div class="row-fluid">
@@ -340,7 +346,9 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="TextBox4" class="span12" placeholder="Código de trabajador" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox4"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                         </div>
 
                                                              <div class="row-fluid">
@@ -348,7 +356,9 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="TextBox50" class="span12" placeholder="Correo" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox50"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                         </div>
 
                                                         <%--    <div class="row-fluid">
@@ -367,7 +377,9 @@
 																            <i class="icon-user"></i>
 															            </span>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox5"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                         </div>
 
                                                             <div class="row-fluid">
@@ -378,7 +390,9 @@
 																            <i class="icon-lock"></i>
 															            </span>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox6"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                         </div>
 
                                                             <div class="row-fluid">
@@ -389,7 +403,9 @@
 																            <i class="icon-retweet"></i>
 															            </span>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox7"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                         </div>
 
                                                              <div class="space-18"></div>
