@@ -46,17 +46,21 @@ namespace AcademyCourses.Vista
 
                 case 1:
                     lblResultado.Text = "Debe ingresar su nombre de usuario";
+                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje2", "Alert.render('Debe ingresar su nombre de usuario.')", true);
                     txtUsuario.Text = "";
                     break;
 
                 case 2:
                     lblResultado.Text = "Debe ingresar su contraseña";
+                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje2", "Alert.render('Debe ingresar contraseña.')", true);
                     txtUsuario.Text = "";
                     break;
 
                 case 3:
                     lblResultado.Text = "Usuario no existe";
+                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje2", "Alert.render('Usuario no existe.')", true);
                     txtUsuario.Text = "";
+                    txtContrasena.Text = "";
                     break;
             }
         }
