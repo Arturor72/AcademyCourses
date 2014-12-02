@@ -236,7 +236,7 @@
                                                                         <asp:TextBox ID="txtNombre" class="span12" placeholder="Nombre" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtNombre"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese nombre" ControlToValidate="txtNombre" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
  	                                                    </div>
 
@@ -289,12 +289,15 @@
 
 
                                                         <div class="row-fluid">
-                                                                  <div class="span3" ></div>  
+                                                                  <div class="span3" >
+                                                                      <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtCursoR" ErrorMessage="El código solo debe contener números" ForeColor="Red" MaximumValue="200" MinimumValue="1">*</asp:RangeValidator>
+                                                                  </div>  
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="txtHoras" class="span12" placeholder="Número de horas" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtHoras"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese número de horas" ControlToValidate="txtHoras" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                                                      <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="txtHoras" ErrorMessage="El campo hora debe contener números" ForeColor="Red" MaximumValue="999" MinimumValue="1">*</asp:RangeValidator>
                                                                   </div>  
  	                                                    </div>
 
@@ -303,7 +306,10 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="txtPrecio" class="span12" placeholder="Precio" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtPrecio" ErrorMessage="Ingrese precio" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                                                      <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtPrecio" ErrorMessage="El campo precio debe contener números" ForeColor="Red">*</asp:RangeValidator>
+                                                                  </div>  
  	                                                    </div>
 
 
@@ -329,7 +335,7 @@
                                                                         <asp:TextBox ID="txtTemario" class="span12" placeholder="Temario" runat="server" TextMode="MultiLine"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtTemario"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Ingrese temario" ControlToValidate="txtTemario" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
  	                                                    </div>
 
@@ -340,7 +346,7 @@
                                                                         <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtFechaInicio"></asp:CalendarExtender>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtFechaInicio"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ingrese fecha de inicio" ControlToValidate="txtFechaInicio" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
  	                                                    </div>
 
@@ -352,7 +358,7 @@
                                                                         <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txtFechaFin"></asp:CalendarExtender>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtFechaFin"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese fecha de fin" ControlToValidate="txtFechaFin" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
  	                                                    </div>
                                                            
@@ -404,9 +410,22 @@
                                                                   <div class="span6">
                                                                         <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" class="width-40 pull-right btn btn-small btn-success" OnClick="btnRegistrar_Click"/>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                     
+                                                                  </div>  
  	                                                    </div>
                                                                
+                                                        <div class="row-fluid">
+                                                                  <div class="span4" ></div>  
+                                                                  <div class="span7">
+                                                                        <asp:ValidationSummary ID="ValidationSummary2" runat="server" />
+															      </div>  
+                                                                  <div class="span3">
+                                                                     
+                                                                  </div>  
+ 	                                                    </div>
+
+
 
            										                <asp:ToolkitScriptManager ID="ToolkitScriptManager1" EnableScriptGlobalization="true" runat="server">
                                                                 </asp:ToolkitScriptManager>
