@@ -27,6 +27,12 @@ namespace AcademyCourses.Vista
             {
                 case 0:
                     lblResultado.Text = "Usuario valido";
+
+                    int codigo = LoginDAO.ObtenerCodigo(objUsuario);
+
+                    Session.Add("Codigo", codigo);
+                    Session.Add("Nick", objUsuario.Nick);
+
                     int rpta = LoginDAO.AlumnoAdministrador(objUsuario);
                     if (rpta == 1)
                     {

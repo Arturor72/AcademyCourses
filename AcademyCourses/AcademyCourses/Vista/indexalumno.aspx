@@ -67,8 +67,8 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="../App_Themes/Tema/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
-									<small>Bienvenido</small>
-									Pati
+									<small>Bienvenid@</small>
+                                    <asp:Label ID="lblBienvenida" runat="server" Text=""></asp:Label>
 								</span>
 
 								<i class="icon-caret-down"></i>

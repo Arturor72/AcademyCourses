@@ -52,5 +52,28 @@ namespace AcademyCourses
             return respuesta;
 
         }
+
+
+
+
+        public static int ObtenerCodigo(UsuarioBE objUsuario)
+        {
+            int respuesta;
+
+            using (SqlConnection Conn = BDConexion.ObtenerConexion())
+            {
+                SqlCommand comm = new SqlCommand("usp_ObtenerCodigoAlumno", Conn);
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Add("@Nick", SqlDbType.VarChar).Value = objUsuario.Nick;
+
+                //Capturamos los valores RETURN del STORE PROCEDURE
+                comm.Parameters.Add("@RETURN_VALUE", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+                comm.ExecuteNonQuery();
+                respuesta = (int)comm.Parameters["@RETURN_VALUE"].Value;
+            }
+
+            return respuesta;
+
+        }
     }
 }
