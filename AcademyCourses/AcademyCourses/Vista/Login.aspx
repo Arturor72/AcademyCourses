@@ -195,18 +195,21 @@
 														<label>
 															<span class="block input-icon input-icon-right">
                                                                 <asp:TextBox ID="TextBox4" class="span12" placeholder="Nombre"  runat="server"></asp:TextBox>
-															</span>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox4"></asp:RequiredFieldValidator>
+                                                            </span>
 														</label>
 
 														<label>
 															<span class="block input-icon input-icon-right">
                                                                 <asp:TextBox ID="TextBox5" class="span12" placeholder="Apellido paterrno" runat="server" OnTextChanged="TextBox5_TextChanged"></asp:TextBox>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox5"></asp:RequiredFieldValidator>
 															</span>
 														</label>
 
 														<label>
 															<span class="block input-icon input-icon-right">
                                                                 <asp:TextBox ID="TextBox6" class="span12" placeholder="Apellido materrno" runat="server"></asp:TextBox>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox6"></asp:RequiredFieldValidator>
 															</span>
 														</label>
 
@@ -240,6 +243,7 @@
 															<span class="block input-icon input-icon-right">
                                                                 <asp:TextBox ID="TextBox12" class="span12" placeholder="Correo" runat="server"></asp:TextBox>
 																<i class="icon-envelope"></i>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox12"></asp:RequiredFieldValidator>
 															</span>
 														</label>
 
@@ -247,6 +251,7 @@
 															<span class="block input-icon input-icon-right">
                                                                 <asp:TextBox ID="TextBox7" class="span12" placeholder="Usuario" runat="server"></asp:TextBox>
 																<i class="icon-user"></i>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox7"></asp:RequiredFieldValidator>
 															</span>
 														</label>
 
@@ -254,6 +259,7 @@
 															<span class="block input-icon input-icon-right">
                                                                 <asp:TextBox ID="TextBox8" type="password" class="span12" placeholder="Contraseña" runat="server"></asp:TextBox>
 																<i class="icon-lock"></i>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox8"></asp:RequiredFieldValidator>
 															</span>
 														</label>
 
@@ -263,6 +269,7 @@
 															<span class="block input-icon input-icon-right">
                                                                 <asp:TextBox ID="TextBox9" type="password" class="span12" placeholder="Reescriba Contraseña" runat="server"></asp:TextBox>
 																<i class="icon-retweet"></i>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox9"></asp:RequiredFieldValidator>
 															</span>
 														</label>
 
@@ -279,14 +286,16 @@
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<asp:TextBox ID="TextBox10" class="span12" placeholder="Código curso" runat="server"></asp:TextBox>
+																<asp:TextBox ID="TextBox10" class="span12" placeholder="Código" runat="server"></asp:TextBox>
 															</span>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox10"></asp:RequiredFieldValidator>
 														</label>
 
 
 														<label>
 															<span class="block input-icon input-icon-right">
                                                                 <asp:TextBox ID="TextBox11" class="span12" placeholder="Código recibo" runat="server"></asp:TextBox>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox11"></asp:RequiredFieldValidator>
 															</span>
 														</label>
 
