@@ -2501,9 +2501,7 @@ EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' ,
 -- STORE PROCEDURE para matricular a un Curso--
 /*
 	Validar:
-	01. El código de alumno no sea NULL ni vacío.
 	02. El código de curso no sea NULL ni vacío.
-	03. El código de alumno exista.
 	04. El código de curso exista.
 */
 CREATE PROCEDURE usp_MatricularCurso
@@ -2511,30 +2509,20 @@ CREATE PROCEDURE usp_MatricularCurso
 @C_Curso		INT,
 @C_Recibo		INT
 AS
-	IF(@C_Alumno IS NULL OR LEN(@C_Alumno)=0)
-		BEGIN
-			PRINT 'Debe ingresar codigo de alumno'
-			RETURN 1
-		END
 	IF(@C_Curso IS NULL OR LEN(@C_Curso)=0)
 		BEGIN
 			PRINT 'Debe ingresar codigo de curso'
-			RETURN 2
+			RETURN 1
 		END
 	IF(@C_Recibo IS NULL OR LEN(@C_Recibo)=0)
 		BEGIN
 			PRINT 'Debe ingresar codigo de recibo'
-			RETURN 3
-		END
-	IF NOT EXISTS(SELECT 1 FROM Alumno WHERE C_Alumno = @C_Alumno)
-		BEGIN
-			PRINT 'El codigo de alumno no existe'
-			RETURN 4
+			RETURN 2
 		END
 	IF NOT EXISTS(SELECT 1 FROM Curso WHERE C_Curso = @C_Curso)
 		BEGIN
 			PRINT 'El codigo de curso no existe'
-			RETURN 5
+			RETURN 3
 		END
 	-----------------------------------------------------------------------------------
 	
@@ -2545,7 +2533,7 @@ AS
 	IF(@@ERROR <> 0)
 		BEGIN
 			PRINT 'Error al insertar'
-			RETURN 5
+			RETURN 4
 		END
 	
 	PRINT 'Se matriculo al curso'
