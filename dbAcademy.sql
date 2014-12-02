@@ -1179,9 +1179,39 @@ EXECUTE usp_ValidarLogin ' ', 'asdf'						-- Usuario vacío
 EXECUTE usp_ValidarLogin 'Carlos33', NULL			-- Contraseña NULL
 EXECUTE usp_ValidarLogin 'Carlos33', ' '				-- Contraseña vacía
 EXECUTE usp_ValidarLogin 'Carlos33', 'asdfg'		-- Usuario inválido
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 
+
+
+---- STORE PROCEDURE para saber si es Alumno o Administrador ----
+CREATE PROCEDURE usp_AlumnoAdministrador
+@Nick	VARCHAR(25),
+@Password VARCHAR(40)
+AS
+	DECLARE @C_Usuario INT
+	SELECT @C_Usuario = C_Usuario FROM Usuario WHERE Nick = @Nick
+	IF EXISTS(SELECT 1 FROM Alumno WHERE C_Alumno = @C_Usuario)
+ 		BEGIN
+ 			PRINT 'Es ALUMNO'
+ 			RETURN 1
+ 		END
+	----------------------------------------------------------------------------
+	IF EXISTS(SELECT 1 FROM Administrador WHERE C_Administrador = @C_Usuario)
+ 		BEGIN
+ 			PRINT 'Es ADMINISTRADOR'
+ 			RETURN 2
+ 		END
+GO
+
+-- CÓDIGO DE PRUEBA
+EXECUTE usp_AlumnoAdministrador 'Pati', 'abcd' -- ALUMNO
+EXECUTE usp_AlumnoAdministrador 'Carlos33', 'asdf'	-- ADMINISTRADOR
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
+
+
+
 
 
 ---- STORE PROCEDURE para agregar Curso ----
@@ -2478,7 +2508,8 @@ EXECUTE usp_AgregarAdministrador 'Claudia','Valenzuela', 'Guzman' , 'F' , '15' ,
 */
 CREATE PROCEDURE usp_MatricularCurso
 @C_Alumno	INT,
-@C_Curso		INT
+@C_Curso		INT,
+@C_Recibo		INT
 AS
 	IF(@C_Alumno IS NULL OR LEN(@C_Alumno)=0)
 		BEGIN
@@ -2490,21 +2521,23 @@ AS
 			PRINT 'Debe ingresar codigo de curso'
 			RETURN 2
 		END
+	IF(@C_Recibo IS NULL OR LEN(@C_Recibo)=0)
+		BEGIN
+			PRINT 'Debe ingresar codigo de recibo'
+			RETURN 3
+		END
 	IF NOT EXISTS(SELECT 1 FROM Alumno WHERE C_Alumno = @C_Alumno)
 		BEGIN
 			PRINT 'El codigo de alumno no existe'
-			RETURN 3
+			RETURN 4
 		END
 	IF NOT EXISTS(SELECT 1 FROM Curso WHERE C_Curso = @C_Curso)
 		BEGIN
 			PRINT 'El codigo de curso no existe'
-			RETURN 4
+			RETURN 5
 		END
 	-----------------------------------------------------------------------------------
 	
-	-- Obtenemos el valor del último código de recibo
-	DECLARE @C_Recibo INT
-	SELECT @C_Recibo = (MAX(C_Recibo)+1) FROM MatriculaCurso
 	
 	-- Matriculamos al curso
 	INSERT INTO MatriculaCurso(C_Alumno, C_Curso, C_Recibo, FechaMatricula)
@@ -2520,18 +2553,12 @@ AS
 GO
 
 -- CÓDIGO DE PRUEBA
-EXECUTE usp_MatricularCurso 14, 1			-- ÉXITO!
-EXECUTE usp_MatricularCurso NULL, 1		-- Alumno NULL
-EXECUTE usp_MatricularCurso ' ', 1			-- Alumno vacío	
-EXECUTE usp_MatricularCurso 14, NULL	-- Curso NULL
-EXECUTE usp_MatricularCurso 14, ' '			-- Curso vacío
-EXECUTE usp_MatricularCurso 144, 1		-- Alumno no existe
-EXECUTE usp_MatricularCurso 14, 1000	-- Curso no existe	
+EXECUTE usp_MatricularCurso 3, 1, 25698			-- ÉXITO!
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 
 
-
+SELECT * FROM MatriculaCurso
 
 -- STORE PROCEDURE para validar el curso prerequisito --
 CREATE PROCEDURE usp_ValidarCursoRequisito
@@ -2725,13 +2752,79 @@ AS
 GO
 
 EXECUTE usp_MostrarCursosNoInscritos 3
+----------------------------------------------------------------
+----------------------------------------------------------------
 
 
 
-
+-- STORE PROCEDURE para matricular por módulo --
+/* Validar:
+	1. Que el código de módulo no sea NULL. Validar en vista
+	2. Que el código de recibo no ses NULL. Validar en vista
+	3. Que el código de módulo exista.
+*/
+CREATE PROCEDURE usp_MatricularModulo
+@C_Alumno	INT = NULL,
+@C_Modulo	INT = NULL,
+@C_Recibo		INT = NULL
+AS
+	IF(@C_Modulo IS NULL OR LEN(@C_Modulo) = 0)
+		BEGIN
+			PRINT 'Debe ingresar codigo de modulo'
+			RETURN 1
+		END
+	IF(@C_Recibo IS NULL OR LEN(@C_Recibo) = 0)
+		BEGIN
+			PRINT 'Debe ingresar codigo de recibo'
+			RETURN 2
+		END
+	IF NOT EXISTS (SELECT 1 FROM Modulo WHERE C_Modulo = @C_Modulo)
+		BEGIN
+			PRINT 'El codigo de modulo no existe'
+			RETURN 3
+		END
+		
+	DECLARE @C_Categoria INT
+	SELECT @C_Categoria = C_Categoria FROM Modulo WHERE C_Modulo = @C_Modulo
 	
+	DECLARE @C_Curso INT
+	SELECT TOP 1 @C_Curso = C_Curso FROM Curso WHERE C_Modulo = @C_Modulo
 	
+	-- INICIAMOS TRANSACCIÓN
+	BEGIN TRANSACTION
+		
+		-- INSERTAMOS EN MatriculaModulo
+		INSERT INTO MatriculaModulo(C_Alumno, C_Modulo, C_Categoria, C_Recibo, FechaMatricula)
+		VALUES(@C_Alumno, @C_Modulo, @C_Categoria, @C_Recibo, GETDATE())
+		IF(@@ERROR <> 0)
+			BEGIN
+				PRINT 'Error al insertar en MatriculaModulo'
+				ROLLBACK
+				RETURN 4
+			END
+			
+		-- INSERTAMOS EN MatriculaCurso
+		INSERT INTO MatriculaCurso(C_Alumno, C_Curso, C_Recibo, FechaMatricula)
+		VALUES(@C_Alumno, @C_Curso, @C_Recibo, GETDATE())
+		IF(@@ERROR <> 0)
+			BEGIN
+				PRINT 'Error al insertar en MatriculaCurso'
+				ROLLBACK
+				RETURN 5
+			END
+		
+	COMMIT TRANSACTION
 	
+	RETURN 0
+GO
+
+-- CÓDIGO DE PRUEBA
+EXECUTE usp_MatricularModulo 3, 1 , 250		-- ÉXITO!
+EXECUTE usp_MatricularModulo 3, NULL , 250	-- Modulo NULL
+EXECUTE usp_MatricularModulo 3, 1 , NULL		-- Recibo NULL
+
+
+
 	
 
 	
