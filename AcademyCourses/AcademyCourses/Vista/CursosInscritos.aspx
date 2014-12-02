@@ -194,7 +194,8 @@
 						<div class="span12">
 							<!--INICIO HOJA-->
 
-                            <div>
+                            <div class="span3"></div>
+                            <div class="span6">
                               <form id="form1" runat="server">
                                   
 
@@ -209,7 +210,7 @@
                                   </asp:GridView>
 
 
-                                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString3 %>" SelectCommand="usp_MostrarCursosInscritos" SelectCommandType="StoredProcedure">
+                                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString2 %>" SelectCommand="usp_MostrarCursosInscritos" SelectCommandType="StoredProcedure">
                                       <SelectParameters>
                                           <asp:SessionParameter Name="C_Alumno" SessionField="Codigo" Type="Int32" />
                                       </SelectParameters>
@@ -218,6 +219,7 @@
 
                               </form>
                             </div>
+                            <div class="span3"></div>
                               
 
 							<!--FIN HOJA-->

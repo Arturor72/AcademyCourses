@@ -192,8 +192,8 @@
 					<div class="row-fluid">
 						<div class="span12">
 							<!--INICIO HOJA-->
-
-                             <div style="overflow:scroll">
+                            <div class="span3"></div>
+                             <div class="spam8">
                               <form id="form1" runat="server">
                                   
 
@@ -208,7 +208,7 @@
                                   </asp:GridView>
 
 
-                                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString3 %>" SelectCommand="usp_MostrarCursosNoInscritos" SelectCommandType="StoredProcedure">
+                                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbAcademyConnectionString2 %>" SelectCommand="usp_MostrarCursosNoInscritos" SelectCommandType="StoredProcedure">
                                       <SelectParameters>
                                           <asp:SessionParameter Name="C_Alumno" SessionField="Codigo" Type="Int32" />
                                       </SelectParameters>
@@ -217,6 +217,7 @@
 
                               </form>
                             </div>
+                            <div class="span3"></div>
                               
 
 							<!--FIN HOJA-->
