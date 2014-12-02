@@ -98,7 +98,12 @@ namespace AcademyCourses
                 comm.Parameters.Add("@Contrasena1", SqlDbType.VarChar).Value = objUsuario.Contrasena;
                 comm.Parameters.Add("@Contrasena2", SqlDbType.VarChar).Value = objUsuario.Contrasena;
 
-                respuesta = comm.ExecuteNonQuery();
+               // respuesta = comm.ExecuteNonQuery();
+
+
+                comm.Parameters.Add("@valorReturn", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+                comm.ExecuteNonQuery();
+                respuesta = (int)comm.Parameters["@valorReturn"].Value;
 
                 Conn.Close();
             }
