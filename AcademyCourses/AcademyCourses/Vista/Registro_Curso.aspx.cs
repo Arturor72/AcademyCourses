@@ -38,9 +38,7 @@ namespace AcademyCourses.Vista
             switch (retorno)
             {
                 case 0:
-                    //Response.Write("<script>window.alert('Se registro el curso');</script>");
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "Alert.render('Se registro curso')", true);
-
+                    Response.Write("<script>window.alert('Se registro el curso');</script>");
                     txtNombre.Text = "";
                     txtCursoR.Text = "";
                     txtHoras.Text = "";
@@ -110,44 +108,33 @@ namespace AcademyCourses.Vista
                     break;
 
                 case 15:
-                    //Response.Write("<script>window.alert('Codigo de curso requerido no existe');</script>");
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "Alert.render('Codigo de curso requerido no existe')", true);
+                    Response.Write("<script>window.alert('Codigo de curso requerido no existe');</script>");
                     break;
-                ////////////////////////////////////////
+
                 case 16:
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "Alert.render('Nombre de curso ya existe.')", true);
+                    Response.Write("<script>window.alert('Nombre de curso ya existe');</script>");
                     break;
 
                 case 17:
-                    //Response.Write("<script>window.alert('Precio no puede ser menor que cero');</script>");
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "Alert.render('Precio no puede ser menor que cero.')", true);
+                    Response.Write("<script>window.alert('Precio no puede ser menor que cero');</script>");
                     break;
 
                 case 18:
-                    //    Response.Write("<script>window.alert('Numero de horas no puede ser menor que cero');</script>");
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "Alert.render('Numero de horas no puede ser menor que cero.')", true);
+                    Response.Write("<script>window.alert('Numero de horas no puede ser menor que cero');</script>");
                     break;
 
                 case 19:
-                    //Response.Write("<script>window.alert('Fecha de inicio no puede ser posterior a la de fin');</script>");
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "Alert.render('Fecha de inicio no puede ser posterior a la de fin.')", true);
+                    Response.Write("<script>window.alert('Fecha de inicio no puede ser posterior a la de fin');</script>");
                     break;
 
                 case 20:
-                    //Response.Write("<script>window.alert('Fecha de inicio no puede ser igual a fecha de fin');</script>");
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "Alert.render('Fecha de inicio no puede ser igual a fecha de fin.')", true);
+                    Response.Write("<script>window.alert('Fecha de inicio no puede ser igual a fecha de fin');</script>");
                     break;
 
                 case 21:
-                    //Response.Write("<script>window.alert('Error al agregar curso');</script>");
-                    ClientScript.RegisterStartupScript(GetType(), "Mostrar_Mensaje3", "Alert.render('Error al agregar curso.')", true);
-
+                    Response.Write("<script>window.alert('Error al agregar curso');</script>");
                     break;
             }
-
-
-
-
         }
 
 }
