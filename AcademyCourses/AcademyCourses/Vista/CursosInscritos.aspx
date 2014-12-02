@@ -66,9 +66,9 @@
 					<!--/BIENVENIDO-->
 						<li class="light-blue">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="../App_Themes/Tema/assets/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="../App_Themes/Tema/assets/avatars/avatar2.png" alt="Jason's Photo" />
 								<span class="user-info">
-									<small>Bienvenido</small>
+									<small>Bienvenid@</small>
                                     <asp:Label ID="lblBienvenida" runat="server" Text=""></asp:Label>
 								</span>
 

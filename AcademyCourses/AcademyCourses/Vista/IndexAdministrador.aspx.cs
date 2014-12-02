@@ -12,6 +12,8 @@ namespace AcademyCourses
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string nick = (string)(Session["Nick"]);
+            lblBienvenida.Text = nick;
         }
 
         protected void gvCursos_RowDataBound(object sender, GridViewRowEventArgs e)

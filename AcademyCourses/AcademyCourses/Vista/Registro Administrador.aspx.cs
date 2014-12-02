@@ -11,7 +11,8 @@ namespace AcademyCourses.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string nick = (string)(Session["Nick"]);
+            lblBienvenida.Text = nick;
         }
 
         //PROGRAMAR EVENTO REGISTRAR ADMINISTRADOR
