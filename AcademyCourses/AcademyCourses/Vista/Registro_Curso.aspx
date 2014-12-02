@@ -308,7 +308,7 @@
 															      </div>  
                                                                   <div class="span3">
                                                                       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtPrecio" ErrorMessage="Ingrese precio" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                                                      <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtPrecio" ErrorMessage="El campo precio debe contener números" ForeColor="Red">*</asp:RangeValidator>
+                                                                      <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtPrecio" ErrorMessage="El campo precio debe contener números" ForeColor="Red" MaximumValue="999" MinimumValue="1">*</asp:RangeValidator>
                                                                   </div>  
  	                                                    </div>
 

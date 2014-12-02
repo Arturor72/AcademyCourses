@@ -231,9 +231,8 @@
                                                                   </div>  
                                                                   <div class="span3">
                                                                       
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese código" ControlToValidate="txtRecibo" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                                                  
                                                                       
-                                                                      <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtCodigo" ErrorMessage="El código solo puede contener números" MaximumValue="70" MinimumValue="1" ForeColor="Red">*</asp:RangeValidator>
                                                                       
                                                                   </div> 
  	                                                    </div>
@@ -247,7 +246,6 @@
 															      </div>  
 
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Ingrese código de recibo" ControlToValidate="txtRecibo" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div> 
  	                                                    </div>
 
@@ -267,7 +265,7 @@
                                                                                                                 <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                       <asp:ValidationSummary ID="ValidationSummary2" runat="server" />
+                                                                 
 															      </div>  
                                                                   <div class="span3">
 
