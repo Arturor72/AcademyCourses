@@ -235,7 +235,9 @@
 
                                                                         <asp:TextBox ID="txtNombre" class="span12" placeholder="Nombre" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtNombre"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                    </div>
 
                                                         <div class="row-fluid">
@@ -291,7 +293,9 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="txtHoras" class="span12" placeholder="Número de horas" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtHoras"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                    </div>
 
                                                         <div class="row-fluid">
@@ -324,7 +328,9 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="txtTemario" class="span12" placeholder="Temario" runat="server" TextMode="MultiLine"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtTemario"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                    </div>
 
                                                         <div class="row-fluid">
@@ -333,7 +339,9 @@
                                                                         <asp:TextBox ID="txtFechaInicio" class="span12" placeholder="Fecha de inicio" runat="server"></asp:TextBox>
                                                                         <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtFechaInicio"></asp:CalendarExtender>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtFechaInicio"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                    </div>
 
 
@@ -343,7 +351,9 @@
                                                                         <asp:TextBox ID="txtFechaFin" class="span12" placeholder="Fecha de fin" runat="server" ></asp:TextBox>
                                                                         <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txtFechaFin"></asp:CalendarExtender>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtFechaFin"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                    </div>
                                                            
                                                         <div class="row-fluid">
