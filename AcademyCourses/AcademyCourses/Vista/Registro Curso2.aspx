@@ -226,17 +226,26 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="txtCurso" class="span12" placeholder="Código curso" runat="server"></asp:TextBox>
-															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                        <asp:TextBox ID="txtCurso" class="span12" placeholder="Código" runat="server"></asp:TextBox>
+															      
+                                                                  </div>  
+                                                                  <div class="span3">
+                                                                      
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtRecibo"></asp:RequiredFieldValidator>
+                                                                      
+                                                                  </div> 
  	                                                    </div>
 
                                                         <div class="row-fluid">
-                                                                  <div class="span3" ></div>  
+                                                                  <div class="span3" > 
+                                                             
+ 	                                                              </div>  
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="txtRecibo" class="span12" placeholder="Código recibo" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtRecibo"></asp:RequiredFieldValidator>
+                                                                  </div>  
  	                                                    </div>
 
 
@@ -246,7 +255,10 @@
                                                                   <div class="span6">
                                                                         <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" class="width-40 pull-right btn btn-small btn-success" OnClick="btnRegistrar_Click"/>
 															      </div>  
-                                                                  <div class="span3"></div>  
+                                                                  <div class="span3">
+                                                                      
+
+                                                                  </div>  
  	                                                    </div>
                                   
 										        </div><!--/widget-body-->
