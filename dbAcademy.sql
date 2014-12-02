@@ -2662,3 +2662,20 @@ WHERE A.C_Alumno = 14
 EXECUTE usp_ValidarCursoRequisito 14, 50		-- No hay curso prerequisito
 EXECUTE usp_ValidarCursoRequisito 14, 53		-- Si hay curso prerequisito. El alumno no lo llevó
 EXECUTE usp_ValidarCursoRequisito 14, 51		-- ÉXITO! Si hay curso prerequisito. El alumno sí lo llevó
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+
+
+
+-- STORE PROCEDURE para obtener código de alumno --
+CREATE PROCEDURE usp_ObtenerCodigoAlumno
+@Nick	VARCHAR(25) = NULL
+AS
+	DECLARE @C_Alumno INT
+	SELECT @C_Alumno = C_Usuario FROM Usuario WHERE Nick = @Nick
+	PRINT @C_Alumno
+	RETURN @C_Alumno
+GO
+
+EXECUTE usp_ObtenerCodigoAlumno 'Pati'
