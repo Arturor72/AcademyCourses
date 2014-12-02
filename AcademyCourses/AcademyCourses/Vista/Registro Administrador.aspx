@@ -39,14 +39,6 @@
 
 		<!--inline styles related to this page-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<style type="text/css">
-        .auto-style6 {
-            width: 130px;
-        }
-        .auto-style7 {
-            width: 131px;
-        }
-    </style>
 
    <%-- <script type="text/javascript">
 
@@ -306,7 +298,7 @@
                                                                         <asp:TextBox ID="TextBox1" class="span12" placeholder="Nombre" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese nombre" ControlToValidate="TextBox1" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
  	                                                         </div>
 
@@ -316,7 +308,7 @@
                                                                         <asp:TextBox ID="TextBox2" class="span12" placeholder="Apellido paterrno" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese apellido paterno" ControlToValidate="TextBox2" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
  	                                                         </div>
 
@@ -326,7 +318,7 @@
                                                                         <asp:TextBox ID="TextBox3" class="span12" placeholder="Apellido materrno" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Camo obligatorio" ControlToValidate="TextBox3"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Ingrese apellido materno" ControlToValidate="TextBox3" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
  	                                                         </div>
 
@@ -346,18 +338,22 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="TextBox4" class="span12" placeholder="Código de trabajador" runat="server"></asp:TextBox>
 															      </div>  
-                                                                  <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox4"></asp:RequiredFieldValidator>
+                                                                <div class="span3" >
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox4" ErrorMessage="Ingrese codigo de trabajador" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
+
  	                                                         </div>
 
                                                              <div class="row-fluid">
-                                                                  <div class="span3" ></div>  
+                                                                  <div class="span3" >
+                                                                    
+                                                                  </div>  
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="TextBox50" class="span12" placeholder="Correo" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox50"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese correo electrónico" ControlToValidate="TextBox50" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox50" ErrorMessage="Ingrese un correo electrónico valido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
                                                                   </div>  
  	                                                         </div>
 
@@ -378,7 +374,7 @@
 															            </span>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox5"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Ingrese usuario" ControlToValidate="TextBox5" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
  	                                                         </div>
 
@@ -391,7 +387,8 @@
 															            </span>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox6"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Ingrese contraseña" ControlToValidate="TextBox6" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                                                      <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox6" ControlToValidate="TextBox7" ErrorMessage="Las contraseñas no son iguales" ForeColor="Red">*</asp:CompareValidator>
                                                                   </div>  
  	                                                         </div>
 
@@ -404,7 +401,7 @@
 															            </span>
 															      </div>  
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="TextBox7"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Reeingrese la contraseña" ControlToValidate="TextBox7" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                   </div>  
  	                                                         </div>
 
@@ -421,11 +418,27 @@
                                                                   <div class="span3"></div>  
  	                                                          </div>
 
+                                                               <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+															      </div>  
+                                                                  <div class="span3">
+                                                                     
+                                                                  </div>  
+ 	                                                          </div>
+
+
+
 										              </div><!--/widget-main-->
                                                 </div><!--/widget-body-->
 
 									        </div><!--/signup-box-->
                                         </div>
+
+
+
+                                                                
                                     </div>
                               </form>
 
