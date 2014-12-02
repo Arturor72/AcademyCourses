@@ -231,7 +231,9 @@
                                                                   </div>  
                                                                   <div class="span3">
                                                                       
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtRecibo"></asp:RequiredFieldValidator>
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese código" ControlToValidate="txtRecibo" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                                                      
+                                                                      <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtCurso" ErrorMessage="El código solo puede contener números" MaximumValue="70" MinimumValue="1" ForeColor="Red">*</asp:RangeValidator>
                                                                       
                                                                   </div> 
  	                                                    </div>
@@ -243,9 +245,10 @@
                                                                   <div class="span6">
                                                                         <asp:TextBox ID="txtRecibo" class="span12" placeholder="Código recibo" runat="server"></asp:TextBox>
 															      </div>  
+
                                                                   <div class="span3">
-                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtRecibo"></asp:RequiredFieldValidator>
-                                                                  </div>  
+                                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Ingrese código de recibo" ControlToValidate="txtRecibo" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                                                  </div> 
  	                                                    </div>
 
 
@@ -256,7 +259,17 @@
                                                                         <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" class="width-40 pull-right btn btn-small btn-success" OnClick="btnRegistrar_Click"/>
 															      </div>  
                                                                   <div class="span3">
-                                                                      
+                                                                                      
+
+                                                                  </div>  
+ 	                                                    </div>
+
+                                                                                                                <div class="row-fluid">
+                                                                  <div class="span3" ></div>  
+                                                                  <div class="span6">
+                                                                       <asp:ValidationSummary ID="ValidationSummary2" runat="server" />
+															      </div>  
+                                                                  <div class="span3">
 
                                                                   </div>  
  	                                                    </div>
@@ -265,7 +278,8 @@
 									        </div><!--/signup-box-->
                                         </div>
                                     </div>
-                                        </form>
+                                                                   
+ 	                                                    </form>
 
 						</div><!--/.span-->
 					</div><!--/.row-fluid-->
