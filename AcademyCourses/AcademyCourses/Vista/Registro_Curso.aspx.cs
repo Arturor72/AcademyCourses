@@ -136,10 +136,5 @@ namespace AcademyCourses.Vista
             }
         }
 
-        protected void txtObjetivo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 }
 }
