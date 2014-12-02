@@ -226,7 +226,7 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="txtCurso" class="span12" placeholder="Código curso" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtCurso" class="span12" placeholder="Código" runat="server"></asp:TextBox>
 															      </div>  
                                                                   <div class="span3"></div>  
  	                                                    </div>
