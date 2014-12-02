@@ -1123,12 +1123,65 @@ INSERT INTO dbo.MatriculaCurso VALUES(10,28,10005,'2014-11-22T14:13:10')
 INSERT INTO dbo.MatriculaCurso VALUES(11,44,10006,'2014-11-23T14:25:10')
 INSERT INTO dbo.MatriculaCurso VALUES(12,36,10007,'2014-11-24T14:25:10')
 
--- MATRÍCULA MÓDULO
-
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 
+
+
+
+---- STORE PROCEDURE ----
+
+
+---- STORE PROCEDURE para validar el Login ----
+/*
+	Validar:
+	01. El usuario no sea NULL ni vacío.
+	02. La contraseña no sea NULL ni vacía.
+	03. El usuario y contraseña sean válidos.
+*/
+
+CREATE PROCEDURE usp_ValidarLogin
+@Nick			VARCHAR(25)			= NULL,
+@Password	VARCHAR(40)			= NULL
+AS
+	IF(@Nick IS NULL OR LEN(@Nick)=0)
+		BEGIN
+			PRINT 'Debe ingresar su nombre de usuario'
+			RETURN 1
+		END
+	----------------------------------------------------
+	IF(@Password IS NULL OR LEN(@Password)=0)
+		BEGIN
+			PRINT 'Debe ingresar su contrasena'
+			RETURN 2
+		END
+	----------------------------------------------------
+
+	IF NOT EXISTS( SELECT 1 FROM Usuario 
+					 WHERE Nick = @Nick
+					 AND	  dbo.Desencriptar(Contrasena) = @Password )
+		BEGIN
+			PRINT 'Usuario invalido'
+			RETURN 3
+		END
+	ELSE
+		BEGIN
+			PRINT 'Usuario valido'
+			RETURN 0	-- EXITO
+		END
+GO
+
+-- CÓDIGO DE PRUEBA
+EXECUTE usp_ValidarLogin 'Carlos33', 'asdf'			-- ÉXITO
+EXECUTE usp_ValidarLogin NULL, 'asdf'				-- Usuario NULL
+EXECUTE usp_ValidarLogin ' ', 'asdf'						-- Usuario vacío
+EXECUTE usp_ValidarLogin 'Carlos33', NULL			-- Contraseña NULL
+EXECUTE usp_ValidarLogin 'Carlos33', ' '				-- Contraseña vacía
+EXECUTE usp_ValidarLogin 'Carlos33', 'asdfg'		-- Usuario inválido
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 
 
 ---- STORE PROCEDURE para agregar Curso ----
