@@ -28,7 +28,7 @@ namespace AcademyCourses
                 comm.Parameters.Add("@Nick", SqlDbType.VarChar).Value = objUsuario.Nick;
                 comm.Parameters.Add("@Contrasena1", SqlDbType.VarChar).Value = objUsuario.Contrasena;
                 comm.Parameters.Add("@Contrasena2", SqlDbType.VarChar).Value = objUsuario.Contrasena;
-                comm.Parameters.Add("@C_Curso", SqlDbType.Int).Value = objMatriculaC.C_Curso.C_Curso;
+                comm.Parameters.Add("@C_Curso", SqlDbType.Int).Value = objMatriculaC.C_Curso;
                 comm.Parameters.Add("@C_Recibo", SqlDbType.Int).Value = objMatriculaC.Recibo;
 
                 //comm.Parameters.Add("@valorReturn", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
@@ -63,7 +63,7 @@ namespace AcademyCourses
                 comm.Parameters.Add("@Nick", SqlDbType.VarChar).Value = objUsuario.Nick;
                 comm.Parameters.Add("@Contrasena1", SqlDbType.VarChar).Value = objUsuario.Contrasena;
                 comm.Parameters.Add("@Contrasena2", SqlDbType.VarChar).Value = objUsuario.Contrasena;
-                comm.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = objMatriculaM.C_Modulo.C_Modulo;
+                comm.Parameters.Add("@C_Modulo", SqlDbType.Int).Value = objMatriculaM.C_Modulo;
                 comm.Parameters.Add("@C_Recibo", SqlDbType.Int).Value = objMatriculaM.Recibo;
 
                 //comm.Parameters.Add("@valorReturn", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;

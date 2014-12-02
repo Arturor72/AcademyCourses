@@ -9,15 +9,15 @@ namespace AcademyCourses
     {
 
         public int C_MatriculaModulo { get; set; }
-        public AlumnoBE C_Alumno { get; set; }
-        public ModuloBE C_Modulo { get; set; }
-        public CategoriaBE C_Categoria { get; set; }
+        public int C_Alumno { get; set; }
+        public int C_Modulo { get; set; }
+        public int C_Categoria { get; set; }
         public String Recibo { get; set; }
         public DateTime Matricula { get; set; }
 
         public MatriculaModuloBE() { }
 
-        public MatriculaModuloBE(int C_MatriculaModulo, AlumnoBE C_Alumno, ModuloBE C_Modulo, CategoriaBE C_Categoria,
+        public MatriculaModuloBE(int C_MatriculaModulo, int C_Alumno, int C_Modulo, int C_Categoria,
                                    String Recibo, DateTime Matricula)
         {
 

@@ -114,9 +114,8 @@ namespace AcademyCourses.Vista
             if (DropDownList3.SelectedIndex == 0)
             {
 
-                objMatriculaCurso.C_Curso = new CursoBE();
 
-                objMatriculaCurso.C_Curso.C_Curso = Convert.ToInt32(TextBox10.Text);
+                objMatriculaCurso.C_Curso = Convert.ToInt32(TextBox10.Text);
                 objMatriculaCurso.Recibo = TextBox11.Text;
 
                 int retorno = UsuarioDAO.AgregarAlumnoCurso(objUsuario, objAlumno, objMatriculaCurso);
@@ -134,9 +133,7 @@ namespace AcademyCourses.Vista
             {
 
 
-                objMatriculaModulo.C_Modulo = new ModuloBE();
-
-                objMatriculaModulo.C_Modulo.C_Modulo = Convert.ToInt32(TextBox10.Text);
+                objMatriculaModulo.C_Modulo = Convert.ToInt32(TextBox10.Text);
                 objMatriculaModulo.Recibo = TextBox11.Text;
 
                 int retorno = UsuarioDAO.AgregarAlumnoModulo(objUsuario, objAlumno, objMatriculaModulo);

@@ -342,6 +342,7 @@
     <Compile Include="CategoriaBE.cs" />
     <Compile Include="CursoBE.cs" />
     <Compile Include="CursoDAO.cs" />
+    <Compile Include="MatriculaDAO.cs" />
     <Compile Include="Vista\CursosInscritos.aspx.cs">
       <DependentUpon>CursosInscritos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -226,14 +226,14 @@
                                                         <div class="row-fluid">
                                                                   <div class="span3" ></div>  
                                                                   <div class="span6">
-                                                                        <asp:TextBox ID="txtCurso" class="span12" placeholder="Código" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtCodigo" class="span12" placeholder="Código" runat="server"></asp:TextBox>
 															      
                                                                   </div>  
                                                                   <div class="span3">
                                                                       
                                                                       <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese código" ControlToValidate="txtRecibo" ForeColor="Red">*</asp:RequiredFieldValidator>
                                                                       
-                                                                      <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtCurso" ErrorMessage="El código solo puede contener números" MaximumValue="70" MinimumValue="1" ForeColor="Red">*</asp:RangeValidator>
+                                                                      <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtCodigo" ErrorMessage="El código solo puede contener números" MaximumValue="70" MinimumValue="1" ForeColor="Red">*</asp:RangeValidator>
                                                                       
                                                                   </div> 
  	                                                    </div>
